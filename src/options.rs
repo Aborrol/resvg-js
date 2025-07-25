@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 use std::sync::Arc;
+use std::collections::HashMap;
 
 use crate::error::Error;
 #[cfg(not(target_arch = "wasm32"))]
@@ -122,30 +123,6 @@ pub struct JsOptions {
     /// Default: [en]
     pub languages: Vec<String>,
 
-    /// The default shape rendering method.
-    ///
-    /// Will be used when an SVG element's `shape-rendering` property is set to `auto`.
-    ///
-    /// Default: GeometricPrecision
-    #[serde(deserialize_with = "deserialize_shape_rendering")]
-    pub shape_rendering: usvg::ShapeRendering,
-
-    /// The default text rendering method.
-    ///
-    /// Will be used when an SVG element's `text-rendering` property is set to `auto`.
-    ///
-    /// Default: OptimizeLegibility
-    #[serde(deserialize_with = "deserialize_text_rendering")]
-    pub text_rendering: usvg::TextRendering,
-
-    /// The default image rendering method.
-    ///
-    /// Will be used when an SVG element's `image-rendering` property is set to `auto`.
-    ///
-    /// Default: OptimizeQuality
-    #[serde(deserialize_with = "deserialize_image_rendering")]
-    pub image_rendering: usvg::ImageRendering,
-
     /// The size to render the SVG.
     ///
     /// Default: Original
@@ -161,6 +138,9 @@ pub struct JsOptions {
 
     #[serde(with = "LogLevelDef")]
     pub log_level: log::LevelFilter,
+
+    #[serde(default)]
+    pub text_layout: Option<JsTextLayoutOptions>,
 }
 
 impl Default for JsOptions {
@@ -169,13 +149,11 @@ impl Default for JsOptions {
             font: JsFontOptions::default(),
             dpi: 96.0,
             languages: vec!["en".to_string()],
-            shape_rendering: usvg::ShapeRendering::default(),
-            text_rendering: usvg::TextRendering::default(),
-            image_rendering: usvg::ImageRendering::default(),
             fit_to: FitToDef::Original,
             background: None,
             crop: JsCropOptions::default(),
             log_level: log::LevelFilter::Error,
+            text_layout: None,
         }
     }
 }
@@ -195,9 +173,9 @@ impl JsOptions {
             font_family: self.font.default_font_family.clone(),
             font_size: self.font.default_font_size,
             languages: self.languages.clone(),
-            shape_rendering: self.shape_rendering,
-            text_rendering: self.text_rendering,
-            image_rendering: self.image_rendering,
+            shape_rendering: usvg::ShapeRendering::default(),
+            text_rendering: usvg::TextRendering::default(),
+            image_rendering: usvg::ImageRendering::default(),
             default_size: usvg::Size::from_wh(100.0, 100.0).unwrap(),
             image_href_resolver: usvg::ImageHrefResolver::default(),
         };
@@ -221,6 +199,15 @@ impl JsOptions {
         }
         Ok(pixmap)
     }
+}
+
+/// The font options passed to `load_fonts()`.
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct JsFontBuffer {
+    pub font_name: String,
+    #[serde(with = "serde_bytes")]
+    pub buffer: Vec<u8>,
 }
 
 /// The font options passed to `load_fonts()`.
@@ -276,6 +263,8 @@ pub struct JsFontOptions {
     ///
     /// Default: Courier New
     pub monospace_family: String,
+    #[serde(default)]
+    pub font_buffers: Vec<JsFontBuffer>,
 }
 
 impl Default for JsFontOptions {
@@ -291,6 +280,7 @@ impl Default for JsFontOptions {
             cursive_family: "Comic Sans MS".to_string(),
             fantasy_family: "Impact".to_string(),
             monospace_family: "Courier New".to_string(),
+            font_buffers: vec![],
         }
     }
 }
@@ -320,58 +310,26 @@ pub struct JsCropOptions {
     pub bottom: Option<i32>,
 }
 
-/// Deserializes `usvg::ShapeRendering`
-fn deserialize_shape_rendering<'de, D>(deserializer: D) -> Result<usvg::ShapeRendering, D::Error>
-where
-    D: Deserializer<'de>,
-{
-    match u64::deserialize(deserializer)? {
-        0 => Ok(usvg::ShapeRendering::OptimizeSpeed),
-        1 => Ok(usvg::ShapeRendering::CrispEdges),
-        2 => Ok(usvg::ShapeRendering::GeometricPrecision),
-        n => Err(serde::de::Error::custom(format_args!(
-            "Invalid ShapeRendering value: {n}. Must be these numbers: 0 (OptimizeSpeed), 1 (CrispEdges), or 2 (GeometricPrecision)."
-        ))),
-    }
+#[derive(Deserialize, Default, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct JsTextLayoutBlockOptions {
+    pub width: Option<f32>,
+    pub line_height: Option<f32>,
+    pub maxlines: Option<u32>,
+    pub text_align: Option<String>, // например, "center", "left", "right"
+    // SVG-атрибуты, которые можно перезаписать
+    pub x: Option<f32>,
+    pub y: Option<f32>,
+    pub font_family: Option<String>,
+    pub font_size: Option<f32>,
+    pub fill: Option<String>,
+    pub font_weight: Option<String>,
+    pub font_style: Option<String>,
+    pub opacity: Option<f32>,
+    pub letter_spacing: Option<f32>,
+    // Можно добавить любые другие SVG-атрибуты по мере необходимости
 }
 
-/// Deserializes `usvg::TextRendering`
-fn deserialize_text_rendering<'de, D>(deserializer: D) -> Result<usvg::TextRendering, D::Error>
-where
-    D: Deserializer<'de>,
-{
-    match u64::deserialize(deserializer)? {
-        0 => Ok(usvg::TextRendering::OptimizeSpeed),
-        1 => Ok(usvg::TextRendering::OptimizeLegibility),
-        2 => Ok(usvg::TextRendering::GeometricPrecision),
-        n => Err(serde::de::Error::custom(format_args!(
-            "Invalid TextRendering value: {n}. Must be these numbers: 0 (OptimizeSpeed), 1 (OptimizeLegibility), or 2 (GeometricPrecision)."
-        ))),
-    }
-}
-
-/// Deserializes `usvg::ImageRendering`
-fn deserialize_image_rendering<'de, D>(deserializer: D) -> Result<usvg::ImageRendering, D::Error>
-where
-    D: Deserializer<'de>,
-{
-    match u64::deserialize(deserializer)? {
-    0 => Ok(usvg::ImageRendering::OptimizeQuality),
-    1 => Ok(usvg::ImageRendering::OptimizeSpeed),
-    n => Err(serde::de::Error::custom(format_args!(
-      "Invalid ImageRendering value: {n}. Must be these numbers: 0 (OptimizeQuality) or 1 (OptimizeSpeed)."
-    ))),
-  }
-}
-
-pub(crate) fn tweak_usvg_options(opts: &mut usvg::Options) {
-    opts.image_href_resolver = ImageHrefResolver::default();
-    opts.image_href_resolver.resolve_string = Arc::new(move |data: &str, opts: &Options| {
-        if data.starts_with("https://") || data.starts_with("http://") {
-            Some(ImageKind::RAW(1, 1, Arc::new(data.as_bytes().to_vec())))
-        } else {
-            let resolver = ImageHrefResolver::default().resolve_string;
-            (resolver)(data, opts)
-        }
-    });
-}
+#[derive(Deserialize, Default, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct JsTextLayoutOptions(pub HashMap<String, JsTextLayoutBlockOptions>);

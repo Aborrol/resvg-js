@@ -2,7 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-use crate::options::*;
+use crate::options::JsFontOptions;
 use resvg::usvg::fontdb::{Database, Language};
 
 #[cfg(not(target_arch = "wasm32"))]
@@ -24,23 +24,47 @@ pub fn load_fonts(font_options: &JsFontOptions) -> Database {
     let mut fontdb = Database::new();
     let now = std::time::Instant::now();
 
+    // Загружаем буферы шрифтов с явным именем
+    let mut loaded_from_buffer = 0;
+    for font in &font_options.font_buffers {
+        fontdb.load_font_data(font.buffer.clone());
+        loaded_from_buffer += 1;
+    }
+    println!("[DEBUG] Загружено шрифтов из буфера: {}", loaded_from_buffer);
+    // Debug: выводим все загруженные family name после загрузки буферов
+    for face in fontdb.faces() {
+        println!("[DEBUG] После буферов: {:?}", face.families);
+    }
+
     // 加载指定路径的字体
+    let mut loaded_from_files = 0;
     for path in &font_options.font_files {
         if let Err(e) = fontdb.load_font_file(path) {
             warn!("Failed to load '{}' cause {}.", path, e);
+        } else {
+            loaded_from_files += 1;
         }
     }
+    println!("[DEBUG] Загружено шрифтов из файлов: {}", loaded_from_files);
 
     // Load font directories
+    let mut loaded_from_dirs = 0;
     for path in &font_options.font_dirs {
         fontdb.load_fonts_dir(path);
+        loaded_from_dirs += 1;
     }
+    println!("[DEBUG] Загружено директорий шрифтов: {}", loaded_from_dirs);
 
     // 加载系统字体
-    // 放到最后加载，这样在获取 default_font_family 时才能优先读取到自定义的字体。
-    // https://github.com/RazrFalcon/fontdb/blob/052d74b9eb45f2c4f446846a53f33bd965e2662d/src/lib.rs#L261
     if font_options.load_system_fonts {
         fontdb.load_system_fonts();
+        println!("[DEBUG] Загружены системные шрифты");
+    }
+
+    // Итоговый список всех шрифтов
+    println!("[DEBUG] Итоговый список всех шрифтов в fontdb:");
+    for face in fontdb.faces() {
+        println!("[DEBUG] {:?}", face.families);
     }
 
     set_font_families(font_options, &mut fontdb);
@@ -221,4 +245,121 @@ fn get_first_font_family_or_fallback(fontdb: &mut Database) -> String {
     }
 
     default_font_family
+}
+
+#[cfg(not(target_arch = "wasm32"))]
+pub fn measure_text_width(
+    text: &str,
+    font_family: &str,
+    font_size: f32,
+    fontdb: &resvg::usvg::fontdb::Database,
+    letter_spacing: f32,
+) -> Option<f32> {
+    use resvg::usvg::fontdb::{Family, Query, Source};
+    use fontdue::Font;
+
+    // 1. Найти нужный шрифт по имени
+    let query = Query {
+        families: &[Family::Name(font_family)],
+        ..Query::default()
+    };
+    let face_id = fontdb.query(&query)?;
+    let face = fontdb.face(face_id)?;
+
+    // 2. Извлечь TTF-данные
+    let ttf_bytes: Vec<u8> = match face.source {
+        Source::Binary(ref bytes) => bytes.as_ref().as_ref().to_vec(),
+        Source::File(ref path) => {
+            match std::fs::read(path) {
+                Ok(data) => data,
+                Err(_) => return None,
+            }
+        }
+        _ => return None,
+    };
+
+    // 3. Создать fontdue::Font
+    let font = match Font::from_bytes(ttf_bytes.as_slice(), fontdue::FontSettings::default()) {
+        Ok(f) => f,
+        Err(_) => return None,
+    };
+
+    // 4. Измерить ширину текста (без рендеринга)
+    let mut width = 0.0f32;
+    let mut char_count = 0;
+    for ch in text.chars() {
+        let (metrics, _) = font.rasterize(ch, font_size);
+        width += metrics.advance_width;
+        char_count += 1;
+    }
+    if char_count > 1 {
+        width += (char_count - 1) as f32 * letter_spacing;
+    }
+    Some(width)
+}
+
+#[cfg(not(target_arch = "wasm32"))]
+pub fn wrap_text_greedy(
+    text: &str,
+    font_family: &str,
+    font_size: f32,
+    fontdb: &resvg::usvg::fontdb::Database,
+    max_width: f32,
+    maxlines: Option<usize>,
+    letter_spacing: f32,
+) -> Vec<String> {
+    let mut lines = Vec::new();
+    for paragraph in text.split('\n') {
+        let mut current_line = String::new();
+        for word in paragraph.split_whitespace() {
+            let test_line = if current_line.is_empty() {
+                word.to_string()
+            } else {
+                format!("{} {}", current_line, word)
+            };
+            if let Some(width) = measure_text_width(&test_line, font_family, font_size, fontdb, letter_spacing) {
+                if width <= max_width {
+                    current_line = test_line;
+                } else {
+                    if !current_line.is_empty() {
+                        lines.push(std::mem::take(&mut current_line));
+                    }
+                    // Если слово само длиннее max_width — переносим по символам
+                    if let Some(word_width) = measure_text_width(word, font_family, font_size, fontdb, letter_spacing) {
+                        if word_width > max_width {
+                            let mut part = String::new();
+                            for ch in word.chars() {
+                                let test_part = format!("{}{}", part, ch);
+                                if let Some(part_width) = measure_text_width(&test_part, font_family, font_size, fontdb, letter_spacing) {
+                                    if part_width <= max_width {
+                                        part = test_part;
+                                    } else {
+                                        lines.push(part);
+                                        part = ch.to_string();
+                                    }
+                                }
+                            }
+                            current_line = part;
+                        } else {
+                            current_line = word.to_string();
+                        }
+                    }
+                }
+            }
+        }
+        if !current_line.is_empty() {
+            lines.push(std::mem::take(&mut current_line));
+        }
+    }
+    // Ограничиваем по maxlines, добавляем ... если нужно
+    if let Some(max) = maxlines {
+        if lines.len() > max {
+            let mut limited = lines.into_iter().take(max).collect::<Vec<_>>();
+            if let Some(last) = limited.last_mut() {
+                last.push_str("...");
+            }
+            return limited;
+        }
+    }
+    lines
 }

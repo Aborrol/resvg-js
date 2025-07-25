@@ -1,5 +1,5 @@
+  ⚡️ This is a fork of resvg-js@2.6.2 with custom text layout features (see below).
 # resvg-js
-
 <a href="https://github.com/yisibl/resvg-js/actions"><img alt="GitHub CI Status" src="https://github.com/yisibl/resvg-js/workflows/CI/badge.svg?branch=main"></a>
 <a href="https://www.npmjs.com/package/@resvg/resvg-js"><img src="https://img.shields.io/npm/v/@resvg/resvg-js.svg?sanitize=true" alt="@resvg/resvg-js npm version"></a>
 <a href="https://npmcharts.com/compare/@resvg/resvg-js?minimal=true"><img src="https://img.shields.io/npm/dm/@resvg/resvg-js.svg?sanitize=true" alt="@resvg/resvg-js downloads"></a>
@@ -26,6 +26,76 @@ https://resvg-js.vercel.app
 - No need for node-gyp and postinstall, the `.node` file has been compiled for you.
 - Cross-platform support, including [Apple M Chips](https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/).
 - Support for running as native addons in Deno.
+
+## Custom Features (Fork by Aborrol)
+
+- Поддержка кастомного layout для `<text>`: автоматический перенос строк, параметры `width`, `lineHeight`, `maxlines`, `textAlign`, `opacity`, `letterSpacing` и др. через опцию `textLayout` в JS.
+- Возможность задавать шрифты из буфера с явным именем family (`fontBuffers`).
+- Приоритет параметров: опции JS → SVG-атрибуты → дефолт.
+- Все параметры применяются по id `<text>`. Если id не найден — опции не применяются.
+
+### Пример: кастомный layout и шрифты из буфера
+
+```js
+const { promises } = require('fs')
+const { join } = require('path')
+const { Resvg } = require('@resvg/resvg-js')
+
+async function main() {
+  const svg = await promises.readFile(join(__dirname, 'input.svg'), 'utf8')
+  const fontFiles = [
+    { name: 'Lobster', file: 'Lobster-Regular.ttf' },
+    { name: 'Jost-700', file: 'Jost-700.ttf' },
+  ]
+  // Загружаем шрифты как буферы
+  const fontBuffers = await Promise.all(
+    fontFiles.map(async ({ name, file }) => {
+      const buffer = await promises.readFile(join(__dirname, 'fonts', file))
+      return { fontName: name, buffer: Array.from(buffer) }
+    }),
+  )
+
+  const resvg = new Resvg(svg, {
+    background: '#fff',
+    font: {
+      loadSystemFonts: false,
+      fontBuffers, // <-- ваши шрифты
+      defaultFontFamily: 'Lobster',
+    },
+    textLayout: {
+      'main-title': {
+        width: 300,
+        lineHeight: 32,
+        maxlines: 3,
+        textAlign: 'center',
+        opacity: 0.5,
+        letterSpacing: 2.5,
+        x: 50,
+        y: 100,
+        fontFamily: 'Lobster',
+        fontSize: 48,
+        fill: '#ff0000',
+      },
+      'subtitle': {
+        width: 200,
+        lineHeight: 24,
+        maxlines: 2,
+        textAlign: 'left',
+      }
+    },
+    logLevel: 'debug',
+  })
+
+  const pngData = resvg.render()
+  const pngBuffer = pngData.asPng()
+  await promises.writeFile(join(__dirname, 'output.png'), Buffer.from(pngBuffer))
+  console.log('💾 output.png создан')
+}
+
+main().catch(console.error)
+```
+
+**Этот пример показывает, как подключить свои TTF-шрифты из буфера и задать расширенный layout для текста через `textLayout`.**
 
 ## Installation
 

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="200">
+  <text id="main-text" x="0" fill="#003366" y="40" width="400" lineHeight="32" maxlines="3" font-family="Jost-700" font-size="24">
+    Это очень длинная строка текста, которая должна автоматически переноситься по ширине контейнера
+     и ограничиваться тремя строками.\nА это новая строка.
+  </text>
+</svg> 

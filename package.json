@@ -1,20 +1,18 @@
 {
-  "name": "@resvg/resvg-js",
-  "version": "2.6.2",
-  "description": "A high-performance SVG renderer and toolkit, powered by Rust based resvg and napi-rs",
-  "main": "index.js",
-  "repository": "git@github.com:yisibl/resvg-js.git",
-  "license": "MPL-2.0",
+  "name": "@aborrol/resvg-js-tolty",
+  "version": "2.6.2-ab1",
+  "description": "Fork: resvg-js with advanced custom text layout (textLayout, letterSpacing, opacity, font buffers) by Aborrol",
+  "repository": "https://github.com/Aborrol/resvg-js",
+  "author": "Aborrol <aborrol@gmail.com>",
   "keywords": [
     "resvg",
     "svg",
-    "node-resvg",
-    "resvg-js",
-    "resvg-node",
-    "rust",
-    "svg2png",
-    "svg2img",
-    "svg to png"
+    "custom fonts",
+    "textLayout",
+    "letterSpacing",
+    "opacity",
+    "tolty",
+    "fork"
   ],
   "files": [
     "index.d.ts",
@@ -48,6 +46,7 @@
   },
   "scripts": {
     "artifacts": "napi artifacts",
+    "build-dist": "node build-dist.js",
     "bench": "node -r @swc-node/register benchmark/bench.ts",
     "bundle": "run-p 'bundle:*'",
     "bundle:js": "node bundle.js",
@@ -134,5 +133,9 @@
     "arrowParens": "always",
     "parser": "typescript"
   },
-  "packageManager": "yarn@3.8.5"
+  "packageManager": "yarn@3.8.5",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "fonteditor-core": "^2.6.1"
+  }
 }

@@ -26,6 +26,8 @@ use wasm_bindgen::{
     prelude::{wasm_bindgen, JsValue},
     JsCast,
 };
+use svgtypes::FontFamily;
+use resvg::usvg::Node;
 
 mod error;
 mod fonts;
@@ -153,13 +155,214 @@ impl Resvg {
             .try_init();
 
         let (mut opts, fontdb) = js_options.to_usvg_options();
-        options::tweak_usvg_options(&mut opts);
         // Parse the SVG string into a tree.
         let mut tree = match svg {
             Either::A(a) => usvg::Tree::from_str(a.as_str(), &opts),
             Either::B(b) => usvg::Tree::from_data(b.as_ref(), &opts),
         }
         .map_err(|e| napi::Error::from_reason(format!("{e}")))?;
+
+        // Кастомный обход для <text> без <tspan> с поддержкой textLayout
+        if let Some(layout_map) = js_options.text_layout.as_ref() {
+            // Первый проход: собираем нужные узлы
+            let mut text_nodes = vec![];
+            for node in tree.root.descendants() {
+                if let usvg::NodeKind::Text(ref text) = *node.borrow() {
+                    // Пропускаем, если есть <tspan>
+                    if node.has_children() {
+                        continue;
+                    }
+                    let id = text.id.clone();
+                    if layout_map.0.get(&id).is_some() {
+                        text_nodes.push(node.clone());
+                    }
+                }
+            }
+            // --- Сбор параметров для вставки новых <text> ---
+            struct TextInsert {
+                after_id: String,
+                lines: Vec<String>,
+                x: f32,
+                y: f32,
+                line_height: f32,
+                font_family: String,
+                font_size: f32,
+                id: String,
+                orig_chunks: Vec<usvg::TextChunk>, // добавляем исходные чанки
+            }
+            let mut inserts = Vec::new();
+            for node in &text_nodes {
+                let node_ref = node.clone();
+                let (after_id, lines, x, y, line_height, font_family, font_size, id, orig_chunks) = {
+                    let mut borrow = node_ref.borrow_mut();
+                    if let usvg::NodeKind::Text(ref mut text) = *borrow {
+                        println!("[DEBUG] text.chunks: {:?}", text.chunks.iter().map(|c| c.text.clone()).collect::<Vec<_>>());
+                        let text_content = text.chunks.iter().map(|c| c.text.replace("\\n", "\n")).collect::<String>();
+                        println!("[DEBUG] text_content (после замены \\n): {:?}", text_content);
+                        let id = text.id.clone();
+                        let opts = layout_map.0.get(&id).unwrap();
+                        let letter_spacing = opts.letter_spacing.unwrap_or(0.0);
+                        let font_family = opts.font_family.as_ref().map(|s| s.as_str()).unwrap_or(&js_options.font.default_font_family);
+                        let font_size = opts.font_size.unwrap_or(js_options.font.default_font_size);
+                        let max_width = opts.width.unwrap_or(300.0);
+                        let maxlines = opts.maxlines.map(|v| v as usize);
+                        let line_height = opts.line_height.unwrap_or(font_size * 1.2);
+                        let x = opts.x.unwrap_or_else(|| text.chunks.first().and_then(|c| c.x).unwrap_or(0.0));
+                        let y = opts.y.unwrap_or_else(|| text.chunks.first().and_then(|c| c.y).unwrap_or(0.0));
+                        let lines = crate::fonts::wrap_text_greedy(
+                            &text_content,
+                            font_family,
+                            font_size,
+                            &fontdb,
+                            max_width,
+                            maxlines,
+                            letter_spacing,
+                        );
+                        let orig_chunks = text.chunks.clone();
+                        text.chunks.clear();
+                        (id.clone(), lines, x, y, line_height, font_family.to_string(), font_size, id, orig_chunks)
+                    } else {
+                        continue;
+                    }
+                };
+                inserts.push(TextInsert {
+                    after_id,
+                    lines,
+                    x,
+                    y,
+                    line_height,
+                    font_family,
+                    font_size,
+                    id,
+                    orig_chunks,
+                });
+            }
+            // --- Вставка новых <text> после обхода дерева ---
+            for ins in inserts {
+                // Ищем узел по id
+                let mut after_node = None;
+                for node in tree.root.descendants() {
+                    if let usvg::NodeKind::Text(ref text) = *node.borrow() {
+                        if text.id == ins.after_id {
+                            after_node = Some(node.clone());
+                            break;
+                        }
+                    }
+                }
+                if let Some(mut last) = after_node {
+                    for (i, line) in ins.lines.iter().enumerate() {
+                        let opts = js_options.text_layout.as_ref().and_then(|map| map.0.get(&ins.id));
+                        // --- fill ---
+                        let fill_color = opts
+                            .and_then(|o| o.fill.as_ref())
+                            .and_then(|s| {
+                                let s = s.trim_start_matches('#');
+                                if s.len() == 6 {
+                                    let r = u8::from_str_radix(&s[0..2], 16).ok()?;
+                                    let g = u8::from_str_radix(&s[2..4], 16).ok()?;
+                                    let b = u8::from_str_radix(&s[4..6], 16).ok()?;
+                                    Some(usvg::Color::new_rgb(r, g, b))
+                                } else {
+                                    None
+                                }
+                            })
+                            .or_else(|| ins.orig_chunks.first().and_then(|c| c.spans.first()).and_then(|span| span.fill.as_ref()).and_then(|fill| match &fill.paint {
+                                usvg::Paint::Color(color) => Some(*color),
+                                _ => None,
+                            }))
+                            .unwrap_or(usvg::Color::new_rgb(0, 0, 0));
+                        // --- opacity ---
+                        let opacity = opts
+                            .and_then(|o| o.opacity)
+                            .or_else(|| ins.orig_chunks.first().and_then(|c| c.spans.first()).and_then(|span| span.fill.as_ref()).map(|fill| fill.opacity.get()))
+                            .unwrap_or(1.0);
+                        // --- letter-spacing ---
+                        let letter_spacing = opts
+                            .and_then(|o| o.letter_spacing)
+                            .or_else(|| ins.orig_chunks.first().and_then(|c| c.spans.first()).map(|span| span.letter_spacing))
+                            .unwrap_or(0.0);
+                        // --- центрирование и прочее ---
+                        let text_align = opts.and_then(|o| o.text_align.as_ref().map(|s| s.as_str())).unwrap_or("left");
+                        let container_width = opts.and_then(|o| o.width).unwrap_or(300.0);
+                        let line_width = crate::fonts::measure_text_width(
+                            line,
+                            &ins.font_family,
+                            ins.font_size,
+                            &fontdb,
+                            letter_spacing,
+                        ).unwrap_or(0.0);
+                        let mut x = ins.x;
+                        match text_align {
+                            "center" | "middle" => {
+                                x = ins.x + (container_width - line_width) / 2.0;
+                            }
+                            "right" => {
+                                x = ins.x + (container_width - line_width);
+                            }
+                            _ => {}
+                        }
+                        let y_pos = ins.y + i as f32 * ins.line_height;
+                        let mut new_text = usvg::Text {
+                            id: String::new(),
+                            transform: usvg::Transform::default(),
+                            rendering_mode: usvg::TextRendering::OptimizeLegibility,
+                            positions: vec![],
+                            rotate: vec![],
+                            writing_mode: usvg::WritingMode::LeftToRight,
+                            chunks: vec![],
+                        };
+                        new_text.chunks.push(usvg::TextChunk {
+                            text: line.clone(),
+                            x: Some(x),
+                            y: Some(y_pos),
+                            anchor: usvg::TextAnchor::Start,
+                            spans: vec![{
+                                let span = usvg::TextSpan {
+                                    start: 0,
+                                    end: line.as_bytes().len(),
+                                    font: usvg::Font {
+                                        families: vec![ins.font_family.clone()],
+                                        style: usvg::FontStyle::Normal,
+                                        stretch: usvg::FontStretch::Normal,
+                                        weight: 400,
+                                    },
+                                    font_size: usvg::NonZeroPositiveF32::new(ins.font_size).unwrap_or(usvg::NonZeroPositiveF32::new(12.0).unwrap()),
+                                    fill: Some(usvg::Fill {
+                                        paint: usvg::Paint::Color(fill_color),
+                                        opacity: usvg::NormalizedF32::new(opacity).unwrap_or(usvg::NormalizedF32::new(1.0).unwrap()),
+                                        rule: usvg::FillRule::NonZero,
+                                    }),
+                                    alignment_baseline: usvg::AlignmentBaseline::Auto,
+                                    apply_kerning: true,
+                                    baseline_shift: vec![],
+                                    decoration: usvg::TextDecoration {
+                                        underline: None,
+                                        overline: None,
+                                        line_through: None,
+                                    },
+                                    dominant_baseline: usvg::DominantBaseline::Auto,
+                                    letter_spacing: letter_spacing,
+                                    paint_order: usvg::PaintOrder::default(),
+                                    stroke: None,
+                                    text_length: None,
+                                    length_adjust: usvg::LengthAdjust::Spacing,
+                                    visibility: usvg::Visibility::Visible,
+                                    word_spacing: 0.0,
+                                    small_caps: false,
+                                };
+                                println!("[DEBUG] <text id={}>: span: start={}, end={}, font_family={:?}, font_size={}, fill={:?}, opacity={}, letter_spacing={}", ins.id, span.start, span.end, span.font.families, span.font_size.get(), fill_color, opacity, letter_spacing);
+                                span
+                            }],
+                            text_flow: usvg::TextFlow::Linear,
+                        });
+                        let new_node = Node::new(NodeKind::Text(new_text));
+                        last.insert_after(new_node.clone());
+                        last = new_node;
+                        println!("[DEBUG] <text id={}>: new line '{}', x={:?}, y={:?}, align={}", ins.id, line, x, y_pos, text_align);
+                    }
+                }
+            }
+        }
         tree.convert_text(&fontdb);
         Ok(Resvg { tree, js_options })
     }
@@ -287,7 +490,6 @@ impl Resvg {
 
         crate::fonts::load_wasm_fonts(&js_options.font, custom_font_buffers, &mut fontdb)?;
 
-        options::tweak_usvg_options(&mut opts);
         let mut tree = if js_sys::Uint8Array::instanceof(&svg) {
             let uintarray = js_sys::Uint8Array::unchecked_from_js_ref(&svg);
             let svg_buffer = uintarray.to_vec();
