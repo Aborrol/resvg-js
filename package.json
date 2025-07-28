@@ -1,6 +1,6 @@
 {
   "name": "@aborrol/resvg-js-tolty",
-  "version": "2.6.2-ab14",
+  "version": "2.6.2-ab15",
   "description": "Fork: resvg-js with advanced custom text layout (textLayout, letterSpacing, opacity, font buffers) by Aborrol",
   "repository": "https://github.com/Aborrol/resvg-js",
   "author": "Aborrol <aborrol@gmail.com>",
@@ -140,8 +140,8 @@
     "fonteditor-core": "^2.6.1"
   },
   "optionalDependencies": {
-    "@aborrol/resvg-js-tolty-darwin-x64": "^2.6.2-ab13",
-    "@aborrol/resvg-js-tolty-linux-x64-gnu": "2.6.2-ab13",
-    "@aborrol/resvg-js-tolty-win32-x64-msvc": "2.6.2-ab13"
+    "@aborrol/resvg-js-tolty-darwin-x64": "^2.6.2-ab15",
+    "@aborrol/resvg-js-tolty-linux-x64-gnu": "2.6.2-ab15",
+    "@aborrol/resvg-js-tolty-win32-x64-msvc": "2.6.2-ab15"
   }
 }
