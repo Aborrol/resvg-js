@@ -56,6 +56,18 @@ jobs:
       - name: Add Rust target (if needed)
         run: rustup target add ${{ matrix.target }}
 
+      - name: Update platform package versions
+        run: |
+          # Get version from main package.json
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Updating all platform packages to version: $VERSION"
+          
+          # Update all platform package.json files
+          find npm/ -name "package.json" -exec sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$VERSION\"/g" {} \;
+          
+          # Also update repository URLs to point to your fork
+          find npm/ -name "package.json" -exec sed -i 's|"repository": "git@github.com:yisibl/resvg-js.git"|"repository": "https://github.com/Aborrol/resvg-js"|g' {} \;
+
       - name: Build for platform
         run: |
           napi build --target ${{ matrix.target }} --release

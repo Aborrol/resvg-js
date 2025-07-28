@@ -50,6 +50,7 @@
     "bundle:dts": "dts-bundle-generator --external-types -o wasm/index.d.ts wasm-binding.ts",
     "build": "napi build --platform --release --js js-binding.js --dts js-binding.d.ts",
     "build:debug": "napi build --platform --js js-binding.js --dts js-binding.d.ts",
+    "update-platform-versions": "node scripts/update-versions.js",
     "build:wasm": "run-s build:wasm-web copy-wasm bundle",
     "build:wasm-web": "wasm-pack build --target web --out-name index --out-dir wasm/dist --release",
     "copy-wasm": "copyfiles -f wasm/dist/index_bg.wasm ./wasm",
@@ -84,6 +85,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-sonarjs": "^0.25.0",
+    "glob": "^11.0.3",
     "husky": "^8.0.0",
     "jimp-compact": "^0.16.1-2",
     "lint-staged": "^15.2.10",
@@ -135,11 +137,11 @@
     "fonteditor-core": "^2.6.1"
   },
   "optionalDependencies": {
-    "@aborrol/resvg-js-tolty-win32-x64-msvc": "2.6.2-ab9",
+    "@aborrol/resvg-js-tolty-darwin-arm64": "2.6.2-ab9",
     "@aborrol/resvg-js-tolty-darwin-x64": "2.6.2-ab9",
-    "@aborrol/resvg-js-tolty-linux-x64-gnu": "2.6.2-ab9",
     "@aborrol/resvg-js-tolty-linux-arm64-gnu": "2.6.2-ab9",
+    "@aborrol/resvg-js-tolty-linux-x64-gnu": "2.6.2-ab9",
     "@aborrol/resvg-js-tolty-win32-ia32-msvc": "2.6.2-ab9",
-    "@aborrol/resvg-js-tolty-darwin-arm64": "2.6.2-ab9"
+    "@aborrol/resvg-js-tolty-win32-x64-msvc": "2.6.2-ab9"
   }
 }

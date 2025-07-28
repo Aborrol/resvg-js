@@ -1,6 +1,6 @@
 {
   "name": "@aborrol/resvg-js-tolty-android-arm64",
-  "version": "2.6.2-ab8",
+  "version": "2.6.2-ab9",
   "os": [
     "android"
   ],
@@ -31,5 +31,5 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "repository": "git@github.com:yisibl/resvg-js.git"
+  "repository": "https://github.com/Aborrol/resvg-js"
 }
