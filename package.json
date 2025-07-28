@@ -136,12 +136,11 @@
   },
   "packageManager": "yarn@3.8.5",
   "dependencies": {
-    "@aborrol/resvg-js-tolty-darwin-x64": "^2.6.2-ab12",
     "fonteditor-core": "^2.6.1"
   },
   "optionalDependencies": {
-    "@aborrol/resvg-js-tolty-win32-x64-msvc": "2.6.2-ab13",
-    "@aborrol/resvg-js-tolty-darwin-x64": "2.6.2-ab13",
-    "@aborrol/resvg-js-tolty-linux-x64-gnu": "2.6.2-ab13"
+    "@aborrol/resvg-js-tolty-darwin-x64": "^2.6.2-ab13",
+    "@aborrol/resvg-js-tolty-linux-x64-gnu": "2.6.2-ab13",
+    "@aborrol/resvg-js-tolty-win32-x64-msvc": "2.6.2-ab13"
   }
 }
