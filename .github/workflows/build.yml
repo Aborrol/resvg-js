@@ -64,6 +64,7 @@ jobs:
           napi build --target ${{ matrix.target }} --release
 
       - name: Copy native module to platform directory
+        shell: bash
         run: |
           # Find the built .node file and copy it to the platform directory
           find . -name "resvgjs.${{ matrix.platform }}.node" -exec cp {} npm/${{ matrix.platform }}/ \;

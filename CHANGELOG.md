@@ -9,6 +9,14 @@ This changelog also contains important changes in dependencies.
 
 ## [Unreleased]
 
+## [2.6.2-ab17] - 2025-01-28
+
+### Fixed
+
+- **BREAKING**: Fixed CI build failure on Windows - use bash shell for find command
+  - Added explicit bash shell for copy step to ensure cross-platform compatibility
+  - Fixed "FIND: Parameter format not correct" error on Windows
+
 ## [2.6.2-ab16] - 2025-01-28
 
 ### Fixed
