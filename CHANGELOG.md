@@ -9,6 +9,14 @@ This changelog also contains important changes in dependencies.
 
 ## [Unreleased]
 
+## [2.6.2-ab16] - 2025-01-28
+
+### Fixed
+
+- **BREAKING**: Fixed native module not being included in platform packages
+  - Added step to copy built .node files to platform directories in CI
+  - Platform packages now include the actual native modules
+
 ## [2.6.2-ab15] - 2025-01-28
 
 ### Fixed
