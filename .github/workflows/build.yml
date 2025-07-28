@@ -1,0 +1,106 @@
+name: Build and Publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            platform: linux-x64-gnu
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-musl
+            platform: linux-x64-musl
+          - os: ubuntu-latest
+            target: aarch64-unknown-linux-gnu
+            platform: linux-arm64-gnu
+          - os: ubuntu-latest
+            target: aarch64-unknown-linux-musl
+            platform: linux-arm64-musl
+          - os: ubuntu-latest
+            target: armv7-unknown-linux-gnueabihf
+            platform: linux-arm-gnueabihf
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            platform: win32-x64-msvc
+          - os: windows-latest
+            target: i686-pc-windows-msvc
+            platform: win32-ia32-msvc
+          - os: windows-latest
+            target: aarch64-pc-windows-msvc
+            platform: win32-arm64-msvc
+          - os: macos-latest
+            target: x86_64-apple-darwin
+            platform: darwin-x64
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            platform: darwin-arm64
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install -g @napi-rs/cli
+
+      - name: Build for platform
+        run: |
+          napi build --target ${{ matrix.target }} --release --platform npm/
+
+      - name: Publish platform package
+        run: |
+          cd npm/${{ matrix.platform }}
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-main:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install -g @napi-rs/cli
+
+      - name: Build JS binding
+        run: |
+          napi build --platform --release --js js-binding.js --dts js-binding.d.ts
+
+      - name: Minify JS binding
+        run: |
+          npx esbuild js-binding.js --minify --allow-overwrite --outfile=js-binding.js
+
+      - name: Publish main package
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} 
