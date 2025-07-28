@@ -99,6 +99,36 @@ main().catch(console.error)
 
 ## Installation
 
+### ⚠️ Важно: Установка платформо-зависимых пакетов
+
+Этот пакет использует нативные модули для разных платформ. **Платформо-зависимый пакет устанавливается автоматически** при установке основного пакета.
+
+Если автоматическая установка не сработала, вы можете установить соответствующий пакет вручную:
+
+```bash
+# Для macOS Intel (x64)
+npm install @aborrol/resvg-js-tolty-darwin-x64
+
+# Для macOS Apple Silicon (ARM64)
+npm install @aborrol/resvg-js-tolty-darwin-arm64
+
+# Для Linux x64
+npm install @aborrol/resvg-js-tolty-linux-x64-gnu
+
+# Для Windows x64
+npm install @aborrol/resvg-js-tolty-win32-x64-msvc
+
+# Для других платформ см. список доступных пакетов на npm
+```
+
+**Ручная установка:** Если автоматическая установка не работает, запустите:
+```bash
+npm run install-platform
+```
+Этот скрипт автоматически определит вашу платформу и установит соответствующий пакет.
+
+### Стандартная установка
+
 ### Node.js
 
 ```shell

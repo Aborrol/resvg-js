@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@aborrol/resvg-js-tolty-darwin-x64@^2.6.2-ab12":
+  version "2.6.2-ab12"
+  resolved "https://registry.npmjs.org/@aborrol/resvg-js-tolty-darwin-x64/-/resvg-js-tolty-darwin-x64-2.6.2-ab12.tgz"
+  integrity sha512-ksWfoRo8mWkVzuhPzloOD7+PBLlv//sTKggLud61nJOZGKNruygHeevm2OtoXALNJxFzJsx28muuHP4QJxUT1w==
+
 "@esbuild/darwin-x64@0.24.2":
   version "0.24.2"
 

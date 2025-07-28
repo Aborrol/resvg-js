@@ -9,6 +9,24 @@ This changelog also contains important changes in dependencies.
 
 ## [Unreleased]
 
+## [2.6.2-ab13] - 2025-01-28
+
+### Fixed
+
+- **BREAKING**: Fixed platform-specific package installation issue
+  - Added automatic platform package installation via postinstall script
+  - Added manual installation script `npm run install-platform`
+  - Updated README with detailed installation instructions
+  - Removed `optionalDependencies` to avoid CI/CD issues
+  - Users no longer need to manually install platform-specific packages
+
+### Added
+
+- New scripts for platform package management:
+  - `scripts/postinstall.js` - automatically installs platform-specific package after `npm install`
+  - `scripts/install-platform.js` - manual installation of platform-specific package
+  - `npm run install-platform` - convenient npm script for manual installation
+
 ## [2.6.2] - 2024-03-26
 
 ### Fixed
