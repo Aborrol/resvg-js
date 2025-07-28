@@ -99,6 +99,23 @@ jobs:
         run: |
           npx esbuild js-binding.js --minify --allow-overwrite --outfile=js-binding.js
 
+      - name: Update package.json with optionalDependencies
+        run: |
+          # Add optionalDependencies to package.json
+          node -e "
+          const fs = require('fs');
+          const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          pkg.optionalDependencies = {
+            '@aborrol/resvg-js-tolty-darwin-arm64': pkg.version,
+            '@aborrol/resvg-js-tolty-darwin-x64': pkg.version,
+            '@aborrol/resvg-js-tolty-linux-arm64-gnu': pkg.version,
+            '@aborrol/resvg-js-tolty-linux-x64-gnu': pkg.version,
+            '@aborrol/resvg-js-tolty-win32-ia32-msvc': pkg.version,
+            '@aborrol/resvg-js-tolty-win32-x64-msvc': pkg.version
+          };
+          fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
+          "
+
       - name: Publish main package
         run: npm publish --access public
         env:

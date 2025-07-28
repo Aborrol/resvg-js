@@ -135,13 +135,5 @@
   "packageManager": "yarn@3.8.5",
   "dependencies": {
     "fonteditor-core": "^2.6.1"
-  },
-  "optionalDependencies": {
-    "@aborrol/resvg-js-tolty-darwin-arm64": "2.6.2-ab10",
-    "@aborrol/resvg-js-tolty-darwin-x64": "2.6.2-ab10",
-    "@aborrol/resvg-js-tolty-linux-arm64-gnu": "2.6.2-ab10",
-    "@aborrol/resvg-js-tolty-linux-x64-gnu": "2.6.2-ab10",
-    "@aborrol/resvg-js-tolty-win32-ia32-msvc": "2.6.2-ab10",
-    "@aborrol/resvg-js-tolty-win32-x64-msvc": "2.6.2-ab10"
   }
 }
