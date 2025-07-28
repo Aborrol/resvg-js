@@ -9,6 +9,14 @@ This changelog also contains important changes in dependencies.
 
 ## [Unreleased]
 
+## [2.6.2-ab14] - 2025-01-28
+
+### Fixed
+
+- **BREAKING**: Fixed postinstall script not being included in published package
+  - Added `scripts/` directory to package.json files section
+  - Postinstall script now properly included in npm package
+
 ## [2.6.2-ab13] - 2025-01-28
 
 ### Fixed
