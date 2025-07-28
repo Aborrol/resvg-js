@@ -63,7 +63,7 @@ jobs:
         run: |
           napi build --target ${{ matrix.target }} --release
 
-      - name: Check if platform package version exists
+      - name: Check and publish platform package
         run: |
           cd npm/${{ matrix.platform }}
           PACKAGE_NAME=$(node -p "require('./package.json').name")
@@ -73,17 +73,10 @@ jobs:
           # Check if version exists in npm registry
           if npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then
             echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"
-            echo "skip_publish=true" >> $GITHUB_OUTPUT
           else
-            echo "📦 $PACKAGE_NAME@$VERSION does not exist, will publish"
-            echo "skip_publish=false" >> $GITHUB_OUTPUT
+            echo "📦 $PACKAGE_NAME@$VERSION does not exist, publishing..."
+            npm publish --access public
           fi
-
-      - name: Publish platform package
-        if: steps.check_version.outputs.skip_publish != 'true'
-        run: |
-          cd npm/${{ matrix.platform }}
-          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -116,7 +109,7 @@ jobs:
         run: |
           npx esbuild js-binding.js --minify --allow-overwrite --outfile=js-binding.js
 
-      - name: Check if main package version exists
+      - name: Check and publish main package
         run: |
           PACKAGE_NAME=$(node -p "require('./package.json').name")
           VERSION=$(node -p "require('./package.json').version")
@@ -125,32 +118,25 @@ jobs:
           # Check if version exists in npm registry
           if npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then
             echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"
-            echo "skip_publish=true" >> $GITHUB_OUTPUT
           else
-            echo "📦 $PACKAGE_NAME@$VERSION does not exist, will publish"
-            echo "skip_publish=false" >> $GITHUB_OUTPUT
+            echo "📦 $PACKAGE_NAME@$VERSION does not exist, updating package.json and publishing..."
+            
+            # Add optionalDependencies to package.json
+            node -e "
+            const fs = require('fs');
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            pkg.optionalDependencies = {
+              '@aborrol/resvg-js-tolty-darwin-arm64': pkg.version,
+              '@aborrol/resvg-js-tolty-darwin-x64': pkg.version,
+              '@aborrol/resvg-js-tolty-linux-arm64-gnu': pkg.version,
+              '@aborrol/resvg-js-tolty-linux-x64-gnu': pkg.version,
+              '@aborrol/resvg-js-tolty-win32-ia32-msvc': pkg.version,
+              '@aborrol/resvg-js-tolty-win32-x64-msvc': pkg.version
+            };
+            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
+            "
+            
+            npm publish --access public
           fi
-
-      - name: Update package.json with optionalDependencies
-        if: steps.check_main_version.outputs.skip_publish != 'true'
-        run: |
-          # Add optionalDependencies to package.json
-          node -e "
-          const fs = require('fs');
-          const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-          pkg.optionalDependencies = {
-            '@aborrol/resvg-js-tolty-darwin-arm64': pkg.version,
-            '@aborrol/resvg-js-tolty-darwin-x64': pkg.version,
-            '@aborrol/resvg-js-tolty-linux-arm64-gnu': pkg.version,
-            '@aborrol/resvg-js-tolty-linux-x64-gnu': pkg.version,
-            '@aborrol/resvg-js-tolty-win32-ia32-msvc': pkg.version,
-            '@aborrol/resvg-js-tolty-win32-x64-msvc': pkg.version
-          };
-          fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
-          "
-
-      - name: Publish main package
-        if: steps.check_main_version.outputs.skip_publish != 'true'
-        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} 
