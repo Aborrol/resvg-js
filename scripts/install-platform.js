@@ -26,14 +26,49 @@ const platformPackages = {
 }
 
 function getPlatformPackage() {
-  const platformPackagesForOS = platformPackages[platform]
+  // Handle special cases for different platforms
+  let os = platform
+  let architecture = arch
+
+  // Debug logging
+  console.log(`🔍 Detected platform: ${platform}, architecture: ${arch}`)
+
+  // Handle Windows special case - we need to determine if it's MSVC
+  if (platform === 'win32') {
+    // For Windows, we assume MSVC toolchain (which is what we build with)
+    // x64 -> x64-msvc, ia32 -> ia32-msvc
+    if (arch === 'x64') {
+      architecture = 'x64' // Keep as x64 for win32-x64-msvc
+    } else if (arch === 'ia32') {
+      architecture = 'ia32' // Keep as ia32 for win32-ia32-msvc
+    } else if (arch === 'arm64') {
+      architecture = 'arm64' // Keep as arm64 for win32-arm64-msvc
+    }
+  }
+
+  // Handle Linux special case - we need to determine if it's GNU or MUSL
+  if (platform === 'linux') {
+    // For Linux, we assume GNU toolchain (which is what we build with)
+    // x64 -> x64-gnu, arm64 -> arm64-gnu, arm -> arm-gnueabihf
+    if (arch === 'x64') {
+      architecture = 'x64' // Keep as x64 for linux-x64-gnu
+    } else if (arch === 'arm64') {
+      architecture = 'arm64' // Keep as arm64 for linux-arm64-gnu
+    } else if (arch === 'arm') {
+      architecture = 'arm' // Keep as arm for linux-arm-gnueabihf
+    }
+  }
+
+  console.log(`🔍 Mapped to OS: ${os}, architecture: ${architecture}`)
+
+  const platformPackagesForOS = platformPackages[os]
   if (!platformPackagesForOS) {
     throw new Error(`Unsupported platform: ${platform}`)
   }
 
-  const packageName = platformPackagesForOS[arch]
+  const packageName = platformPackagesForOS[architecture]
   if (!packageName) {
-    throw new Error(`Unsupported architecture on ${platform}: ${arch}`)
+    throw new Error(`Unsupported architecture on ${platform}: ${arch} (mapped to ${architecture})`)
   }
 
   return packageName

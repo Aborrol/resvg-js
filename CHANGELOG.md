@@ -9,6 +9,24 @@ This changelog also contains important changes in dependencies.
 
 ## [Unreleased]
 
+## [2.6.2-ab21] - 2025-01-28
+
+### Fixed
+
+- **BREAKING**: Improve platform detection logic in install-platform.js
+  - Added debug logging to better understand platform detection
+  - Improved error messages for unsupported platforms
+  - Better handling of Windows and Linux architecture mapping
+
+## [2.6.2-ab20] - 2025-01-28
+
+### Fixed
+
+- **BREAKING**: Fix Windows CI build failure - move glob to dependencies
+  - Moved glob from devDependencies to dependencies so it's available in CI
+  - This fixes "Cannot find module 'glob'" error in scripts/update-versions.js
+  - Windows builds should now complete successfully
+
 ## [2.6.2-ab19] - 2025-01-28
 
 ### Fixed
