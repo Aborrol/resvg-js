@@ -54,7 +54,7 @@ jobs:
 
       - name: Build for platform
         run: |
-          napi build --target ${{ matrix.target }} --release --platform npm/
+          napi build --target ${{ matrix.target }} --release
 
       - name: Publish platform package
         run: |
