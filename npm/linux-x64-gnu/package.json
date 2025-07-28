@@ -1,32 +1,25 @@
 {
-  "name": "@resvg/resvg-js-linux-x64-gnu",
-  "version": "2.6.2-ab1",
+  "name": "@aborrol/resvg-js-tolty-linux-x64-gnu",
+  "version": "2.6.2-ab8",
   "os": [
     "linux"
   ],
   "cpu": [
     "x64"
   ],
-  "libc": [
-    "glibc"
-  ],
   "main": "resvgjs.linux-x64-gnu.node",
   "files": [
     "resvgjs.linux-x64-gnu.node"
   ],
-  "description": "A high-performance SVG renderer and toolkit, powered by Rust based resvg and napi-rs",
   "keywords": [
-    "resvg",
-    "svg",
-    "node-resvg",
-    "resvg-js",
-    "resvg-node",
-    "rust",
-    "svg2png",
-    "svg2img",
-    "svg to png"
+    "napi-rs",
+    "NAPI",
+    "N-API",
+    "Rust",
+    "node-addon",
+    "node-addon-api"
   ],
-  "license": "MPL-2.0",
+  "license": "MIT",
   "engines": {
     "node": ">= 10"
   },
@@ -34,5 +27,8 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "repository": "git@github.com:yisibl/resvg-js.git"
+  "repository": "https://github.com/Aborrol/resvg-js",
+  "libc": [
+    "glibc"
+  ]
 }

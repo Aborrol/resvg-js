@@ -1,6 +1,6 @@
 {
-  "name": "@resvg/resvg-js-android-arm-eabi",
-  "version": "2.6.2-ab1",
+  "name": "@aborrol/resvg-js-tolty-android-arm-eabi",
+  "version": "2.6.2-ab8",
   "os": [
     "android"
   ],

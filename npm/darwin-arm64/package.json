@@ -1,6 +1,6 @@
 {
-  "name": "@resvg/resvg-js-darwin-arm64",
-  "version": "2.6.2-ab1",
+  "name": "@aborrol/resvg-js-tolty-darwin-arm64",
+  "version": "2.6.2-ab8",
   "os": [
     "darwin"
   ],
