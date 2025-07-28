@@ -9,6 +9,15 @@ This changelog also contains important changes in dependencies.
 
 ## [Unreleased]
 
+## [2.6.2-ab19] - 2025-01-28
+
+### Fixed
+
+- **BREAKING**: Fix .node file copying in CI - use correct filename
+  - Fixed issue where resvgjs.node was created without platform suffix
+  - Now correctly copies resvgjs.node to resvgjs.{platform}.node in platform packages
+  - This ensures native modules are properly included in published packages
+
 ## [2.6.2-ab18] - 2025-01-28
 
 ### Fixed

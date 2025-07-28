@@ -79,9 +79,22 @@ jobs:
             echo "❌ resvgjs.${{ matrix.platform }}.node not found in root directory"
           fi
           
-          # Find the built .node file and copy it to the platform directory
-          echo "🔍 Running find command..."
-          find . -name "resvgjs.${{ matrix.platform }}.node" -exec cp {} npm/${{ matrix.platform }}/ \;
+          # Debug: Check if resvgjs.node exists (without platform suffix)
+          echo "🔍 Looking for resvgjs.node (without platform suffix)..."
+          if [ -f "resvgjs.node" ]; then
+            echo "✅ Found resvgjs.node in root directory"
+          else
+            echo "❌ resvgjs.node not found in root directory"
+          fi
+          
+          # Copy the built .node file to the platform directory
+          echo "🔍 Copying resvgjs.node to npm/${{ matrix.platform }}/resvgjs.${{ matrix.platform }}.node..."
+          if [ -f "resvgjs.node" ]; then
+            cp resvgjs.node npm/${{ matrix.platform }}/resvgjs.${{ matrix.platform }}.node
+            echo "✅ Successfully copied resvgjs.node to npm/${{ matrix.platform }}/resvgjs.${{ matrix.platform }}.node"
+          else
+            echo "❌ Failed to copy: resvgjs.node not found"
+          fi
           
           # Debug: Check if file was copied
           echo "🔍 Checking if file was copied to npm/${{ matrix.platform }}/..."
