@@ -140,8 +140,18 @@
     "@aborrol/resvg-js-tolty-darwin-arm64": "2.6.2-ab12",
     "@aborrol/resvg-js-tolty-darwin-x64": "2.6.2-ab12",
     "@aborrol/resvg-js-tolty-linux-arm64-gnu": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-linux-arm64-musl": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-linux-arm-gnueabihf": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-linux-arm-musleabihf": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-linux-riscv64-gnu": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-linux-riscv64-musl": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-linux-s390x-gnu": "2.6.2-ab12",
     "@aborrol/resvg-js-tolty-linux-x64-gnu": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-linux-x64-musl": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-win32-arm64-msvc": "2.6.2-ab12",
     "@aborrol/resvg-js-tolty-win32-ia32-msvc": "2.6.2-ab12",
-    "@aborrol/resvg-js-tolty-win32-x64-msvc": "2.6.2-ab12"
+    "@aborrol/resvg-js-tolty-win32-x64-msvc": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-android-arm64": "2.6.2-ab12",
+    "@aborrol/resvg-js-tolty-android-arm-eabi": "2.6.2-ab12"
   }
 }
