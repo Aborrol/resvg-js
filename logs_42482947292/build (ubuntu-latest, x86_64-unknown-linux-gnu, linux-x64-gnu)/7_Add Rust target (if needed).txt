@@ -1,0 +1,19 @@
+﻿2025-07-28T15:23:45.7897443Z ##[group]Run rustup target add x86_64-unknown-linux-gnu
+2025-07-28T15:23:45.7897842Z [36;1mrustup target add x86_64-unknown-linux-gnu[0m
+2025-07-28T15:23:45.7926548Z shell: /usr/bin/bash -e {0}
+2025-07-28T15:23:45.7926768Z env:
+2025-07-28T15:23:45.7926993Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-07-28T15:23:45.7927314Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:45.7927569Z   CARGO_HOME: /home/runner/.cargo
+2025-07-28T15:23:45.7927794Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:45.7927982Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:45.7928176Z ##[endgroup]
+2025-07-28T15:23:45.8034175Z info: syncing channel updates for '1.88.0-x86_64-unknown-linux-gnu'
+2025-07-28T15:23:45.8984514Z info: latest update on 2025-06-26, rust version 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:45.8985480Z info: downloading component 'cargo'
+2025-07-28T15:23:46.0342993Z info: downloading component 'rust-std'
+2025-07-28T15:23:46.2105354Z info: downloading component 'rustc'
+2025-07-28T15:23:46.6227732Z info: installing component 'cargo'
+2025-07-28T15:23:47.2889568Z info: installing component 'rust-std'
+2025-07-28T15:23:49.2572991Z info: installing component 'rustc'
+2025-07-28T15:23:54.0009603Z info: component 'rust-std' for target 'x86_64-unknown-linux-gnu' is up to date

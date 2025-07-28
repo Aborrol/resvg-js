@@ -1,0 +1,20 @@
+﻿2025-07-28T15:24:07.2247917Z ##[group]Run rustup target add aarch64-unknown-linux-gnu
+2025-07-28T15:24:07.2248677Z [36;1mrustup target add aarch64-unknown-linux-gnu[0m
+2025-07-28T15:24:07.2284106Z shell: /usr/bin/bash -e {0}
+2025-07-28T15:24:07.2284492Z env:
+2025-07-28T15:24:07.2284882Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-07-28T15:24:07.2285446Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:24:07.2285921Z   CARGO_HOME: /home/runner/.cargo
+2025-07-28T15:24:07.2286366Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:24:07.2286729Z   CARGO_TERM_COLOR: always
+2025-07-28T15:24:07.2287115Z ##[endgroup]
+2025-07-28T15:24:07.2401563Z info: syncing channel updates for '1.88.0-x86_64-unknown-linux-gnu'
+2025-07-28T15:24:07.3890096Z info: latest update on 2025-06-26, rust version 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:24:07.3890923Z info: downloading component 'cargo'
+2025-07-28T15:24:07.5523656Z info: downloading component 'rust-std'
+2025-07-28T15:24:07.8765056Z info: downloading component 'rustc'
+2025-07-28T15:24:08.5725911Z info: installing component 'cargo'
+2025-07-28T15:24:09.2328440Z info: installing component 'rust-std'
+2025-07-28T15:24:11.1960276Z info: installing component 'rustc'
+2025-07-28T15:24:15.9422817Z info: downloading component 'rust-std' for 'aarch64-unknown-linux-gnu'
+2025-07-28T15:24:16.2305819Z info: installing component 'rust-std' for 'aarch64-unknown-linux-gnu'

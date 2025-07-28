@@ -1,0 +1,51 @@
+﻿2025-07-28T15:23:19.4705990Z Current runner version: '2.327.0'
+2025-07-28T15:23:19.4721110Z ##[group]Runner Image Provisioner
+2025-07-28T15:23:19.4721640Z Hosted Compute Agent
+2025-07-28T15:23:19.4721990Z Version: 20250711.363
+2025-07-28T15:23:19.4722360Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-28T15:23:19.4722790Z Build Date: 2025-07-11T20:04:25Z
+2025-07-28T15:23:19.4723150Z ##[endgroup]
+2025-07-28T15:23:19.4723480Z ##[group]Operating System
+2025-07-28T15:23:19.4723830Z macOS
+2025-07-28T15:23:19.4724110Z 14.7.6
+2025-07-28T15:23:19.4724390Z 23H626
+2025-07-28T15:23:19.4724660Z ##[endgroup]
+2025-07-28T15:23:19.4724970Z ##[group]Runner Image
+2025-07-28T15:23:19.4725290Z Image: macos-14-arm64
+2025-07-28T15:23:19.4725610Z Version: 20250723.1691
+2025-07-28T15:23:19.4726290Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20250723.1691/images/macos/macos-14-arm64-Readme.md
+2025-07-28T15:23:19.4727230Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20250723.1691
+2025-07-28T15:23:19.4727910Z ##[endgroup]
+2025-07-28T15:23:19.4729430Z ##[group]GITHUB_TOKEN Permissions
+2025-07-28T15:23:19.4730500Z Actions: write
+2025-07-28T15:23:19.4730820Z Attestations: write
+2025-07-28T15:23:19.4731130Z Checks: write
+2025-07-28T15:23:19.4731430Z Contents: write
+2025-07-28T15:23:19.4731740Z Deployments: write
+2025-07-28T15:23:19.4732050Z Discussions: write
+2025-07-28T15:23:19.4732360Z Issues: write
+2025-07-28T15:23:19.4732660Z Metadata: read
+2025-07-28T15:23:19.4732960Z Models: read
+2025-07-28T15:23:19.4733250Z Packages: write
+2025-07-28T15:23:19.4733550Z Pages: write
+2025-07-28T15:23:19.4733850Z PullRequests: write
+2025-07-28T15:23:19.4734180Z RepositoryProjects: write
+2025-07-28T15:23:19.4734530Z SecurityEvents: write
+2025-07-28T15:23:19.4734880Z Statuses: write
+2025-07-28T15:23:19.4735190Z ##[endgroup]
+2025-07-28T15:23:19.4736640Z Secret source: Actions
+2025-07-28T15:23:19.4737040Z Prepare workflow directory
+2025-07-28T15:23:19.4938430Z Prepare all required actions
+2025-07-28T15:23:19.4964380Z Getting action download info
+2025-07-28T15:23:19.8930600Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-28T15:23:19.8931920Z Version: 4.2.2
+2025-07-28T15:23:19.8933100Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-28T15:23:19.8934370Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-28T15:23:19.8935200Z ##[endgroup]
+2025-07-28T15:23:20.0999380Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-07-28T15:23:20.1000010Z Version: 4.4.0
+2025-07-28T15:23:20.1000650Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-07-28T15:23:20.1001240Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-07-28T15:23:20.1001840Z ##[endgroup]
+2025-07-28T15:23:20.1768050Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:4305c38b25d97ef35a8ad1f985ccf2d2242004f2)
+2025-07-28T15:23:20.9966380Z Complete job name: build (macos-latest, aarch64-apple-darwin, darwin-arm64)

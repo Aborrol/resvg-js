@@ -1,0 +1,11 @@
+﻿2025-07-28T15:27:05.6685520Z ##[group]Run # Find the built .node file and copy it to the platform directory
+2025-07-28T15:27:05.6686115Z [36;1m# Find the built .node file and copy it to the platform directory[0m
+2025-07-28T15:27:05.6686574Z [36;1mfind . -name "resvgjs.win32-x64-msvc.node" -exec cp {} npm/win32-x64-msvc/ \;[0m
+2025-07-28T15:27:05.6697824Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:27:05.6698181Z env:
+2025-07-28T15:27:05.6698362Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:27:05.6698619Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:27:05.6698873Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:27:05.6699131Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:27:05.6699310Z   CARGO_TERM_COLOR: always
+2025-07-28T15:27:05.6699499Z ##[endgroup]

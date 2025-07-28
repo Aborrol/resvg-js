@@ -1,0 +1,44 @@
+﻿2025-07-28T15:27:05.9438718Z ##[group]Run cd npm/win32-x64-msvc
+2025-07-28T15:27:05.9439375Z [36;1mcd npm/win32-x64-msvc[0m
+2025-07-28T15:27:05.9439943Z [36;1mPACKAGE_NAME=$(node -p "require('./package.json').name")[0m
+2025-07-28T15:27:05.9440595Z [36;1mVERSION=$(node -p "require('./package.json').version")[0m
+2025-07-28T15:27:05.9441227Z [36;1mecho "Checking if $PACKAGE_NAME@$VERSION already exists..."[0m
+2025-07-28T15:27:05.9441748Z [36;1m[0m
+2025-07-28T15:27:05.9442078Z [36;1m# Check if version exists in npm registry[0m
+2025-07-28T15:27:05.9442686Z [36;1mif npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then[0m
+2025-07-28T15:27:05.9443411Z [36;1m  echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"[0m
+2025-07-28T15:27:05.9443972Z [36;1melse[0m
+2025-07-28T15:27:05.9444388Z [36;1m  echo "📦 $PACKAGE_NAME@$VERSION does not exist, publishing..."[0m
+2025-07-28T15:27:05.9445002Z [36;1m  npm publish --access public[0m
+2025-07-28T15:27:05.9445464Z [36;1mfi[0m
+2025-07-28T15:27:05.9463331Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:27:05.9463922Z env:
+2025-07-28T15:27:05.9464223Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:27:05.9465459Z   NODE_AUTH_TOKEN: ***
+2025-07-28T15:27:05.9465850Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:27:05.9466277Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:27:05.9466596Z   CARGO_TERM_COLOR: always
+2025-07-28T15:27:05.9466922Z ##[endgroup]
+2025-07-28T15:27:06.1096125Z Checking if @aborrol/resvg-js-tolty-win32-x64-msvc@2.6.2-ab17 already exists...
+2025-07-28T15:27:07.1069963Z 📦 @aborrol/resvg-js-tolty-win32-x64-msvc@2.6.2-ab17 does not exist, publishing...
+2025-07-28T15:27:08.0495139Z npm warn publish npm auto-corrected some errors in your package.json when publishing.  Please run "npm pkg fix" to address these errors.
+2025-07-28T15:27:08.0497503Z npm warn publish errors corrected:
+2025-07-28T15:27:08.0498272Z npm warn publish "repository" was changed from a string to an object
+2025-07-28T15:27:08.0499463Z npm warn publish "repository.url" was normalized to "git+https://github.com/Aborrol/resvg-js.git"
+2025-07-28T15:27:08.0538436Z npm notice
+2025-07-28T15:27:08.0539857Z npm notice package: @aborrol/resvg-js-tolty-win32-x64-msvc@2.6.2-ab17
+2025-07-28T15:27:08.0540410Z npm notice Tarball Contents
+2025-07-28T15:27:08.0543063Z npm notice 107B README.md
+2025-07-28T15:27:08.0543466Z npm notice 704B package.json
+2025-07-28T15:27:08.0543895Z npm notice Tarball Details
+2025-07-28T15:27:08.0545248Z npm notice name: @aborrol/resvg-js-tolty-win32-x64-msvc
+2025-07-28T15:27:08.0545824Z npm notice version: 2.6.2-ab17
+2025-07-28T15:27:08.0547882Z npm notice filename: aborrol-resvg-js-tolty-win32-x64-msvc-2.6.2-ab17.tgz
+2025-07-28T15:27:08.0548417Z npm notice package size: 543 B
+2025-07-28T15:27:08.0548810Z npm notice unpacked size: 811 B
+2025-07-28T15:27:08.0549844Z npm notice shasum: 3fff7fbd77ea3d360d17807a2d01bd6c79ab81a8
+2025-07-28T15:27:08.0551014Z npm notice integrity: sha512-FpHIBbymisavI[...]5EKCC5QBwQ9vA==
+2025-07-28T15:27:08.0551444Z npm notice total files: 2
+2025-07-28T15:27:08.0552392Z npm notice
+2025-07-28T15:27:08.0568948Z npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
+2025-07-28T15:27:09.6154484Z + @aborrol/resvg-js-tolty-win32-x64-msvc@2.6.2-ab17

@@ -1,0 +1,19 @@
+﻿2025-07-28T15:24:28.3354383Z ##[group]Run rustup target add x86_64-pc-windows-msvc
+2025-07-28T15:24:28.3354814Z [36;1mrustup target add x86_64-pc-windows-msvc[0m
+2025-07-28T15:24:28.3391992Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-07-28T15:24:28.3392865Z env:
+2025-07-28T15:24:28.3393342Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:24:28.3393624Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:24:28.3393889Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:24:28.3394126Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:24:28.3394315Z   CARGO_TERM_COLOR: always
+2025-07-28T15:24:28.3394512Z ##[endgroup]
+2025-07-28T15:24:28.6162700Z info: syncing channel updates for '1.88.0-x86_64-pc-windows-msvc'
+2025-07-28T15:24:28.8101002Z info: latest update on 2025-06-26, rust version 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:24:28.8219964Z info: downloading component 'cargo'
+2025-07-28T15:24:29.0671358Z info: downloading component 'rust-std'
+2025-07-28T15:24:29.6339461Z info: downloading component 'rustc'
+2025-07-28T15:24:31.1853393Z info: installing component 'cargo'
+2025-07-28T15:24:32.0763748Z info: installing component 'rust-std'
+2025-07-28T15:24:33.6582359Z info: installing component 'rustc'
+2025-07-28T15:24:38.9481327Z info: component 'rust-std' for target 'x86_64-pc-windows-msvc' is up to date

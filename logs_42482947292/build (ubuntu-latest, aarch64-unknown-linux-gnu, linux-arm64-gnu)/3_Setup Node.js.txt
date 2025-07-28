@@ -1,0 +1,14 @@
+﻿2025-07-28T15:23:24.1942110Z ##[group]Run actions/setup-node@v4
+2025-07-28T15:23:24.1943199Z with:
+2025-07-28T15:23:24.1943965Z   node-version: 20
+2025-07-28T15:23:24.1944910Z   registry-url: https://registry.npmjs.org
+2025-07-28T15:23:24.1946018Z   always-auth: false
+2025-07-28T15:23:24.1946873Z   check-latest: false
+2025-07-28T15:23:24.1947950Z   token: ***
+2025-07-28T15:23:24.1948717Z ##[endgroup]
+2025-07-28T15:23:24.3878109Z Found in cache @ /opt/hostedtoolcache/node/20.19.4/x64
+2025-07-28T15:23:24.3885005Z ##[group]Environment details
+2025-07-28T15:23:27.4290123Z node: v20.19.4
+2025-07-28T15:23:27.4290636Z npm: 10.8.2
+2025-07-28T15:23:27.4290971Z yarn: 3.8.5
+2025-07-28T15:23:27.4291997Z ##[endgroup]

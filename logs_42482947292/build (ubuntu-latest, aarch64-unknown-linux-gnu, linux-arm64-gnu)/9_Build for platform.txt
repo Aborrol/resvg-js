@@ -1,0 +1,224 @@
+﻿2025-07-28T15:24:18.1118006Z ##[group]Run napi build --target aarch64-unknown-linux-gnu --release
+2025-07-28T15:24:18.1118498Z [36;1mnapi build --target aarch64-unknown-linux-gnu --release[0m
+2025-07-28T15:24:18.1145699Z shell: /usr/bin/bash -e {0}
+2025-07-28T15:24:18.1145932Z env:
+2025-07-28T15:24:18.1146164Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-07-28T15:24:18.1146527Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:24:18.1146814Z   CARGO_HOME: /home/runner/.cargo
+2025-07-28T15:24:18.1147049Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:24:18.1147257Z   CARGO_TERM_COLOR: always
+2025-07-28T15:24:18.1147464Z ##[endgroup]
+2025-07-28T15:24:21.8739838Z [1m[32m   Compiling[0m proc-macro2 v1.0.95
+2025-07-28T15:24:21.8740742Z [1m[32m   Compiling[0m unicode-ident v1.0.18
+2025-07-28T15:24:21.8741473Z [1m[32m   Compiling[0m version_check v0.9.5
+2025-07-28T15:24:21.8749743Z [1m[32m   Compiling[0m log v0.4.27
+2025-07-28T15:24:21.9340965Z [1m[32m   Compiling[0m semver v1.0.26
+2025-07-28T15:24:22.0345272Z [1m[32m   Compiling[0m arrayvec v0.7.6
+2025-07-28T15:24:22.0849269Z [1m[32m   Compiling[0m memchr v2.7.5
+2025-07-28T15:24:22.1476202Z [1m[32m   Compiling[0m cfg-if v1.0.1
+2025-07-28T15:24:22.2091851Z [1m[32m   Compiling[0m bytemuck v1.23.1
+2025-07-28T15:24:22.4227723Z [1m[32m   Compiling[0m crc32fast v1.5.0
+2025-07-28T15:24:22.4534005Z [1m[32m   Compiling[0m float-cmp v0.9.0
+2025-07-28T15:24:22.5213260Z [1m[32m   Compiling[0m strict-num v0.1.1
+2025-07-28T15:24:22.5920470Z [1m[32m   Compiling[0m quote v1.0.40
+2025-07-28T15:24:22.6339127Z [1m[32m   Compiling[0m smallvec v1.15.1
+2025-07-28T15:24:22.6848893Z [1m[32m   Compiling[0m arrayref v0.3.9
+2025-07-28T15:24:22.7170639Z [1m[32m   Compiling[0m bitflags v1.3.2
+2025-07-28T15:24:22.7470739Z [1m[32m   Compiling[0m syn v2.0.104
+2025-07-28T15:24:22.7491235Z [1m[32m   Compiling[0m tiny-skia-path v0.10.0
+2025-07-28T15:24:22.8314921Z [1m[32m   Compiling[0m rustc_version v0.4.1
+2025-07-28T15:24:22.9476279Z [1m[32m   Compiling[0m kurbo v0.9.5
+2025-07-28T15:24:23.0347325Z [1m[32m   Compiling[0m slotmap v1.0.7
+2025-07-28T15:24:23.1686372Z [1m[32m   Compiling[0m siphasher v0.3.11
+2025-07-28T15:24:23.3186817Z [1m[32m   Compiling[0m unicode-general-category v0.6.0
+2025-07-28T15:24:23.6802585Z [1m[32m   Compiling[0m svgtypes v0.11.0
+2025-07-28T15:24:24.0164310Z [1m[32m   Compiling[0m pathfinder_simd v0.5.2
+2025-07-28T15:24:24.1576409Z [1m[32m   Compiling[0m serde v1.0.219
+2025-07-28T15:24:24.3418656Z [1m[32m   Compiling[0m pin-project-lite v0.2.16
+2025-07-28T15:24:24.5342824Z [1m[32m   Compiling[0m roxmltree v0.20.0
+2025-07-28T15:24:24.6046519Z [1m[32m   Compiling[0m adler2 v2.0.1
+2025-07-28T15:24:24.6772610Z [1m[32m   Compiling[0m zerocopy v0.8.26
+2025-07-28T15:24:24.9496542Z [1m[32m   Compiling[0m shlex v1.3.0
+2025-07-28T15:24:24.9550694Z [1m[32m   Compiling[0m rctree v0.5.0
+2025-07-28T15:24:25.0612956Z [1m[32m   Compiling[0m tinyvec_macros v0.1.1
+2025-07-28T15:24:25.0645418Z [1m[32m   Compiling[0m usvg-tree v0.34.0 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:24:25.0911038Z [1m[32m   Compiling[0m tinyvec v1.9.0
+2025-07-28T15:24:25.7243448Z [1m[32m   Compiling[0m cc v1.2.30
+2025-07-28T15:24:25.9010939Z [1m[32m   Compiling[0m fontconfig-parser v0.5.8
+2025-07-28T15:24:25.9484682Z [1m[32m   Compiling[0m aho-corasick v1.1.3
+2025-07-28T15:24:27.0603594Z [1m[32m   Compiling[0m miniz_oxide v0.8.9
+2025-07-28T15:24:27.5449802Z [1m[32m   Compiling[0m serde_derive v1.0.219
+2025-07-28T15:24:28.0336379Z [1m[32m   Compiling[0m ahash v0.8.12
+2025-07-28T15:24:28.0774138Z [1m[32m   Compiling[0m libc v0.2.174
+2025-07-28T15:24:28.1717558Z [1m[32m   Compiling[0m xmlparser v0.13.6
+2025-07-28T15:24:28.3432267Z [1m[32m   Compiling[0m regex-syntax v0.8.5
+2025-07-28T15:24:28.8523011Z [1m[32m   Compiling[0m unicode-script v0.5.7
+2025-07-28T15:24:29.3035652Z [1m[32m   Compiling[0m adler32 v1.2.0
+2025-07-28T15:24:29.3765858Z [1m[32m   Compiling[0m futures-sink v0.3.31
+2025-07-28T15:24:29.4260712Z [1m[32m   Compiling[0m ttf-parser v0.18.1
+2025-07-28T15:24:30.5847035Z [1m[32m   Compiling[0m unicode-bidi-mirroring v0.1.0
+2025-07-28T15:24:30.6399609Z [1m[32m   Compiling[0m futures-core v0.3.31
+2025-07-28T15:24:30.7177488Z [1m[32m   Compiling[0m unicode-ccc v0.1.2
+2025-07-28T15:24:30.7493533Z [1m[32m   Compiling[0m once_cell v1.21.3
+2025-07-28T15:24:30.8035873Z [1m[32m   Compiling[0m adler v1.0.2
+2025-07-28T15:24:30.8817999Z [1m[32m   Compiling[0m ttf-parser v0.19.2
+2025-07-28T15:24:30.8995916Z [1m[32m   Compiling[0m miniz_oxide v0.5.4
+2025-07-28T15:24:31.8211028Z [1m[32m   Compiling[0m rustybuzz v0.7.0
+2025-07-28T15:24:32.8263639Z [1m[32m   Compiling[0m regex-automata v0.4.9
+2025-07-28T15:24:34.4392936Z [1m[32m   Compiling[0m fontdb v0.14.1
+2025-07-28T15:24:35.5267996Z [1m[32m   Compiling[0m futures-channel v0.3.31
+2025-07-28T15:24:37.5144374Z [1m[32m   Compiling[0m deflate v1.0.0
+2025-07-28T15:24:38.0238746Z [1m[32m   Compiling[0m roxmltree v0.18.1
+2025-07-28T15:24:38.3980368Z [1m[32m   Compiling[0m futures-macro v0.3.31
+2025-07-28T15:24:38.7855665Z [1m[32m   Compiling[0m flate2 v1.1.2
+2025-07-28T15:24:39.1980273Z [1m[32m   Compiling[0m libmimalloc-sys v0.1.43
+2025-07-28T15:24:39.2330679Z [1m[32m   Compiling[0m simplecss v0.2.2
+2025-07-28T15:24:39.4258055Z [1m[32m   Compiling[0m futures-io v0.3.31
+2025-07-28T15:24:39.5278803Z [1m[32m   Compiling[0m futures-task v0.3.31
+2025-07-28T15:24:39.6223720Z [1m[32m   Compiling[0m pin-utils v0.1.0
+2025-07-28T15:24:39.6503641Z [1m[32m   Compiling[0m serde_json v1.0.141
+2025-07-28T15:24:39.7701654Z [1m[32m   Compiling[0m slab v0.4.10
+2025-07-28T15:24:39.8967580Z [1m[32m   Compiling[0m data-url v0.2.0
+2025-07-28T15:24:39.9577243Z [1m[32m   Compiling[0m utf8parse v0.2.2
+2025-07-28T15:24:40.0067629Z [1m[32m   Compiling[0m unicode-segmentation v1.12.0
+2025-07-28T15:24:40.0650745Z [1m[32m   Compiling[0m unicode-vo v0.1.0
+2025-07-28T15:24:40.1370918Z [1m[32m   Compiling[0m imagesize v0.12.0
+2025-07-28T15:24:40.3641728Z [1m[32m   Compiling[0m unicode-bidi v0.3.18
+2025-07-28T15:24:40.3952667Z [1m[32m   Compiling[0m usvg-parser v0.34.0 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:24:40.8495328Z [1m[32m   Compiling[0m usvg-text-layout v0.34.0 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:24:41.2555907Z [1m[32m   Compiling[0m convert_case v0.6.0
+2025-07-28T15:24:41.3580050Z [1m[32m   Compiling[0m anstyle-parse v0.2.7
+2025-07-28T15:24:41.4925890Z [1m[32m   Compiling[0m futures-util v0.3.31
+2025-07-28T15:24:44.6356150Z [1m[32m   Compiling[0m png v0.17.5
+2025-07-28T15:24:44.7819876Z [1m[32m   Compiling[0m regex v1.11.1
+2025-07-28T15:24:45.1533222Z [1m[32m   Compiling[0m colorchoice v1.0.4
+2025-07-28T15:24:45.1993551Z [1m[32m   Compiling[0m is_terminal_polyfill v1.70.1
+2025-07-28T15:24:45.2366643Z [1m[32m   Compiling[0m anstyle v1.0.11
+2025-07-28T15:24:45.4137081Z [1m[32m   Compiling[0m napi-build v2.2.3
+2025-07-28T15:24:45.5271315Z [1m[32m   Compiling[0m thiserror v1.0.69
+2025-07-28T15:24:45.6944337Z [1m[32m   Compiling[0m xmlwriter v0.1.0
+2025-07-28T15:24:45.8594080Z [1m[32m   Compiling[0m color_quant v1.1.0
+2025-07-28T15:24:45.9159250Z [1m[32m   Compiling[0m pico-args v0.5.0
+2025-07-28T15:24:46.0343258Z [1m[32m   Compiling[0m base64 v0.21.7
+2025-07-28T15:24:46.1203944Z [1m[32m   Compiling[0m ryu v1.0.20
+2025-07-28T15:24:46.1377904Z [1m[32m   Compiling[0m anstyle-query v1.1.3
+2025-07-28T15:24:46.1804612Z [1m[32m   Compiling[0m itoa v1.0.15
+2025-07-28T15:24:46.2609411Z [1m[32m   Compiling[0m weezl v0.1.10
+2025-07-28T15:24:46.2877532Z [1m[32m   Compiling[0m usvg v0.34.1 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:24:46.8367987Z [1m[32m   Compiling[0m gif v0.12.0
+2025-07-28T15:24:46.9152729Z [1m[32m   Compiling[0m anstream v0.6.19
+2025-07-28T15:24:47.1310891Z [1m[32m   Compiling[0m napi-derive-backend v1.0.75
+2025-07-28T15:24:47.7490882Z [1m[32m   Compiling[0m resvg-js v1.0.1 (/home/runner/work/resvg-js/resvg-js)
+2025-07-28T15:24:47.8655687Z [1m[32m   Compiling[0m tiny-skia v0.10.0
+2025-07-28T15:24:48.0300326Z [1m[32m   Compiling[0m env_filter v0.1.3
+2025-07-28T15:24:48.3727107Z [1m[32m   Compiling[0m futures-executor v0.3.31
+2025-07-28T15:24:48.5796001Z [1m[32m   Compiling[0m hashbrown v0.13.2
+2025-07-28T15:24:48.6098328Z [1m[32m   Compiling[0m pathfinder_geometry v0.5.1
+2025-07-28T15:24:48.8107285Z [1m[32m   Compiling[0m pathfinder_color v0.5.0
+2025-07-28T15:24:48.8909887Z [1m[32m   Compiling[0m ctor v0.2.9
+2025-07-28T15:24:49.0431947Z [1m[32m   Compiling[0m thiserror-impl v1.0.69
+2025-07-28T15:24:49.4321642Z [1m[32m   Compiling[0m tokio v1.47.0
+2025-07-28T15:24:50.2583982Z [1m[32m   Compiling[0m kurbo v0.11.3
+2025-07-28T15:24:50.7778915Z [1m[32m   Compiling[0m rgb v0.8.52
+2025-07-28T15:24:51.0961163Z [1m[32m   Compiling[0m bitflags v2.9.1
+2025-07-28T15:24:51.2708471Z [1m[32m   Compiling[0m jiff v0.2.15
+2025-07-28T15:24:52.2674920Z [1m[32m   Compiling[0m arrayvec v0.5.2
+2025-07-28T15:24:52.4917740Z [1m[32m   Compiling[0m ttf-parser v0.15.2
+2025-07-28T15:24:52.6360636Z [1m[32m   Compiling[0m napi-sys v2.4.0
+2025-07-28T15:24:52.6983741Z [1m[32m   Compiling[0m jpeg-decoder v0.3.2
+2025-07-28T15:24:53.0607057Z [1m[32m   Compiling[0m siphasher v1.0.1
+2025-07-28T15:24:53.1970180Z [1m[32m   Compiling[0m svgtypes v0.15.3
+2025-07-28T15:24:53.7890875Z [1m[32m   Compiling[0m resvg v0.34.1 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:24:54.3206880Z [1m[32m   Compiling[0m fontdue v0.7.3
+2025-07-28T15:24:54.5849890Z [1m[32m   Compiling[0m env_logger v0.11.8
+2025-07-28T15:24:54.9072320Z [1m[32m   Compiling[0m mimalloc v0.1.47
+2025-07-28T15:24:54.9404484Z [1m[32m   Compiling[0m napi v2.16.17
+2025-07-28T15:24:55.2969494Z [1m[32m   Compiling[0m pathfinder_content v0.5.0
+2025-07-28T15:24:56.4033682Z [1m[32m   Compiling[0m napi-derive v2.16.13
+2025-07-28T15:24:57.0428052Z [1m[32m   Compiling[0m futures v0.3.31
+2025-07-28T15:24:57.0802193Z [1m[32m   Compiling[0m serde_bytes v0.11.17
+2025-07-28T15:25:00.9995905Z [0m[1m[33mwarning[0m[0m[1m: unused import: `svgtypes::FontFamily`[0m
+2025-07-28T15:25:00.9996662Z [0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/lib.rs:29:5[0m
+2025-07-28T15:25:00.9997418Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:00.9998138Z [0m[1m[38;5;12m29[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse svgtypes::FontFamily;[0m
+2025-07-28T15:25:00.9998851Z [0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^[0m
+2025-07-28T15:25:00.9999611Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.0000176Z [0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_imports)]` on by default[0m
+2025-07-28T15:25:01.0000483Z 
+2025-07-28T15:25:01.0000870Z [0m[1m[33mwarning[0m[0m[1m: unused import: `std::sync::Arc`[0m
+2025-07-28T15:25:01.0001394Z [0m [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:5:5[0m
+2025-07-28T15:25:01.0001793Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.0002392Z [0m[1m[38;5;12m5[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse std::sync::Arc;[0m
+2025-07-28T15:25:01.0002944Z [0m  [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^[0m
+2025-07-28T15:25:01.0003199Z 
+2025-07-28T15:25:01.0003668Z [0m[1m[33mwarning[0m[0m[1m: unused imports: `ImageHrefResolver`, `ImageKind`, and `Options`[0m
+2025-07-28T15:25:01.0004309Z [0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:13:25[0m
+2025-07-28T15:25:01.0004699Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.0005521Z [0m[1m[38;5;12m13[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse resvg::usvg::{self, ImageHrefResolver, ImageKind, Options, TreeParsing};[0m
+2025-07-28T15:25:01.0006475Z [0m   [0m[0m[1m[38;5;12m|[0m[0m                         [0m[0m[1m[33m^^^^^^^^^^^^^^^^^[0m[0m  [0m[0m[1m[33m^^^^^^^^^[0m[0m  [0m[0m[1m[33m^^^^^^^[0m
+2025-07-28T15:25:01.0006971Z 
+2025-07-28T15:25:01.0007278Z [0m[1m[33mwarning[0m[0m[1m: unused import: `Deserializer`[0m
+2025-07-28T15:25:01.0007809Z [0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:14:26[0m
+2025-07-28T15:25:01.0008202Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.0008857Z [0m[1m[38;5;12m14[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse serde::{Deserialize, Deserializer};[0m
+2025-07-28T15:25:01.0009703Z [0m   [0m[0m[1m[38;5;12m|[0m[0m                          [0m[0m[1m[33m^^^^^^^^^^^^[0m
+2025-07-28T15:25:01.0009932Z 
+2025-07-28T15:25:01.1322084Z [0m[1m[33mwarning[0m[0m[1m: unreachable pattern[0m
+2025-07-28T15:25:01.1322866Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/fonts.rs:278:9[0m
+2025-07-28T15:25:01.1323372Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.1324066Z [0m[1m[38;5;12m278[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        _ => return None,[0m
+2025-07-28T15:25:01.1324932Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^[0m[0m [0m[0m[1m[33mno value can reach this[0m
+2025-07-28T15:25:01.1325547Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.1326255Z [0m[1m[38;5;10mnote[0m[0m: multiple earlier patterns match some of the same values[0m
+2025-07-28T15:25:01.1326984Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/fonts.rs:278:9[0m
+2025-07-28T15:25:01.1327473Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.1328555Z [0m[1m[38;5;12m271[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        Source::Binary(ref bytes) => bytes.as_ref().as_ref().to_vec(),[0m
+2025-07-28T15:25:01.1329879Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-------------------------[0m[0m [0m[0m[1m[38;5;12mmatches some of the same values[0m
+2025-07-28T15:25:01.1330902Z [0m[1m[38;5;12m272[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        Source::File(ref path) => {[0m
+2025-07-28T15:25:01.1331755Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m----------------------[0m[0m [0m[0m[1m[38;5;12mmatches some of the same values[0m
+2025-07-28T15:25:01.1332246Z [0m[1m[38;5;12m...[0m
+2025-07-28T15:25:01.1332762Z [0m[1m[38;5;12m278[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        _ => return None,[0m
+2025-07-28T15:25:01.1333521Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;10m^[0m[0m [0m[0m[1m[38;5;10mcollectively making this unreachable[0m
+2025-07-28T15:25:01.1334474Z [0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unreachable_patterns)]` on by default[0m
+2025-07-28T15:25:01.1334791Z 
+2025-07-28T15:25:01.2128401Z [0m[1m[33mwarning[0m[0m[1m: variable does not need to be mutable[0m
+2025-07-28T15:25:01.2129455Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/lib.rs:157:14[0m
+2025-07-28T15:25:01.2129959Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.2130823Z [0m[1m[38;5;12m157[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let (mut opts, fontdb) = js_options.to_usvg_options();[0m
+2025-07-28T15:25:01.2131763Z [0m    [0m[0m[1m[38;5;12m|[0m[0m              [0m[0m[1m[38;5;12m----[0m[0m[1m[33m^^^^[0m
+2025-07-28T15:25:01.2132439Z [0m    [0m[0m[1m[38;5;12m|[0m[0m              [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.2133080Z [0m    [0m[0m[1m[38;5;12m|[0m[0m              [0m[0m[1m[38;5;12mhelp: remove this `mut`[0m
+2025-07-28T15:25:01.2133502Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.2134011Z [0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_mut)]` on by default[0m
+2025-07-28T15:25:01.2134273Z 
+2025-07-28T15:25:01.2597304Z [0m[1m[33mwarning[0m[0m[1m: trait `ResvgReadable` is never used[0m
+2025-07-28T15:25:01.2598414Z [0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:72:18[0m
+2025-07-28T15:25:01.2599431Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.2600568Z [0m[1m[38;5;12m72[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub(crate) trait ResvgReadable {[0m
+2025-07-28T15:25:01.2602137Z [0m   [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^[0m
+2025-07-28T15:25:01.2602835Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.2603532Z [0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(dead_code)]` on by default[0m
+2025-07-28T15:25:01.2603856Z 
+2025-07-28T15:25:01.2604202Z [0m[1m[33mwarning[0m[0m[1m: field `font_name` is never read[0m
+2025-07-28T15:25:01.2604783Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:208:9[0m
+2025-07-28T15:25:01.2605216Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.2605817Z [0m[1m[38;5;12m207[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct JsFontBuffer {[0m
+2025-07-28T15:25:01.2606637Z [0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m------------[0m[0m [0m[0m[1m[38;5;12mfield in this struct[0m
+2025-07-28T15:25:01.2607378Z [0m[1m[38;5;12m208[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub font_name: String,[0m
+2025-07-28T15:25:01.2607994Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^^^[0m
+2025-07-28T15:25:01.2608247Z 
+2025-07-28T15:25:01.2608665Z [0m[1m[33mwarning[0m[0m[1m: fields `font_weight` and `font_style` are never read[0m
+2025-07-28T15:25:01.2609490Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:326:9[0m
+2025-07-28T15:25:01.2609924Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.2610566Z [0m[1m[38;5;12m315[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct JsTextLayoutBlockOptions {[0m
+2025-07-28T15:25:01.2611462Z [0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m------------------------[0m[0m [0m[0m[1m[38;5;12mfields in this struct[0m
+2025-07-28T15:25:01.2611953Z [0m[1m[38;5;12m...[0m
+2025-07-28T15:25:01.2612561Z [0m[1m[38;5;12m326[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub font_weight: Option<String>,[0m
+2025-07-28T15:25:01.2613193Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^^^^^[0m
+2025-07-28T15:25:01.2613883Z [0m[1m[38;5;12m327[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub font_style: Option<String>,[0m
+2025-07-28T15:25:01.2614477Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^^^^[0m
+2025-07-28T15:25:01.2614834Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:25:01.2616000Z [0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `JsTextLayoutBlockOptions` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis[0m
+2025-07-28T15:25:01.2616556Z 
+2025-07-28T15:25:35.2895526Z [1m[33mwarning[0m[1m:[0m `resvg-js` (lib) generated 9 warnings (run `cargo fix --lib -p resvg-js` to apply 5 suggestions)
+2025-07-28T15:25:35.2896693Z [1m[32m    Finished[0m `release` profile [optimized] target(s) in 1m 13s

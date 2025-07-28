@@ -1,0 +1,73 @@
+﻿2025-07-28T15:23:21.1052899Z ##[group]Run actions/checkout@v4
+2025-07-28T15:23:21.1054064Z with:
+2025-07-28T15:23:21.1054506Z   repository: Aborrol/resvg-js
+2025-07-28T15:23:21.1055216Z   token: ***
+2025-07-28T15:23:21.1055642Z   ssh-strict: true
+2025-07-28T15:23:21.1056068Z   ssh-user: git
+2025-07-28T15:23:21.1056507Z   persist-credentials: true
+2025-07-28T15:23:21.1057002Z   clean: true
+2025-07-28T15:23:21.1057434Z   sparse-checkout-cone-mode: true
+2025-07-28T15:23:21.1057971Z   fetch-depth: 1
+2025-07-28T15:23:21.1058388Z   fetch-tags: false
+2025-07-28T15:23:21.1058813Z   show-progress: true
+2025-07-28T15:23:21.1059255Z   lfs: false
+2025-07-28T15:23:21.1059650Z   submodules: false
+2025-07-28T15:23:21.1060095Z   set-safe-directory: true
+2025-07-28T15:23:21.1060805Z ##[endgroup]
+2025-07-28T15:23:21.2765923Z Syncing repository: Aborrol/resvg-js
+2025-07-28T15:23:21.2767914Z ##[group]Getting Git version info
+2025-07-28T15:23:21.2771057Z Working directory is 'D:\a\resvg-js\resvg-js'
+2025-07-28T15:23:21.4039101Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-07-28T15:23:21.7992038Z git version 2.50.1.windows.1
+2025-07-28T15:23:21.8038656Z ##[endgroup]
+2025-07-28T15:23:21.8057131Z Temporarily overriding HOME='D:\a\_temp\7f7ce200-d5fe-418c-97da-99be8aec8e6e' before making global git config changes
+2025-07-28T15:23:21.8059316Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-28T15:23:21.8067876Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\resvg-js\resvg-js
+2025-07-28T15:23:21.8604936Z Deleting the contents of 'D:\a\resvg-js\resvg-js'
+2025-07-28T15:23:21.8610473Z ##[group]Initializing the repository
+2025-07-28T15:23:21.8620033Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\resvg-js\resvg-js
+2025-07-28T15:23:21.9298967Z Initialized empty Git repository in D:/a/resvg-js/resvg-js/.git/
+2025-07-28T15:23:21.9335254Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:21.9761529Z ##[endgroup]
+2025-07-28T15:23:21.9764524Z ##[group]Disabling automatic garbage collection
+2025-07-28T15:23:21.9771265Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-07-28T15:23:22.0040757Z ##[endgroup]
+2025-07-28T15:23:22.0043557Z ##[group]Setting up auth
+2025-07-28T15:23:22.0055231Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-07-28T15:23:22.0301630Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-07-28T15:23:23.2255673Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-28T15:23:23.2475885Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-07-28T15:23:23.6528997Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-07-28T15:23:23.6762324Z ##[endgroup]
+2025-07-28T15:23:23.6763192Z ##[group]Fetching the repository
+2025-07-28T15:23:23.6776577Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6:refs/tags/v2.6.2-ab17
+2025-07-28T15:23:24.8082147Z From https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:24.8083066Z  * [new ref]         b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6 -> v2.6.2-ab17
+2025-07-28T15:23:24.8230640Z ##[endgroup]
+2025-07-28T15:23:24.8231393Z ##[group]Determining the checkout info
+2025-07-28T15:23:24.8234362Z ##[endgroup]
+2025-07-28T15:23:24.8244273Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-07-28T15:23:24.8585841Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-07-28T15:23:24.8797066Z ##[group]Checking out the ref
+2025-07-28T15:23:24.8805343Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/tags/v2.6.2-ab17
+2025-07-28T15:23:24.9840067Z Note: switching to 'refs/tags/v2.6.2-ab17'.
+2025-07-28T15:23:24.9840532Z 
+2025-07-28T15:23:24.9840833Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-07-28T15:23:24.9841579Z changes and commit them, and you can discard any commits you make in this
+2025-07-28T15:23:24.9843162Z state without impacting any branches by switching back to a branch.
+2025-07-28T15:23:24.9843695Z 
+2025-07-28T15:23:24.9843943Z If you want to create a new branch to retain commits you create, you may
+2025-07-28T15:23:24.9844439Z do so (now or later) by using -c with the switch command. Example:
+2025-07-28T15:23:24.9845633Z 
+2025-07-28T15:23:24.9845819Z   git switch -c <new-branch-name>
+2025-07-28T15:23:24.9846044Z 
+2025-07-28T15:23:24.9846155Z Or undo this operation with:
+2025-07-28T15:23:24.9846331Z 
+2025-07-28T15:23:24.9846407Z   git switch -
+2025-07-28T15:23:24.9846531Z 
+2025-07-28T15:23:24.9846749Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-07-28T15:23:24.9847034Z 
+2025-07-28T15:23:24.9847238Z HEAD is now at b6b5364 Fix CI build failure on Windows - use bash shell for find command
+2025-07-28T15:23:24.9881526Z ##[endgroup]
+2025-07-28T15:23:25.0255290Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-07-28T15:23:25.0473048Z b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6

@@ -1,0 +1,85 @@
+﻿2025-07-28T15:23:23.4047387Z ##[group]Run actions/checkout@v4
+2025-07-28T15:23:23.4048381Z with:
+2025-07-28T15:23:23.4048815Z   repository: Aborrol/resvg-js
+2025-07-28T15:23:23.4049840Z   token: ***
+2025-07-28T15:23:23.4050272Z   ssh-strict: true
+2025-07-28T15:23:23.4050744Z   ssh-user: git
+2025-07-28T15:23:23.4051266Z   persist-credentials: true
+2025-07-28T15:23:23.4051859Z   clean: true
+2025-07-28T15:23:23.4052388Z   sparse-checkout-cone-mode: true
+2025-07-28T15:23:23.4053067Z   fetch-depth: 1
+2025-07-28T15:23:23.4053562Z   fetch-tags: false
+2025-07-28T15:23:23.4054078Z   show-progress: true
+2025-07-28T15:23:23.4054611Z   lfs: false
+2025-07-28T15:23:23.4055081Z   submodules: false
+2025-07-28T15:23:23.4055613Z   set-safe-directory: true
+2025-07-28T15:23:23.4056452Z ##[endgroup]
+2025-07-28T15:23:23.5135608Z Syncing repository: Aborrol/resvg-js
+2025-07-28T15:23:23.5138465Z ##[group]Getting Git version info
+2025-07-28T15:23:23.5140312Z Working directory is '/home/runner/work/resvg-js/resvg-js'
+2025-07-28T15:23:23.5143201Z [command]/usr/bin/git version
+2025-07-28T15:23:23.5216882Z git version 2.50.1
+2025-07-28T15:23:23.5243499Z ##[endgroup]
+2025-07-28T15:23:23.5260228Z Temporarily overriding HOME='/home/runner/work/_temp/fe6fb9fc-913f-4c22-af8d-18864d7b203c' before making global git config changes
+2025-07-28T15:23:23.5264085Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-28T15:23:23.5273026Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/resvg-js/resvg-js
+2025-07-28T15:23:23.5306556Z Deleting the contents of '/home/runner/work/resvg-js/resvg-js'
+2025-07-28T15:23:23.5310280Z ##[group]Initializing the repository
+2025-07-28T15:23:23.5315310Z [command]/usr/bin/git init /home/runner/work/resvg-js/resvg-js
+2025-07-28T15:23:23.5417713Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-28T15:23:23.5419877Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-28T15:23:23.5421947Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-28T15:23:23.5423369Z hint:
+2025-07-28T15:23:23.5424389Z hint: 	git config --global init.defaultBranch <name>
+2025-07-28T15:23:23.5425803Z hint:
+2025-07-28T15:23:23.5427087Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-28T15:23:23.5429627Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-28T15:23:23.5431389Z hint:
+2025-07-28T15:23:23.5432095Z hint: 	git branch -m <name>
+2025-07-28T15:23:23.5433039Z hint:
+2025-07-28T15:23:23.5434477Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-07-28T15:23:23.5437107Z Initialized empty Git repository in /home/runner/work/resvg-js/resvg-js/.git/
+2025-07-28T15:23:23.5441027Z [command]/usr/bin/git remote add origin https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:23.5476609Z ##[endgroup]
+2025-07-28T15:23:23.5478086Z ##[group]Disabling automatic garbage collection
+2025-07-28T15:23:23.5481522Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-28T15:23:23.5511562Z ##[endgroup]
+2025-07-28T15:23:23.5512987Z ##[group]Setting up auth
+2025-07-28T15:23:23.5519685Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-28T15:23:23.5552446Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-28T15:23:23.5840287Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-28T15:23:23.5870056Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-28T15:23:23.6086841Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-28T15:23:23.6120293Z ##[endgroup]
+2025-07-28T15:23:23.6122310Z ##[group]Fetching the repository
+2025-07-28T15:23:23.6139602Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6:refs/tags/v2.6.2-ab17
+2025-07-28T15:23:24.1083352Z From https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:24.1086398Z  * [new ref]         b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6 -> v2.6.2-ab17
+2025-07-28T15:23:24.1109741Z ##[endgroup]
+2025-07-28T15:23:24.1111319Z ##[group]Determining the checkout info
+2025-07-28T15:23:24.1112856Z ##[endgroup]
+2025-07-28T15:23:24.1116255Z [command]/usr/bin/git sparse-checkout disable
+2025-07-28T15:23:24.1163116Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-28T15:23:24.1191982Z ##[group]Checking out the ref
+2025-07-28T15:23:24.1195043Z [command]/usr/bin/git checkout --progress --force refs/tags/v2.6.2-ab17
+2025-07-28T15:23:24.1576542Z Note: switching to 'refs/tags/v2.6.2-ab17'.
+2025-07-28T15:23:24.1577990Z 
+2025-07-28T15:23:24.1578734Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-07-28T15:23:24.1581186Z changes and commit them, and you can discard any commits you make in this
+2025-07-28T15:23:24.1584085Z state without impacting any branches by switching back to a branch.
+2025-07-28T15:23:24.1585856Z 
+2025-07-28T15:23:24.1587088Z If you want to create a new branch to retain commits you create, you may
+2025-07-28T15:23:24.1589976Z do so (now or later) by using -c with the switch command. Example:
+2025-07-28T15:23:24.1591713Z 
+2025-07-28T15:23:24.1592393Z   git switch -c <new-branch-name>
+2025-07-28T15:23:24.1593507Z 
+2025-07-28T15:23:24.1594186Z Or undo this operation with:
+2025-07-28T15:23:24.1595198Z 
+2025-07-28T15:23:24.1595787Z   git switch -
+2025-07-28T15:23:24.1596631Z 
+2025-07-28T15:23:24.1597759Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-07-28T15:23:24.1599103Z 
+2025-07-28T15:23:24.1600035Z HEAD is now at b6b5364 Fix CI build failure on Windows - use bash shell for find command
+2025-07-28T15:23:24.1604503Z ##[endgroup]
+2025-07-28T15:23:24.1624433Z [command]/usr/bin/git log -1 --format=%H
+2025-07-28T15:23:24.1646521Z b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6

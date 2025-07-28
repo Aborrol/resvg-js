@@ -1,0 +1,50 @@
+﻿2025-07-28T15:23:26.1725791Z ##[group]Run npm ci
+2025-07-28T15:23:26.1726043Z [36;1mnpm ci[0m
+2025-07-28T15:23:26.1726245Z [36;1mnpm install -g @napi-rs/cli[0m
+2025-07-28T15:23:26.1754870Z shell: /usr/bin/bash -e {0}
+2025-07-28T15:23:26.1755104Z env:
+2025-07-28T15:23:26.1755333Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-07-28T15:23:26.1755663Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:26.1755925Z   CARGO_HOME: /home/runner/.cargo
+2025-07-28T15:23:26.1756152Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:26.1756350Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:26.1756554Z ##[endgroup]
+2025-07-28T15:23:30.6553934Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-07-28T15:23:30.6846085Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-07-28T15:23:30.7662927Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-07-28T15:23:35.0431353Z 
+2025-07-28T15:23:35.0432146Z > @aborrol/resvg-js-tolty@2.6.2-ab17 postinstall
+2025-07-28T15:23:35.0432829Z > node scripts/postinstall.js
+2025-07-28T15:23:35.0433105Z 
+2025-07-28T15:23:35.0717590Z Checking if platform package is installed: @aborrol/resvg-js-tolty-linux-x64-gnu
+2025-07-28T15:23:35.0726418Z Installing platform package: @aborrol/resvg-js-tolty-linux-x64-gnu
+2025-07-28T15:23:36.1329372Z 
+2025-07-28T15:23:36.1330214Z removed 1 package, and audited 470 packages in 1s
+2025-07-28T15:23:36.1330657Z 
+2025-07-28T15:23:36.1331325Z 193 packages are looking for funding
+2025-07-28T15:23:36.1331820Z   run `npm fund` for details
+2025-07-28T15:23:36.1385127Z 
+2025-07-28T15:23:36.1385609Z 1 moderate severity vulnerability
+2025-07-28T15:23:36.1386002Z 
+2025-07-28T15:23:36.1386462Z To address all issues (including breaking changes), run:
+2025-07-28T15:23:36.1386902Z   npm audit fix --force
+2025-07-28T15:23:36.1387065Z 
+2025-07-28T15:23:36.1387224Z Run `npm audit` for details.
+2025-07-28T15:23:36.1477792Z ✅ Successfully installed @aborrol/resvg-js-tolty-linux-x64-gnu
+2025-07-28T15:23:36.1594563Z 
+2025-07-28T15:23:36.1594989Z added 469 packages, and audited 470 packages in 10s
+2025-07-28T15:23:36.1595398Z 
+2025-07-28T15:23:36.1595605Z 193 packages are looking for funding
+2025-07-28T15:23:36.1595875Z   run `npm fund` for details
+2025-07-28T15:23:36.1633338Z 
+2025-07-28T15:23:36.1633731Z 1 moderate severity vulnerability
+2025-07-28T15:23:36.1634103Z 
+2025-07-28T15:23:36.1634538Z To address all issues (including breaking changes), run:
+2025-07-28T15:23:36.1635029Z   npm audit fix --force
+2025-07-28T15:23:36.1635202Z 
+2025-07-28T15:23:36.1635337Z Run `npm audit` for details.
+2025-07-28T15:23:45.7723452Z 
+2025-07-28T15:23:45.7724185Z added 81 packages in 10s
+2025-07-28T15:23:45.7724507Z 
+2025-07-28T15:23:45.7724743Z 14 packages are looking for funding
+2025-07-28T15:23:45.7725179Z   run `npm fund` for details

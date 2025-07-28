@@ -1,0 +1,50 @@
+﻿2025-07-28T15:23:35.6815569Z ##[group]Run npm ci
+2025-07-28T15:23:35.6815857Z [36;1mnpm ci[0m
+2025-07-28T15:23:35.6816055Z [36;1mnpm install -g @napi-rs/cli[0m
+2025-07-28T15:23:35.6899196Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-07-28T15:23:35.6899502Z env:
+2025-07-28T15:23:35.6899677Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.6899942Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.6900204Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.6900435Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:35.6900614Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:35.6900795Z ##[endgroup]
+2025-07-28T15:23:49.1723533Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-07-28T15:23:50.7138264Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-07-28T15:23:50.7144589Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-07-28T15:23:58.7415211Z 
+2025-07-28T15:23:58.7415866Z > @aborrol/resvg-js-tolty@2.6.2-ab17 postinstall
+2025-07-28T15:23:58.7416326Z > node scripts/postinstall.js
+2025-07-28T15:23:58.7416559Z 
+2025-07-28T15:23:58.8006637Z Checking if platform package is installed: @aborrol/resvg-js-tolty-win32-x64-msvc
+2025-07-28T15:23:58.8023786Z Installing platform package: @aborrol/resvg-js-tolty-win32-x64-msvc
+2025-07-28T15:24:00.6555975Z 
+2025-07-28T15:24:00.6556667Z removed 1 package, and audited 470 packages in 2s
+2025-07-28T15:24:00.6557061Z 
+2025-07-28T15:24:00.6557269Z 193 packages are looking for funding
+2025-07-28T15:24:00.6558002Z   run `npm fund` for details
+2025-07-28T15:24:00.6597311Z 
+2025-07-28T15:24:00.6597633Z 1 moderate severity vulnerability
+2025-07-28T15:24:00.6597926Z 
+2025-07-28T15:24:00.6598259Z To address all issues (including breaking changes), run:
+2025-07-28T15:24:00.6598838Z   npm audit fix --force
+2025-07-28T15:24:00.6599044Z 
+2025-07-28T15:24:00.6599199Z Run `npm audit` for details.
+2025-07-28T15:24:00.6750087Z ✅ Successfully installed @aborrol/resvg-js-tolty-win32-x64-msvc
+2025-07-28T15:24:00.6929679Z 
+2025-07-28T15:24:00.6930279Z added 469 packages, and audited 470 packages in 19s
+2025-07-28T15:24:00.6931191Z 
+2025-07-28T15:24:00.6931604Z 193 packages are looking for funding
+2025-07-28T15:24:00.6932034Z   run `npm fund` for details
+2025-07-28T15:24:00.6970957Z 
+2025-07-28T15:24:00.6971426Z 1 moderate severity vulnerability
+2025-07-28T15:24:00.6971730Z 
+2025-07-28T15:24:00.6972087Z To address all issues (including breaking changes), run:
+2025-07-28T15:24:00.6972643Z   npm audit fix --force
+2025-07-28T15:24:00.6972876Z 
+2025-07-28T15:24:00.6973040Z Run `npm audit` for details.
+2025-07-28T15:24:27.5276928Z 
+2025-07-28T15:24:27.5277395Z added 81 packages in 27s
+2025-07-28T15:24:27.5277843Z 
+2025-07-28T15:24:27.5278761Z 14 packages are looking for funding
+2025-07-28T15:24:27.5279147Z   run `npm fund` for details

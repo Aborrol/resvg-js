@@ -1,0 +1,20 @@
+﻿2025-07-28T15:23:42.2410290Z ##[group]Run rustup target add x86_64-apple-darwin
+2025-07-28T15:23:42.2410840Z [36;1mrustup target add x86_64-apple-darwin[0m
+2025-07-28T15:23:42.2482070Z shell: /bin/bash -e {0}
+2025-07-28T15:23:42.2482380Z env:
+2025-07-28T15:23:42.2482620Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:42.2483060Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:42.2483460Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:42.2483700Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:42.2483930Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:42.2484130Z ##[endgroup]
+2025-07-28T15:23:42.2938570Z info: syncing channel updates for '1.88.0-aarch64-apple-darwin'
+2025-07-28T15:23:42.4875450Z info: latest update on 2025-06-26, rust version 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:42.4875990Z info: downloading component 'cargo'
+2025-07-28T15:23:42.6518360Z info: downloading component 'rust-std'
+2025-07-28T15:23:42.9698760Z info: downloading component 'rustc'
+2025-07-28T15:23:43.6336570Z info: installing component 'cargo'
+2025-07-28T15:23:44.2108780Z info: installing component 'rust-std'
+2025-07-28T15:23:46.0059040Z info: installing component 'rustc'
+2025-07-28T15:23:49.5952130Z info: downloading component 'rust-std' for 'x86_64-apple-darwin'
+2025-07-28T15:23:49.9356110Z info: installing component 'rust-std' for 'x86_64-apple-darwin'

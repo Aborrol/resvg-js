@@ -1,0 +1,704 @@
+﻿2025-07-28T15:23:19.9758877Z Current runner version: '2.326.0'
+2025-07-28T15:23:19.9782049Z ##[group]Runner Image Provisioner
+2025-07-28T15:23:19.9782860Z Hosted Compute Agent
+2025-07-28T15:23:19.9783338Z Version: 20250711.363
+2025-07-28T15:23:19.9783853Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-28T15:23:19.9784432Z Build Date: 2025-07-11T20:04:25Z
+2025-07-28T15:23:19.9784966Z ##[endgroup]
+2025-07-28T15:23:19.9785419Z ##[group]Operating System
+2025-07-28T15:23:19.9785908Z Microsoft Windows Server 2022
+2025-07-28T15:23:19.9786425Z 10.0.20348
+2025-07-28T15:23:19.9786797Z Datacenter
+2025-07-28T15:23:19.9787200Z ##[endgroup]
+2025-07-28T15:23:19.9787648Z ##[group]Runner Image
+2025-07-28T15:23:19.9788101Z Image: windows-2022
+2025-07-28T15:23:19.9788535Z Version: 20250720.1.0
+2025-07-28T15:23:19.9789504Z Included Software: https://github.com/actions/runner-images/blob/win22/20250720.1/images/windows/Windows2022-Readme.md
+2025-07-28T15:23:19.9791034Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250720.1
+2025-07-28T15:23:19.9791932Z ##[endgroup]
+2025-07-28T15:23:19.9794251Z ##[group]GITHUB_TOKEN Permissions
+2025-07-28T15:23:19.9796125Z Actions: write
+2025-07-28T15:23:19.9796621Z Attestations: write
+2025-07-28T15:23:19.9797133Z Checks: write
+2025-07-28T15:23:19.9797542Z Contents: write
+2025-07-28T15:23:19.9797976Z Deployments: write
+2025-07-28T15:23:19.9798417Z Discussions: write
+2025-07-28T15:23:19.9798837Z Issues: write
+2025-07-28T15:23:19.9799260Z Metadata: read
+2025-07-28T15:23:19.9799694Z Models: read
+2025-07-28T15:23:19.9800095Z Packages: write
+2025-07-28T15:23:19.9800528Z Pages: write
+2025-07-28T15:23:19.9800912Z PullRequests: write
+2025-07-28T15:23:19.9801391Z RepositoryProjects: write
+2025-07-28T15:23:19.9801930Z SecurityEvents: write
+2025-07-28T15:23:19.9802465Z Statuses: write
+2025-07-28T15:23:19.9803268Z ##[endgroup]
+2025-07-28T15:23:19.9806115Z Secret source: Actions
+2025-07-28T15:23:19.9807109Z Prepare workflow directory
+2025-07-28T15:23:20.0195896Z Prepare all required actions
+2025-07-28T15:23:20.0232808Z Getting action download info
+2025-07-28T15:23:20.3094461Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-28T15:23:20.3095417Z Version: 4.2.2
+2025-07-28T15:23:20.3096445Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-28T15:23:20.3097540Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-28T15:23:20.3098197Z ##[endgroup]
+2025-07-28T15:23:20.4343026Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-07-28T15:23:20.4343744Z Version: 4.4.0
+2025-07-28T15:23:20.4344398Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-07-28T15:23:20.4345285Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-07-28T15:23:20.4345896Z ##[endgroup]
+2025-07-28T15:23:20.5991943Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:4305c38b25d97ef35a8ad1f985ccf2d2242004f2)
+2025-07-28T15:23:20.9443785Z Complete job name: build (windows-latest, i686-pc-windows-msvc, win32-ia32-msvc)
+2025-07-28T15:23:21.1052943Z ##[group]Run actions/checkout@v4
+2025-07-28T15:23:21.1054071Z with:
+2025-07-28T15:23:21.1054511Z   repository: Aborrol/resvg-js
+2025-07-28T15:23:21.1055223Z   token: ***
+2025-07-28T15:23:21.1055645Z   ssh-strict: true
+2025-07-28T15:23:21.1056071Z   ssh-user: git
+2025-07-28T15:23:21.1056512Z   persist-credentials: true
+2025-07-28T15:23:21.1057006Z   clean: true
+2025-07-28T15:23:21.1057437Z   sparse-checkout-cone-mode: true
+2025-07-28T15:23:21.1057974Z   fetch-depth: 1
+2025-07-28T15:23:21.1058391Z   fetch-tags: false
+2025-07-28T15:23:21.1058817Z   show-progress: true
+2025-07-28T15:23:21.1059259Z   lfs: false
+2025-07-28T15:23:21.1059653Z   submodules: false
+2025-07-28T15:23:21.1060099Z   set-safe-directory: true
+2025-07-28T15:23:21.1060811Z ##[endgroup]
+2025-07-28T15:23:21.2765985Z Syncing repository: Aborrol/resvg-js
+2025-07-28T15:23:21.2767933Z ##[group]Getting Git version info
+2025-07-28T15:23:21.2771075Z Working directory is 'D:\a\resvg-js\resvg-js'
+2025-07-28T15:23:21.4039272Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-07-28T15:23:21.7992218Z git version 2.50.1.windows.1
+2025-07-28T15:23:21.8038690Z ##[endgroup]
+2025-07-28T15:23:21.8057168Z Temporarily overriding HOME='D:\a\_temp\7f7ce200-d5fe-418c-97da-99be8aec8e6e' before making global git config changes
+2025-07-28T15:23:21.8059338Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-28T15:23:21.8067916Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\resvg-js\resvg-js
+2025-07-28T15:23:21.8605011Z Deleting the contents of 'D:\a\resvg-js\resvg-js'
+2025-07-28T15:23:21.8610499Z ##[group]Initializing the repository
+2025-07-28T15:23:21.8620070Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\resvg-js\resvg-js
+2025-07-28T15:23:21.9299056Z Initialized empty Git repository in D:/a/resvg-js/resvg-js/.git/
+2025-07-28T15:23:21.9335348Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:21.9761615Z ##[endgroup]
+2025-07-28T15:23:21.9764561Z ##[group]Disabling automatic garbage collection
+2025-07-28T15:23:21.9771305Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-07-28T15:23:22.0040850Z ##[endgroup]
+2025-07-28T15:23:22.0043586Z ##[group]Setting up auth
+2025-07-28T15:23:22.0055273Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-07-28T15:23:22.0301689Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-07-28T15:23:23.2255721Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-28T15:23:23.2475983Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-07-28T15:23:23.6529048Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-07-28T15:23:23.6762380Z ##[endgroup]
+2025-07-28T15:23:23.6763205Z ##[group]Fetching the repository
+2025-07-28T15:23:23.6776604Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6:refs/tags/v2.6.2-ab17
+2025-07-28T15:23:24.8082211Z From https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:24.8083082Z  * [new ref]         b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6 -> v2.6.2-ab17
+2025-07-28T15:23:24.8230675Z ##[endgroup]
+2025-07-28T15:23:24.8231404Z ##[group]Determining the checkout info
+2025-07-28T15:23:24.8234387Z ##[endgroup]
+2025-07-28T15:23:24.8246571Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-07-28T15:23:24.8585888Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-07-28T15:23:24.8797117Z ##[group]Checking out the ref
+2025-07-28T15:23:24.8805371Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/tags/v2.6.2-ab17
+2025-07-28T15:23:24.9840102Z Note: switching to 'refs/tags/v2.6.2-ab17'.
+2025-07-28T15:23:24.9840538Z 
+2025-07-28T15:23:24.9840839Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-07-28T15:23:24.9841587Z changes and commit them, and you can discard any commits you make in this
+2025-07-28T15:23:24.9843183Z state without impacting any branches by switching back to a branch.
+2025-07-28T15:23:24.9843700Z 
+2025-07-28T15:23:24.9843946Z If you want to create a new branch to retain commits you create, you may
+2025-07-28T15:23:24.9844443Z do so (now or later) by using -c with the switch command. Example:
+2025-07-28T15:23:24.9845637Z 
+2025-07-28T15:23:24.9845841Z   git switch -c <new-branch-name>
+2025-07-28T15:23:24.9846047Z 
+2025-07-28T15:23:24.9846166Z Or undo this operation with:
+2025-07-28T15:23:24.9846333Z 
+2025-07-28T15:23:24.9846409Z   git switch -
+2025-07-28T15:23:24.9846541Z 
+2025-07-28T15:23:24.9846751Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-07-28T15:23:24.9847036Z 
+2025-07-28T15:23:24.9847246Z HEAD is now at b6b5364 Fix CI build failure on Windows - use bash shell for find command
+2025-07-28T15:23:24.9881540Z ##[endgroup]
+2025-07-28T15:23:25.0255314Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-07-28T15:23:25.0473080Z b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6
+2025-07-28T15:23:25.0841451Z ##[group]Run actions/setup-node@v4
+2025-07-28T15:23:25.0841790Z with:
+2025-07-28T15:23:25.0841956Z   node-version: 20
+2025-07-28T15:23:25.0842175Z   registry-url: https://registry.npmjs.org
+2025-07-28T15:23:25.0842438Z   always-auth: false
+2025-07-28T15:23:25.0842650Z   check-latest: false
+2025-07-28T15:23:25.0842949Z   token: ***
+2025-07-28T15:23:25.0843111Z ##[endgroup]
+2025-07-28T15:23:25.3369598Z Found in cache @ C:\hostedtoolcache\windows\node\20.19.4\x64
+2025-07-28T15:23:25.3379421Z ##[group]Environment details
+2025-07-28T15:23:29.7751371Z node: v20.19.4
+2025-07-28T15:23:29.7751597Z npm: 10.8.2
+2025-07-28T15:23:29.7751796Z yarn: 3.8.5
+2025-07-28T15:23:29.7753506Z ##[endgroup]
+2025-07-28T15:23:29.8076183Z ##[group]Run dtolnay/rust-toolchain@stable
+2025-07-28T15:23:29.8076495Z with:
+2025-07-28T15:23:29.8076660Z   toolchain: stable
+2025-07-28T15:23:29.8076826Z env:
+2025-07-28T15:23:29.8076987Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:29.8077245Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:29.8077472Z ##[endgroup]
+2025-07-28T15:23:29.8324702Z ##[group]Run : parse toolchain version
+2025-07-28T15:23:29.8325056Z [36;1m: parse toolchain version[0m
+2025-07-28T15:23:29.8325430Z [36;1mif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2025-07-28T15:23:29.8325768Z [36;1m  if [[ Windows == macOS ]]; then[0m
+2025-07-28T15:23:29.8326213Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.8326619Z [36;1m  else[0m
+2025-07-28T15:23:29.8326984Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.8327363Z [36;1m  fi[0m
+2025-07-28T15:23:29.8327602Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2025-07-28T15:23:29.8328040Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.8328417Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2025-07-28T15:23:29.8328830Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.8329224Z [36;1melse[0m
+2025-07-28T15:23:29.8329417Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.8329660Z [36;1mfi[0m
+2025-07-28T15:23:29.8346373Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:29.8346730Z env:
+2025-07-28T15:23:29.8346906Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:29.8347176Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:29.8347408Z   toolchain: stable
+2025-07-28T15:23:29.8347579Z ##[endgroup]
+2025-07-28T15:23:29.9968545Z ##[group]Run : construct rustup command line
+2025-07-28T15:23:29.9968845Z [36;1m: construct rustup command line[0m
+2025-07-28T15:23:29.9969235Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.9969793Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.9970378Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.9981868Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:29.9982209Z env:
+2025-07-28T15:23:29.9982384Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:29.9982649Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:29.9982867Z   targets: 
+2025-07-28T15:23:29.9983040Z   components: 
+2025-07-28T15:23:29.9983190Z ##[endgroup]
+2025-07-28T15:23:30.0558109Z ##[group]Run : set $CARGO_HOME
+2025-07-28T15:23:30.0558346Z [36;1m: set $CARGO_HOME[0m
+2025-07-28T15:23:30.0558633Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$USERPROFILE\.cargo"} >> $GITHUB_ENV[0m
+2025-07-28T15:23:30.0570908Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:30.0571274Z env:
+2025-07-28T15:23:30.0571453Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:30.0571703Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:30.0571944Z ##[endgroup]
+2025-07-28T15:23:30.1009565Z ##[group]Run : install rustup if needed on windows
+2025-07-28T15:23:30.1009894Z [36;1m: install rustup if needed on windows[0m
+2025-07-28T15:23:30.1010178Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2025-07-28T15:23:30.1012577Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://win.rustup.rs/x86_64 --output 'D:\a\_temp\rustup-init.exe'[0m
+2025-07-28T15:23:30.1013419Z [36;1m  'D:\a\_temp\rustup-init.exe' --default-toolchain none --no-modify-path -y[0m
+2025-07-28T15:23:30.1013813Z [36;1m  echo "$CARGO_HOME\bin" >> $GITHUB_PATH[0m
+2025-07-28T15:23:30.1014050Z [36;1mfi[0m
+2025-07-28T15:23:30.1026484Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:30.1026829Z env:
+2025-07-28T15:23:30.1027011Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:30.1027275Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:30.1027539Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:30.1027763Z ##[endgroup]
+2025-07-28T15:23:30.1554340Z ##[group]Run rustup toolchain install stable --profile minimal --no-self-update
+2025-07-28T15:23:30.1554846Z [36;1mrustup toolchain install stable --profile minimal --no-self-update[0m
+2025-07-28T15:23:30.1567541Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:30.1567900Z env:
+2025-07-28T15:23:30.1568074Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:30.1568346Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:30.1568596Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:30.1568811Z ##[endgroup]
+2025-07-28T15:23:34.4632989Z info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
+2025-07-28T15:23:34.8789083Z 
+2025-07-28T15:23:34.8944995Z   stable-x86_64-pc-windows-msvc unchanged - rustc 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:34.8945652Z 
+2025-07-28T15:23:34.9109524Z ##[group]Run rustup default stable
+2025-07-28T15:23:34.9109765Z [36;1mrustup default stable[0m
+2025-07-28T15:23:34.9120243Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:34.9120576Z env:
+2025-07-28T15:23:34.9120746Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:34.9121002Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:34.9121268Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:34.9121487Z ##[endgroup]
+2025-07-28T15:23:34.9740965Z info: using existing install for 'stable-x86_64-pc-windows-msvc'
+2025-07-28T15:23:35.0186942Z info: default toolchain set to 'stable-x86_64-pc-windows-msvc'
+2025-07-28T15:23:35.0187303Z 
+2025-07-28T15:23:35.0344777Z   stable-x86_64-pc-windows-msvc unchanged - rustc 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:35.0345293Z 
+2025-07-28T15:23:35.0351290Z info: note that the toolchain '1.88.0-x86_64-pc-windows-msvc' is currently in use (overridden by 'D:\a\resvg-js\resvg-js\rust-toolchain')
+2025-07-28T15:23:35.0504555Z ##[group]Run : create cachekey
+2025-07-28T15:23:35.0504789Z [36;1m: create cachekey[0m
+2025-07-28T15:23:35.0505206Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2025-07-28T15:23:35.0505756Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2025-07-28T15:23:35.0506207Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:35.0516892Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:35.0517222Z env:
+2025-07-28T15:23:35.0517392Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.0517652Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.0517903Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.0518128Z ##[endgroup]
+2025-07-28T15:23:35.8630225Z ##[group]Run : disable incremental compilation
+2025-07-28T15:23:35.8630749Z [36;1m: disable incremental compilation[0m
+2025-07-28T15:23:35.8631223Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2025-07-28T15:23:35.8631703Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2025-07-28T15:23:35.8632113Z [36;1mfi[0m
+2025-07-28T15:23:35.8651622Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:35.8652217Z env:
+2025-07-28T15:23:35.8653431Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.8653942Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.8654389Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.8654766Z ##[endgroup]
+2025-07-28T15:23:35.9093635Z ##[group]Run : enable colors in Cargo output
+2025-07-28T15:23:35.9093916Z [36;1m: enable colors in Cargo output[0m
+2025-07-28T15:23:35.9094181Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2025-07-28T15:23:35.9094463Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2025-07-28T15:23:35.9094712Z [36;1mfi[0m
+2025-07-28T15:23:35.9105516Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:35.9105854Z env:
+2025-07-28T15:23:35.9106030Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.9106282Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.9106526Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.9106746Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:35.9106927Z ##[endgroup]
+2025-07-28T15:23:35.9512290Z ##[group]Run : enable Cargo sparse registry
+2025-07-28T15:23:35.9512582Z [36;1m: enable Cargo sparse registry[0m
+2025-07-28T15:23:35.9512891Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2025-07-28T15:23:35.9513440Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2025-07-28T15:23:35.9514012Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2025-07-28T15:23:35.9514473Z [36;1m    touch "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-07-28T15:23:35.9514883Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2025-07-28T15:23:35.9515299Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2025-07-28T15:23:35.9515742Z [36;1m    touch "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-07-28T15:23:35.9516136Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2025-07-28T15:23:35.9516412Z [36;1m  fi[0m
+2025-07-28T15:23:35.9516557Z [36;1mfi[0m
+2025-07-28T15:23:35.9527480Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:35.9527821Z env:
+2025-07-28T15:23:35.9527992Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.9528247Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.9528483Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.9529397Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:35.9529573Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:35.9529758Z ##[endgroup]
+2025-07-28T15:23:36.2041427Z ##[group]Run : work around spurious network errors in curl 8.0
+2025-07-28T15:23:36.2041803Z [36;1m: work around spurious network errors in curl 8.0[0m
+2025-07-28T15:23:36.2042296Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2025-07-28T15:23:36.2042848Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2025-07-28T15:23:36.2043234Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2025-07-28T15:23:36.2043492Z [36;1mfi[0m
+2025-07-28T15:23:36.2053879Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:36.2054221Z env:
+2025-07-28T15:23:36.2054402Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:36.2054678Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:36.2054936Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:36.2055160Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:36.2055333Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:36.2055524Z ##[endgroup]
+2025-07-28T15:23:36.2931983Z ##[group]Run rustc +stable --version --verbose
+2025-07-28T15:23:36.2932294Z [36;1mrustc +stable --version --verbose[0m
+2025-07-28T15:23:36.2942993Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:36.2943363Z env:
+2025-07-28T15:23:36.2943552Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:36.2943822Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:36.2944086Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:36.2944336Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:36.2944526Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:36.2944719Z ##[endgroup]
+2025-07-28T15:23:36.3614111Z rustc 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:36.3614656Z binary: rustc
+2025-07-28T15:23:36.3615171Z commit-hash: 6b00bc3880198600130e1cf62b8f8a93494488cc
+2025-07-28T15:23:36.3615548Z commit-date: 2025-06-23
+2025-07-28T15:23:36.3616093Z host: x86_64-pc-windows-msvc
+2025-07-28T15:23:36.3617052Z release: 1.88.0
+2025-07-28T15:23:36.3617612Z LLVM version: 20.1.5
+2025-07-28T15:23:36.3812600Z ##[group]Run npm ci
+2025-07-28T15:23:36.3812864Z [36;1mnpm ci[0m
+2025-07-28T15:23:36.3813059Z [36;1mnpm install -g @napi-rs/cli[0m
+2025-07-28T15:23:36.3896211Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-07-28T15:23:36.3896515Z env:
+2025-07-28T15:23:36.3896691Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:36.3896948Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:36.3897201Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:36.3897427Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:36.3897603Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:36.3897784Z ##[endgroup]
+2025-07-28T15:23:49.4634087Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-07-28T15:23:51.1191543Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-07-28T15:23:51.1264839Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-07-28T15:23:58.3340546Z 
+2025-07-28T15:23:58.3341744Z > @aborrol/resvg-js-tolty@2.6.2-ab17 postinstall
+2025-07-28T15:23:58.3342308Z > node scripts/postinstall.js
+2025-07-28T15:23:58.3342557Z 
+2025-07-28T15:23:58.3942469Z Checking if platform package is installed: @aborrol/resvg-js-tolty-win32-x64-msvc
+2025-07-28T15:23:58.3954776Z Installing platform package: @aborrol/resvg-js-tolty-win32-x64-msvc
+2025-07-28T15:24:00.3750776Z 
+2025-07-28T15:24:00.3751286Z removed 1 package, and audited 470 packages in 2s
+2025-07-28T15:24:00.3751647Z 
+2025-07-28T15:24:00.3751847Z 193 packages are looking for funding
+2025-07-28T15:24:00.3752384Z   run `npm fund` for details
+2025-07-28T15:24:00.3791556Z 
+2025-07-28T15:24:00.3791835Z 1 moderate severity vulnerability
+2025-07-28T15:24:00.3792091Z 
+2025-07-28T15:24:00.3792440Z To address all issues (including breaking changes), run:
+2025-07-28T15:24:00.3792960Z   npm audit fix --force
+2025-07-28T15:24:00.3793177Z 
+2025-07-28T15:24:00.3793317Z Run `npm audit` for details.
+2025-07-28T15:24:00.3922000Z ✅ Successfully installed @aborrol/resvg-js-tolty-win32-x64-msvc
+2025-07-28T15:24:00.4087662Z 
+2025-07-28T15:24:00.4088193Z added 469 packages, and audited 470 packages in 19s
+2025-07-28T15:24:00.4088455Z 
+2025-07-28T15:24:00.4088724Z 193 packages are looking for funding
+2025-07-28T15:24:00.4089247Z   run `npm fund` for details
+2025-07-28T15:24:00.4127084Z 
+2025-07-28T15:24:00.4127395Z 1 moderate severity vulnerability
+2025-07-28T15:24:00.4127668Z 
+2025-07-28T15:24:00.4127935Z To address all issues (including breaking changes), run:
+2025-07-28T15:24:00.4128448Z   npm audit fix --force
+2025-07-28T15:24:00.4128581Z 
+2025-07-28T15:24:00.4128731Z Run `npm audit` for details.
+2025-07-28T15:24:29.5691260Z 
+2025-07-28T15:24:29.5691677Z added 81 packages in 29s
+2025-07-28T15:24:29.5692647Z 
+2025-07-28T15:24:29.5692965Z 14 packages are looking for funding
+2025-07-28T15:24:29.5693237Z   run `npm fund` for details
+2025-07-28T15:24:30.6045026Z ##[group]Run rustup target add i686-pc-windows-msvc
+2025-07-28T15:24:30.6045449Z [36;1mrustup target add i686-pc-windows-msvc[0m
+2025-07-28T15:24:30.6087924Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-07-28T15:24:30.6088238Z env:
+2025-07-28T15:24:30.6088424Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:24:30.6088687Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:24:30.6088950Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:24:30.6089186Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:24:30.6089362Z   CARGO_TERM_COLOR: always
+2025-07-28T15:24:30.6089571Z ##[endgroup]
+2025-07-28T15:24:30.9054528Z info: syncing channel updates for '1.88.0-x86_64-pc-windows-msvc'
+2025-07-28T15:24:31.0714150Z info: latest update on 2025-06-26, rust version 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:24:31.0867285Z info: downloading component 'cargo'
+2025-07-28T15:24:31.3165583Z info: downloading component 'rust-std'
+2025-07-28T15:24:31.9435316Z info: downloading component 'rustc'
+2025-07-28T15:24:33.2583486Z info: installing component 'cargo'
+2025-07-28T15:24:34.1597762Z info: installing component 'rust-std'
+2025-07-28T15:24:35.6397402Z info: installing component 'rustc'
+2025-07-28T15:24:41.1707265Z info: downloading component 'rust-std' for 'i686-pc-windows-msvc'
+2025-07-28T15:24:41.5982791Z info: installing component 'rust-std' for 'i686-pc-windows-msvc'
+2025-07-28T15:24:43.7366824Z ##[group]Run node scripts/update-versions.js
+2025-07-28T15:24:43.7367208Z [36;1mnode scripts/update-versions.js[0m
+2025-07-28T15:24:43.7410375Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-07-28T15:24:43.7410726Z env:
+2025-07-28T15:24:43.7410986Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:24:43.7411348Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:24:43.7411651Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:24:43.7412005Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:24:43.7412240Z   CARGO_TERM_COLOR: always
+2025-07-28T15:24:43.7412508Z ##[endgroup]
+2025-07-28T15:24:44.0886959Z Updating all platform packages to version: 2.6.2-ab17
+2025-07-28T15:24:44.0997215Z Updating npm\win32-x64-msvc\package.json...
+2025-07-28T15:24:44.1003132Z Updating npm\win32-ia32-msvc\package.json...
+2025-07-28T15:24:44.1005810Z Updating npm\win32-arm64-msvc\package.json...
+2025-07-28T15:24:44.1008968Z Updating npm\linux-x64-musl\package.json...
+2025-07-28T15:24:44.1012088Z Updating npm\linux-x64-gnu\package.json...
+2025-07-28T15:24:44.1015383Z Updating npm\linux-arm64-musl\package.json...
+2025-07-28T15:24:44.1018491Z Updating npm\linux-arm64-gnu\package.json...
+2025-07-28T15:24:44.1021858Z Updating npm\linux-arm-gnueabihf\package.json...
+2025-07-28T15:24:44.1025911Z Updating npm\darwin-x64\package.json...
+2025-07-28T15:24:44.1031220Z Updating npm\darwin-arm64\package.json...
+2025-07-28T15:24:44.1034094Z Updating npm\android-arm64\package.json...
+2025-07-28T15:24:44.1037785Z Updating npm\android-arm-eabi\package.json...
+2025-07-28T15:24:44.1041231Z ✅ Updated 12 platform packages to version 2.6.2-ab17
+2025-07-28T15:24:44.1043221Z ℹ️  Note: optionalDependencies are not added to main package.json to avoid CI issues
+2025-07-28T15:24:44.2448240Z ##[group]Run napi build --target i686-pc-windows-msvc --release
+2025-07-28T15:24:44.2449029Z [36;1mnapi build --target i686-pc-windows-msvc --release[0m
+2025-07-28T15:24:44.2481827Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-07-28T15:24:44.2482153Z env:
+2025-07-28T15:24:44.2482339Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:24:44.2482609Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:24:44.2482885Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:24:44.2483105Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:24:44.2483291Z   CARGO_TERM_COLOR: always
+2025-07-28T15:24:44.2483468Z ##[endgroup]
+2025-07-28T15:25:12.8439105Z [1m[32m   Compiling[0m proc-macro2 v1.0.95
+2025-07-28T15:25:12.8440219Z [1m[32m   Compiling[0m unicode-ident v1.0.18
+2025-07-28T15:25:12.8441516Z [1m[32m   Compiling[0m version_check v0.9.5
+2025-07-28T15:25:12.8450099Z [1m[32m   Compiling[0m semver v1.0.26
+2025-07-28T15:25:12.9604018Z [1m[32m   Compiling[0m log v0.4.27
+2025-07-28T15:25:13.1766050Z [1m[32m   Compiling[0m arrayvec v0.7.6
+2025-07-28T15:25:13.1787358Z [1m[32m   Compiling[0m cfg-if v1.0.1
+2025-07-28T15:25:13.2298270Z [1m[32m   Compiling[0m memchr v2.7.5
+2025-07-28T15:25:13.4148164Z [1m[32m   Compiling[0m bytemuck v1.23.1
+2025-07-28T15:25:13.6830484Z [1m[32m   Compiling[0m windows_i686_msvc v0.52.6
+2025-07-28T15:25:13.7971777Z [1m[32m   Compiling[0m crc32fast v1.5.0
+2025-07-28T15:25:15.1584676Z [1m[32m   Compiling[0m float-cmp v0.9.0
+2025-07-28T15:25:15.2308824Z [1m[32m   Compiling[0m arrayref v0.3.9
+2025-07-28T15:25:15.2842517Z [1m[32m   Compiling[0m strict-num v0.1.1
+2025-07-28T15:25:15.2971411Z [1m[32m   Compiling[0m smallvec v1.15.1
+2025-07-28T15:25:15.4721931Z [1m[32m   Compiling[0m bitflags v1.3.2
+2025-07-28T15:25:15.5256007Z [1m[32m   Compiling[0m rustc_version v0.4.1
+2025-07-28T15:25:15.6139959Z [1m[32m   Compiling[0m tiny-skia-path v0.10.0
+2025-07-28T15:25:15.8787299Z [1m[32m   Compiling[0m quote v1.0.40
+2025-07-28T15:25:15.9341947Z [1m[32m   Compiling[0m kurbo v0.9.5
+2025-07-28T15:25:16.2591052Z [1m[32m   Compiling[0m syn v2.0.104
+2025-07-28T15:25:16.2619910Z [1m[32m   Compiling[0m slotmap v1.0.7
+2025-07-28T15:25:16.4766624Z [1m[32m   Compiling[0m siphasher v0.3.11
+2025-07-28T15:25:16.7104331Z [1m[32m   Compiling[0m unicode-general-category v0.6.0
+2025-07-28T15:25:17.1387503Z [1m[32m   Compiling[0m windows_i686_msvc v0.53.0
+2025-07-28T15:25:17.3697151Z [1m[32m   Compiling[0m svgtypes v0.11.0
+2025-07-28T15:25:17.7997821Z [1m[32m   Compiling[0m pathfinder_simd v0.5.2
+2025-07-28T15:25:18.0203499Z [1m[32m   Compiling[0m windows-targets v0.52.6
+2025-07-28T15:25:18.0668721Z [1m[32m   Compiling[0m tinyvec_macros v0.1.1
+2025-07-28T15:25:18.1144085Z [1m[32m   Compiling[0m pin-project-lite v0.2.16
+2025-07-28T15:25:18.1891281Z [1m[32m   Compiling[0m rctree v0.5.0
+2025-07-28T15:25:18.3659377Z [1m[32m   Compiling[0m serde v1.0.219
+2025-07-28T15:25:18.6592826Z [1m[32m   Compiling[0m adler2 v2.0.1
+2025-07-28T15:25:18.7421196Z [1m[32m   Compiling[0m zerocopy v0.8.26
+2025-07-28T15:25:18.7843383Z [1m[32m   Compiling[0m shlex v1.3.0
+2025-07-28T15:25:19.0611228Z [1m[32m   Compiling[0m cc v1.2.30
+2025-07-28T15:25:19.2491198Z [1m[32m   Compiling[0m miniz_oxide v0.8.9
+2025-07-28T15:25:19.9374665Z [1m[32m   Compiling[0m aho-corasick v1.1.3
+2025-07-28T15:25:21.0422692Z [1m[32m   Compiling[0m usvg-tree v0.34.0 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:25:21.9773541Z [1m[32m   Compiling[0m tinyvec v1.9.0
+2025-07-28T15:25:22.1816201Z [1m[32m   Compiling[0m windows-sys v0.59.0
+2025-07-28T15:25:23.5568063Z [1m[32m   Compiling[0m ahash v0.8.12
+2025-07-28T15:25:23.7735735Z [1m[32m   Compiling[0m libc v0.2.174
+2025-07-28T15:25:24.1390890Z [1m[32m   Compiling[0m serde_derive v1.0.219
+2025-07-28T15:25:24.1717325Z [1m[32m   Compiling[0m adler32 v1.2.0
+2025-07-28T15:25:24.1841299Z [1m[32m   Compiling[0m futures-sink v0.3.31
+2025-07-28T15:25:24.2714310Z [1m[32m   Compiling[0m unicode-bidi-mirroring v0.1.0
+2025-07-28T15:25:24.3127345Z [1m[32m   Compiling[0m ttf-parser v0.19.2
+2025-07-28T15:25:24.4135929Z [1m[32m   Compiling[0m adler v1.0.2
+2025-07-28T15:25:24.7036591Z [1m[32m   Compiling[0m regex-syntax v0.8.5
+2025-07-28T15:25:27.4243722Z [1m[32m   Compiling[0m once_cell v1.21.3
+2025-07-28T15:25:29.3674091Z [1m[32m   Compiling[0m ttf-parser v0.18.1
+2025-07-28T15:25:29.9770444Z [1m[32m   Compiling[0m xmlparser v0.13.6
+2025-07-28T15:25:31.2421506Z [1m[32m   Compiling[0m unicode-script v0.5.7
+2025-07-28T15:25:31.6607042Z [1m[32m   Compiling[0m unicode-ccc v0.1.2
+2025-07-28T15:25:31.7989200Z [1m[32m   Compiling[0m futures-core v0.3.31
+2025-07-28T15:25:31.9073483Z [1m[32m   Compiling[0m futures-channel v0.3.31
+2025-07-28T15:25:31.9268606Z [1m[32m   Compiling[0m regex-automata v0.4.9
+2025-07-28T15:25:32.0424596Z [1m[32m   Compiling[0m roxmltree v0.18.1
+2025-07-28T15:25:33.5453954Z [1m[32m   Compiling[0m rustybuzz v0.7.0
+2025-07-28T15:25:35.0287537Z [1m[32m   Compiling[0m fontdb v0.14.1
+2025-07-28T15:25:36.6675131Z [1m[32m   Compiling[0m miniz_oxide v0.5.4
+2025-07-28T15:25:37.0899499Z [1m[32m   Compiling[0m deflate v1.0.0
+2025-07-28T15:25:38.2956262Z [1m[32m   Compiling[0m futures-macro v0.3.31
+2025-07-28T15:25:38.6504547Z [1m[32m   Compiling[0m windows-targets v0.53.2
+2025-07-28T15:25:39.4753571Z [1m[32m   Compiling[0m libmimalloc-sys v0.1.43
+2025-07-28T15:25:39.5483289Z [1m[32m   Compiling[0m flate2 v1.1.2
+2025-07-28T15:25:40.2758208Z [1m[32m   Compiling[0m simplecss v0.2.2
+2025-07-28T15:25:41.5436808Z [1m[32m   Compiling[0m serde_json v1.0.141
+2025-07-28T15:25:41.7587262Z [1m[32m   Compiling[0m once_cell_polyfill v1.70.1
+2025-07-28T15:25:41.8442192Z [1m[32m   Compiling[0m utf8parse v0.2.2
+2025-07-28T15:25:41.9305498Z [1m[32m   Compiling[0m slab v0.4.10
+2025-07-28T15:25:42.1550573Z [1m[32m   Compiling[0m anstyle v1.0.11
+2025-07-28T15:25:42.4486059Z [1m[32m   Compiling[0m unicode-segmentation v1.12.0
+2025-07-28T15:25:42.5547045Z [1m[32m   Compiling[0m futures-io v0.3.31
+2025-07-28T15:25:42.7312219Z [1m[32m   Compiling[0m unicode-vo v0.1.0
+2025-07-28T15:25:42.8612213Z [1m[32m   Compiling[0m unicode-bidi v0.3.18
+2025-07-28T15:25:43.0289080Z [1m[32m   Compiling[0m futures-task v0.3.31
+2025-07-28T15:25:43.1935679Z [1m[32m   Compiling[0m imagesize v0.12.0
+2025-07-28T15:25:44.4488684Z [1m[32m   Compiling[0m pin-utils v0.1.0
+2025-07-28T15:25:44.4974096Z [1m[32m   Compiling[0m data-url v0.2.0
+2025-07-28T15:25:44.5359359Z [1m[32m   Compiling[0m futures-util v0.3.31
+2025-07-28T15:25:44.7157395Z [1m[32m   Compiling[0m usvg-parser v0.34.0 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:25:45.3246787Z [1m[32m   Compiling[0m usvg-text-layout v0.34.0 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:25:48.8993415Z [1m[32m   Compiling[0m convert_case v0.6.0
+2025-07-28T15:25:49.3119372Z [1m[32m   Compiling[0m anstyle-wincon v3.0.9
+2025-07-28T15:25:49.3728770Z [1m[32m   Compiling[0m anstyle-parse v0.2.7
+2025-07-28T15:25:49.6558723Z [1m[32m   Compiling[0m regex v1.11.1
+2025-07-28T15:25:49.7022839Z [1m[32m   Compiling[0m libloading v0.8.8
+2025-07-28T15:25:50.0333462Z [1m[32m   Compiling[0m png v0.17.5
+2025-07-28T15:25:51.4854155Z [1m[32m   Compiling[0m anstyle-query v1.1.3
+2025-07-28T15:25:51.5469432Z [1m[32m   Compiling[0m colorchoice v1.0.4
+2025-07-28T15:25:51.6183101Z [1m[32m   Compiling[0m xmlwriter v0.1.0
+2025-07-28T15:25:51.8148086Z [1m[32m   Compiling[0m pico-args v0.5.0
+2025-07-28T15:25:51.9772642Z [1m[32m   Compiling[0m thiserror v1.0.69
+2025-07-28T15:25:52.1418737Z [1m[32m   Compiling[0m is_terminal_polyfill v1.70.1
+2025-07-28T15:25:52.2048039Z [1m[32m   Compiling[0m napi-build v2.2.3
+2025-07-28T15:25:52.2422386Z [1m[32m   Compiling[0m ryu v1.0.20
+2025-07-28T15:25:52.3790120Z [1m[32m   Compiling[0m weezl v0.1.10
+2025-07-28T15:25:52.3842583Z [1m[32m   Compiling[0m color_quant v1.1.0
+2025-07-28T15:25:52.5121052Z [1m[32m   Compiling[0m itoa v1.0.15
+2025-07-28T15:25:52.8132964Z [1m[32m   Compiling[0m base64 v0.21.7
+2025-07-28T15:25:52.8456837Z [1m[32m   Compiling[0m gif v0.12.0
+2025-07-28T15:25:53.7560950Z [1m[32m   Compiling[0m usvg v0.34.1 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:25:53.9330192Z [1m[32m   Compiling[0m resvg-js v1.0.1 (D:\a\resvg-js\resvg-js)
+2025-07-28T15:25:54.1997627Z [1m[32m   Compiling[0m anstream v0.6.19
+2025-07-28T15:25:54.8903281Z [1m[32m   Compiling[0m napi-derive-backend v1.0.75
+2025-07-28T15:25:54.8999715Z [1m[32m   Compiling[0m tiny-skia v0.10.0
+2025-07-28T15:25:54.9042752Z [1m[32m   Compiling[0m env_filter v0.1.3
+2025-07-28T15:25:55.7493431Z [1m[32m   Compiling[0m napi-sys v2.4.0
+2025-07-28T15:25:56.8931681Z [1m[32m   Compiling[0m hashbrown v0.13.2
+2025-07-28T15:25:57.0335041Z [1m[32m   Compiling[0m futures-executor v0.3.31
+2025-07-28T15:25:57.5196175Z [1m[32m   Compiling[0m pathfinder_color v0.5.0
+2025-07-28T15:25:57.6535253Z [1m[32m   Compiling[0m pathfinder_geometry v0.5.1
+2025-07-28T15:25:57.7575080Z [1m[32m   Compiling[0m ctor v0.2.9
+2025-07-28T15:25:57.9333503Z [1m[32m   Compiling[0m thiserror-impl v1.0.69
+2025-07-28T15:25:57.9658004Z [1m[32m   Compiling[0m tokio v1.47.0
+2025-07-28T15:25:58.4866788Z [1m[32m   Compiling[0m kurbo v0.11.3
+2025-07-28T15:25:59.7902056Z [1m[32m   Compiling[0m rgb v0.8.52
+2025-07-28T15:26:00.3713956Z [1m[32m   Compiling[0m jiff v0.2.15
+2025-07-28T15:26:01.9329341Z [1m[32m   Compiling[0m ttf-parser v0.15.2
+2025-07-28T15:26:02.0745183Z [1m[32m   Compiling[0m jpeg-decoder v0.3.2
+2025-07-28T15:26:04.1802042Z [1m[32m   Compiling[0m bitflags v2.9.1
+2025-07-28T15:26:04.5755661Z [1m[32m   Compiling[0m arrayvec v0.5.2
+2025-07-28T15:26:04.6694448Z [1m[32m   Compiling[0m siphasher v1.0.1
+2025-07-28T15:26:04.9222511Z [1m[32m   Compiling[0m pathfinder_content v0.5.0
+2025-07-28T15:26:04.9509577Z [1m[32m   Compiling[0m svgtypes v0.15.3
+2025-07-28T15:26:05.3037072Z [1m[32m   Compiling[0m napi v2.16.17
+2025-07-28T15:26:06.7358350Z [1m[32m   Compiling[0m env_logger v0.11.8
+2025-07-28T15:26:06.8707736Z [1m[32m   Compiling[0m fontdue v0.7.3
+2025-07-28T15:26:07.8290327Z [1m[32m   Compiling[0m resvg v0.34.1 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:26:08.1686873Z [1m[32m   Compiling[0m napi-derive v2.16.13
+2025-07-28T15:26:10.8377698Z [1m[32m   Compiling[0m futures v0.3.31
+2025-07-28T15:26:10.9139524Z [1m[32m   Compiling[0m mimalloc v0.1.47
+2025-07-28T15:26:10.9775362Z [1m[32m   Compiling[0m serde_bytes v0.11.17
+2025-07-28T15:26:16.5252680Z [0m[1m[38;5;11mwarning[0m[0m[1m[38;5;15m: unused import: `svgtypes::FontFamily`[0m
+2025-07-28T15:26:16.5254594Z [0m  [0m[0m[1m[38;5;14m--> [0m[0msrc\lib.rs:29:5[0m
+2025-07-28T15:26:16.5255333Z [0m   [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.5256278Z [0m[1m[38;5;14m29[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0muse svgtypes::FontFamily;[0m
+2025-07-28T15:26:16.5257208Z [0m   [0m[0m[1m[38;5;14m|[0m[0m     [0m[0m[1m[38;5;11m^^^^^^^^^^^^^^^^^^^^[0m
+2025-07-28T15:26:16.5257839Z [0m   [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.5258694Z [0m   [0m[0m[1m[38;5;14m= [0m[0m[1m[38;5;15mnote[0m[0m: `#[warn(unused_imports)]` on by default[0m
+2025-07-28T15:26:16.5259466Z 
+2025-07-28T15:26:16.5260101Z [0m[1m[38;5;11mwarning[0m[0m[1m[38;5;15m: unused import: `std::sync::Arc`[0m
+2025-07-28T15:26:16.5260920Z [0m [0m[0m[1m[38;5;14m--> [0m[0msrc\options.rs:5:5[0m
+2025-07-28T15:26:16.5261485Z [0m  [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.5262284Z [0m[1m[38;5;14m5[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0muse std::sync::Arc;[0m
+2025-07-28T15:26:16.5263320Z [0m  [0m[0m[1m[38;5;14m|[0m[0m     [0m[0m[1m[38;5;11m^^^^^^^^^^^^^^[0m
+2025-07-28T15:26:16.5263688Z 
+2025-07-28T15:26:16.5264452Z [0m[1m[38;5;11mwarning[0m[0m[1m[38;5;15m: unused imports: `ImageHrefResolver`, `ImageKind`, and `Options`[0m
+2025-07-28T15:26:16.5265425Z [0m  [0m[0m[1m[38;5;14m--> [0m[0msrc\options.rs:13:25[0m
+2025-07-28T15:26:16.5266024Z [0m   [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.5267232Z [0m[1m[38;5;14m13[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0muse resvg::usvg::{self, ImageHrefResolver, ImageKind, Options, TreeParsing};[0m
+2025-07-28T15:26:16.5268699Z [0m   [0m[0m[1m[38;5;14m|[0m[0m                         [0m[0m[1m[38;5;11m^^^^^^^^^^^^^^^^^[0m[0m  [0m[0m[1m[38;5;11m^^^^^^^^^[0m[0m  [0m[0m[1m[38;5;11m^^^^^^^[0m
+2025-07-28T15:26:16.5269192Z 
+2025-07-28T15:26:16.5269706Z [0m[1m[38;5;11mwarning[0m[0m[1m[38;5;15m: unused import: `Deserializer`[0m
+2025-07-28T15:26:16.5270542Z [0m  [0m[0m[1m[38;5;14m--> [0m[0msrc\options.rs:14:26[0m
+2025-07-28T15:26:16.5271140Z [0m   [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.5272086Z [0m[1m[38;5;14m14[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0muse serde::{Deserialize, Deserializer};[0m
+2025-07-28T15:26:16.5273045Z [0m   [0m[0m[1m[38;5;14m|[0m[0m                          [0m[0m[1m[38;5;11m^^^^^^^^^^^^[0m
+2025-07-28T15:26:16.5273437Z 
+2025-07-28T15:26:16.7243601Z [0m[1m[38;5;11mwarning[0m[0m[1m[38;5;15m: unreachable pattern[0m
+2025-07-28T15:26:16.7244263Z [0m   [0m[0m[1m[38;5;14m--> [0m[0msrc\fonts.rs:278:9[0m
+2025-07-28T15:26:16.7244657Z [0m    [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.7245159Z [0m[1m[38;5;14m278[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m        _ => return None,[0m
+2025-07-28T15:26:16.7245814Z [0m    [0m[0m[1m[38;5;14m|[0m[0m         [0m[0m[1m[38;5;11m^[0m[0m [0m[0m[1m[38;5;11mno value can reach this[0m
+2025-07-28T15:26:16.7246243Z [0m    [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.7246766Z [0m[1m[38;5;10mnote[0m[0m: multiple earlier patterns match some of the same values[0m
+2025-07-28T15:26:16.7247303Z [0m   [0m[0m[1m[38;5;14m--> [0m[0msrc\fonts.rs:278:9[0m
+2025-07-28T15:26:16.7247663Z [0m    [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.7248446Z [0m[1m[38;5;14m271[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m        Source::Binary(ref bytes) => bytes.as_ref().as_ref().to_vec(),[0m
+2025-07-28T15:26:16.7249267Z [0m    [0m[0m[1m[38;5;14m|[0m[0m         [0m[0m[1m[38;5;14m-------------------------[0m[0m [0m[0m[1m[38;5;14mmatches some of the same values[0m
+2025-07-28T15:26:16.7250013Z [0m[1m[38;5;14m272[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m        Source::File(ref path) => {[0m
+2025-07-28T15:26:16.7250723Z [0m    [0m[0m[1m[38;5;14m|[0m[0m         [0m[0m[1m[38;5;14m----------------------[0m[0m [0m[0m[1m[38;5;14mmatches some of the same values[0m
+2025-07-28T15:26:16.7251150Z [0m[1m[38;5;14m...[0m
+2025-07-28T15:26:16.7251573Z [0m[1m[38;5;14m278[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m        _ => return None,[0m
+2025-07-28T15:26:16.7252209Z [0m    [0m[0m[1m[38;5;14m|[0m[0m         [0m[0m[1m[38;5;10m^[0m[0m [0m[0m[1m[38;5;10mcollectively making this unreachable[0m
+2025-07-28T15:26:16.7252861Z [0m    [0m[0m[1m[38;5;14m= [0m[0m[1m[38;5;15mnote[0m[0m: `#[warn(unreachable_patterns)]` on by default[0m
+2025-07-28T15:26:16.7253149Z 
+2025-07-28T15:26:16.8443921Z [0m[1m[38;5;11mwarning[0m[0m[1m[38;5;15m: variable does not need to be mutable[0m
+2025-07-28T15:26:16.8444660Z [0m   [0m[0m[1m[38;5;14m--> [0m[0msrc\lib.rs:157:14[0m
+2025-07-28T15:26:16.8445130Z [0m    [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.8445925Z [0m[1m[38;5;14m157[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m        let (mut opts, fontdb) = js_options.to_usvg_options();[0m
+2025-07-28T15:26:16.8446762Z [0m    [0m[0m[1m[38;5;14m|[0m[0m              [0m[0m[1m[38;5;14m----[0m[0m[1m[38;5;11m^^^^[0m
+2025-07-28T15:26:16.8448113Z [0m    [0m[0m[1m[38;5;14m|[0m[0m              [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.8449250Z [0m    [0m[0m[1m[38;5;14m|[0m[0m              [0m[0m[1m[38;5;14mhelp: remove this `mut`[0m
+2025-07-28T15:26:16.8449779Z [0m    [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.8450404Z [0m    [0m[0m[1m[38;5;14m= [0m[0m[1m[38;5;15mnote[0m[0m: `#[warn(unused_mut)]` on by default[0m
+2025-07-28T15:26:16.8450772Z 
+2025-07-28T15:26:16.9115360Z [0m[1m[38;5;11mwarning[0m[0m[1m[38;5;15m: trait `ResvgReadable` is never used[0m
+2025-07-28T15:26:16.9116737Z [0m  [0m[0m[1m[38;5;14m--> [0m[0msrc\options.rs:72:18[0m
+2025-07-28T15:26:16.9117356Z [0m   [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.9118183Z [0m[1m[38;5;14m72[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0mpub(crate) trait ResvgReadable {[0m
+2025-07-28T15:26:16.9119291Z [0m   [0m[0m[1m[38;5;14m|[0m[0m                  [0m[0m[1m[38;5;11m^^^^^^^^^^^^^[0m
+2025-07-28T15:26:16.9119717Z [0m   [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.9120206Z [0m   [0m[0m[1m[38;5;14m= [0m[0m[1m[38;5;15mnote[0m[0m: `#[warn(dead_code)]` on by default[0m
+2025-07-28T15:26:16.9120475Z 
+2025-07-28T15:26:16.9120783Z [0m[1m[38;5;11mwarning[0m[0m[1m[38;5;15m: field `font_name` is never read[0m
+2025-07-28T15:26:16.9121255Z [0m   [0m[0m[1m[38;5;14m--> [0m[0msrc\options.rs:208:9[0m
+2025-07-28T15:26:16.9121614Z [0m    [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.9122076Z [0m[1m[38;5;14m207[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0mpub struct JsFontBuffer {[0m
+2025-07-28T15:26:16.9122700Z [0m    [0m[0m[1m[38;5;14m|[0m[0m            [0m[0m[1m[38;5;14m------------[0m[0m [0m[0m[1m[38;5;14mfield in this struct[0m
+2025-07-28T15:26:16.9123271Z [0m[1m[38;5;14m208[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m    pub font_name: String,[0m
+2025-07-28T15:26:16.9123759Z [0m    [0m[0m[1m[38;5;14m|[0m[0m         [0m[0m[1m[38;5;11m^^^^^^^^^[0m
+2025-07-28T15:26:16.9123966Z 
+2025-07-28T15:26:16.9124321Z [0m[1m[38;5;11mwarning[0m[0m[1m[38;5;15m: fields `font_weight` and `font_style` are never read[0m
+2025-07-28T15:26:16.9124824Z [0m   [0m[0m[1m[38;5;14m--> [0m[0msrc\options.rs:326:9[0m
+2025-07-28T15:26:16.9125164Z [0m    [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.9125654Z [0m[1m[38;5;14m315[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0mpub struct JsTextLayoutBlockOptions {[0m
+2025-07-28T15:26:16.9126339Z [0m    [0m[0m[1m[38;5;14m|[0m[0m            [0m[0m[1m[38;5;14m------------------------[0m[0m [0m[0m[1m[38;5;14mfields in this struct[0m
+2025-07-28T15:26:16.9126732Z [0m[1m[38;5;14m...[0m
+2025-07-28T15:26:16.9127185Z [0m[1m[38;5;14m326[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m    pub font_weight: Option<String>,[0m
+2025-07-28T15:26:16.9127692Z [0m    [0m[0m[1m[38;5;14m|[0m[0m         [0m[0m[1m[38;5;11m^^^^^^^^^^^[0m
+2025-07-28T15:26:16.9128208Z [0m[1m[38;5;14m327[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m    pub font_style: Option<String>,[0m
+2025-07-28T15:26:16.9128726Z [0m    [0m[0m[1m[38;5;14m|[0m[0m         [0m[0m[1m[38;5;11m^^^^^^^^^^[0m
+2025-07-28T15:26:16.9129076Z [0m    [0m[0m[1m[38;5;14m|[0m
+2025-07-28T15:26:16.9129998Z [0m    [0m[0m[1m[38;5;14m= [0m[0m[1m[38;5;15mnote[0m[0m: `JsTextLayoutBlockOptions` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis[0m
+2025-07-28T15:26:16.9130793Z 
+2025-07-28T15:27:10.1801714Z [1m[33mwarning[0m[1m:[0m `resvg-js` (lib) generated 9 warnings (run `cargo fix --lib -p resvg-js` to apply 5 suggestions)
+2025-07-28T15:27:10.1802729Z [1m[32m    Finished[0m `release` profile [optimized] target(s) in 1m 57s
+2025-07-28T15:27:10.2471635Z ##[group]Run # Find the built .node file and copy it to the platform directory
+2025-07-28T15:27:10.2472190Z [36;1m# Find the built .node file and copy it to the platform directory[0m
+2025-07-28T15:27:10.2472678Z [36;1mfind . -name "resvgjs.win32-ia32-msvc.node" -exec cp {} npm/win32-ia32-msvc/ \;[0m
+2025-07-28T15:27:10.2483485Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:27:10.2483822Z env:
+2025-07-28T15:27:10.2484009Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:27:10.2484271Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:27:10.2484542Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:27:10.2484776Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:27:10.2484955Z   CARGO_TERM_COLOR: always
+2025-07-28T15:27:10.2485144Z ##[endgroup]
+2025-07-28T15:27:10.5295958Z ##[group]Run cd npm/win32-ia32-msvc
+2025-07-28T15:27:10.5296370Z [36;1mcd npm/win32-ia32-msvc[0m
+2025-07-28T15:27:10.5296727Z [36;1mPACKAGE_NAME=$(node -p "require('./package.json').name")[0m
+2025-07-28T15:27:10.5297125Z [36;1mVERSION=$(node -p "require('./package.json').version")[0m
+2025-07-28T15:27:10.5297504Z [36;1mecho "Checking if $PACKAGE_NAME@$VERSION already exists..."[0m
+2025-07-28T15:27:10.5297837Z [36;1m[0m
+2025-07-28T15:27:10.5298029Z [36;1m# Check if version exists in npm registry[0m
+2025-07-28T15:27:10.5298380Z [36;1mif npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then[0m
+2025-07-28T15:27:10.5298786Z [36;1m  echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"[0m
+2025-07-28T15:27:10.5299090Z [36;1melse[0m
+2025-07-28T15:27:10.5299364Z [36;1m  echo "📦 $PACKAGE_NAME@$VERSION does not exist, publishing..."[0m
+2025-07-28T15:27:10.5299683Z [36;1m  npm publish --access public[0m
+2025-07-28T15:27:10.5300017Z [36;1mfi[0m
+2025-07-28T15:27:10.5310840Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:27:10.5311175Z env:
+2025-07-28T15:27:10.5311360Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:27:10.5312281Z   NODE_AUTH_TOKEN: ***
+2025-07-28T15:27:10.5312498Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:27:10.5312737Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:27:10.5312910Z   CARGO_TERM_COLOR: always
+2025-07-28T15:27:10.5313098Z ##[endgroup]
+2025-07-28T15:27:10.6816877Z Checking if @aborrol/resvg-js-tolty-win32-ia32-msvc@2.6.2-ab17 already exists...
+2025-07-28T15:27:12.2489585Z 📦 @aborrol/resvg-js-tolty-win32-ia32-msvc@2.6.2-ab17 does not exist, publishing...
+2025-07-28T15:27:13.1927703Z npm warn publish npm auto-corrected some errors in your package.json when publishing.  Please run "npm pkg fix" to address these errors.
+2025-07-28T15:27:13.1929602Z npm warn publish errors corrected:
+2025-07-28T15:27:13.1930275Z npm warn publish "repository" was changed from a string to an object
+2025-07-28T15:27:13.1931321Z npm warn publish "repository.url" was normalized to "git+https://github.com/Aborrol/resvg-js.git"
+2025-07-28T15:27:13.1977160Z npm notice
+2025-07-28T15:27:13.1977780Z npm notice package: @aborrol/resvg-js-tolty-win32-ia32-msvc@2.6.2-ab17
+2025-07-28T15:27:13.1978275Z npm notice Tarball Contents
+2025-07-28T15:27:13.1981123Z npm notice 106B README.md
+2025-07-28T15:27:13.1981481Z npm notice 708B package.json
+2025-07-28T15:27:13.1981849Z npm notice Tarball Details
+2025-07-28T15:27:13.1983230Z npm notice name: @aborrol/resvg-js-tolty-win32-ia32-msvc
+2025-07-28T15:27:13.1983786Z npm notice version: 2.6.2-ab17
+2025-07-28T15:27:13.1986568Z npm notice filename: aborrol-resvg-js-tolty-win32-ia32-msvc-2.6.2-ab17.tgz
+2025-07-28T15:27:13.1987623Z npm notice package size: 538 B
+2025-07-28T15:27:13.1987966Z npm notice unpacked size: 814 B
+2025-07-28T15:27:13.1988450Z npm notice shasum: 5bf5fd98e2d8930b12a57d42b689fa47961076bf
+2025-07-28T15:27:13.1989934Z npm notice integrity: sha512-ED7EYhZ4kNOdE[...]LGXAZXjDq7zEA==
+2025-07-28T15:27:13.1990509Z npm notice total files: 2
+2025-07-28T15:27:13.1990819Z npm notice
+2025-07-28T15:27:13.2008345Z npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
+2025-07-28T15:27:14.3363167Z + @aborrol/resvg-js-tolty-win32-ia32-msvc@2.6.2-ab17
+2025-07-28T15:27:14.3640040Z Post job cleanup.
+2025-07-28T15:27:14.5812995Z Post job cleanup.
+2025-07-28T15:27:14.7897151Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-07-28T15:27:14.8122868Z git version 2.50.1.windows.1
+2025-07-28T15:27:14.8194642Z Temporarily overriding HOME='D:\a\_temp\52433455-3230-437d-9fc1-fff44f340841' before making global git config changes
+2025-07-28T15:27:14.8195969Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-28T15:27:14.8207288Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\resvg-js\resvg-js
+2025-07-28T15:27:14.8454932Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-07-28T15:27:14.8676627Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-07-28T15:27:15.3026727Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-28T15:27:15.3214181Z http.https://github.com/.extraheader
+2025-07-28T15:27:15.3247713Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-07-28T15:27:15.3472622Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-07-28T15:27:15.7852827Z Cleaning up orphan processes

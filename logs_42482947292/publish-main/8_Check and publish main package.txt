@@ -1,0 +1,141 @@
+﻿2025-07-28T15:29:08.6091922Z ##[group]Run PACKAGE_NAME=$(node -p "require('./package.json').name")
+2025-07-28T15:29:08.6092427Z [36;1mPACKAGE_NAME=$(node -p "require('./package.json').name")[0m
+2025-07-28T15:29:08.6092827Z [36;1mVERSION=$(node -p "require('./package.json').version")[0m
+2025-07-28T15:29:08.6093230Z [36;1mecho "Checking if $PACKAGE_NAME@$VERSION already exists..."[0m
+2025-07-28T15:29:08.6094284Z [36;1m[0m
+2025-07-28T15:29:08.6094517Z [36;1m# Check if version exists in npm registry[0m
+2025-07-28T15:29:08.6094893Z [36;1mif npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then[0m
+2025-07-28T15:29:08.6095329Z [36;1m  echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"[0m
+2025-07-28T15:29:08.6095655Z [36;1melse[0m
+2025-07-28T15:29:08.6095922Z [36;1m  echo "📦 $PACKAGE_NAME@$VERSION does not exist, publishing..."[0m
+2025-07-28T15:29:08.6096263Z [36;1m  npm publish --access public[0m
+2025-07-28T15:29:08.6096503Z [36;1mfi[0m
+2025-07-28T15:29:08.6124763Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:29:08.6125108Z env:
+2025-07-28T15:29:08.6125337Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-07-28T15:29:08.6126153Z   NODE_AUTH_TOKEN: ***
+2025-07-28T15:29:08.6126389Z   CARGO_HOME: /home/runner/.cargo
+2025-07-28T15:29:08.6126629Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:29:08.6126829Z   CARGO_TERM_COLOR: always
+2025-07-28T15:29:08.6127038Z ##[endgroup]
+2025-07-28T15:29:08.6738862Z Checking if @aborrol/resvg-js-tolty@2.6.2-ab17 already exists...
+2025-07-28T15:29:09.6020988Z 📦 @aborrol/resvg-js-tolty@2.6.2-ab17 does not exist, publishing...
+2025-07-28T15:29:09.9762127Z 
+2025-07-28T15:29:09.9762731Z > @aborrol/resvg-js-tolty@2.6.2-ab17 prepublishOnly
+2025-07-28T15:29:09.9763863Z > napi prepublish -t npm && esbuild js-binding.js --minify --allow-overwrite --outfile=js-binding.js
+2025-07-28T15:29:09.9764402Z 
+2025-07-28T15:29:10.1034244Z Fix CI build failure on Windows - use bash shell for find command
+2025-07-28T15:29:10.1034687Z 
+2025-07-28T15:29:10.3270786Z POST /repos/Aborrol/resvg-js/releases - 404 with id 0420:D3AE0:509BE:A4A18:68879746 in 221ms
+2025-07-28T15:29:10.3338166Z RequestError [HttpError]: Not Found - https://docs.github.com/rest/releases/releases#create-a-release
+2025-07-28T15:29:10.3339409Z     at /home/runner/work/resvg-js/resvg-js/node_modules/@napi-rs/cli/scripts/index.js:48114:21
+2025-07-28T15:29:10.3340480Z     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+2025-07-28T15:29:10.3341193Z   status: 404,
+2025-07-28T15:29:10.3341510Z   request: {
+2025-07-28T15:29:10.3341820Z     method: 'POST',
+2025-07-28T15:29:10.3342355Z     url: 'https://api.github.com/repos/Aborrol/resvg-js/releases',
+2025-07-28T15:29:10.3342914Z     headers: {
+2025-07-28T15:29:10.3343504Z       accept: 'application/vnd.github.v3+json',
+2025-07-28T15:29:10.3344319Z       'user-agent': 'octokit-rest.js/21.0.0 octokit-core.js/6.1.2 Node.js/20.19.4 (linux; x64)',
+2025-07-28T15:29:10.3345511Z       'content-type': 'application/json; charset=utf-8'
+2025-07-28T15:29:10.3345996Z     },
+2025-07-28T15:29:10.3346422Z     body: '{"tag_name":"v2.6.2-ab17","prerelease":false}',
+2025-07-28T15:29:10.3347017Z     request: { hook: [Function: bound bound register] }
+2025-07-28T15:29:10.3347467Z   },
+2025-07-28T15:29:10.3347742Z   response: {
+2025-07-28T15:29:10.3348283Z     url: 'https://api.github.com/repos/Aborrol/resvg-js/releases',
+2025-07-28T15:29:10.3348839Z     status: 404,
+2025-07-28T15:29:10.3349165Z     headers: {
+2025-07-28T15:29:10.3349552Z       'access-control-allow-origin': '*',
+2025-07-28T15:29:10.3351969Z       'access-control-expose-headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset',
+2025-07-28T15:29:10.3354293Z       'content-encoding': 'gzip',
+2025-07-28T15:29:10.3354751Z       'content-length': '122',
+2025-07-28T15:29:10.3355535Z       'content-security-policy': "default-src 'none'",
+2025-07-28T15:29:10.3356165Z       'content-type': 'application/json; charset=utf-8',
+2025-07-28T15:29:10.3356769Z       date: 'Mon, 28 Jul 2025 15:29:10 GMT',
+2025-07-28T15:29:10.3357512Z       'referrer-policy': 'origin-when-cross-origin, strict-origin-when-cross-origin',
+2025-07-28T15:29:10.3358182Z       server: 'github.com',
+2025-07-28T15:29:10.3358839Z       'strict-transport-security': 'max-age=31536000; includeSubdomains; preload',
+2025-07-28T15:29:10.3359619Z       vary: 'Accept-Encoding, Accept, X-Requested-With',
+2025-07-28T15:29:10.3360173Z       'x-content-type-options': 'nosniff',
+2025-07-28T15:29:10.3360659Z       'x-frame-options': 'deny',
+2025-07-28T15:29:10.3361175Z       'x-github-api-version-selected': '2022-11-28',
+2025-07-28T15:29:10.3361774Z       'x-github-media-type': 'github.v3; format=json',
+2025-07-28T15:29:10.3362432Z       'x-github-request-id': '0420:D3AE0:509BE:A4A18:68879746',
+2025-07-28T15:29:10.3363036Z       'x-ratelimit-limit': '60',
+2025-07-28T15:29:10.3363658Z       'x-ratelimit-remaining': '58',
+2025-07-28T15:29:10.3364148Z       'x-ratelimit-reset': '1753718206',
+2025-07-28T15:29:10.3364642Z       'x-ratelimit-resource': 'core',
+2025-07-28T15:29:10.3365111Z       'x-ratelimit-used': '2',
+2025-07-28T15:29:10.3365538Z       'x-xss-protection': '0'
+2025-07-28T15:29:10.3365910Z     },
+2025-07-28T15:29:10.3366185Z     data: {
+2025-07-28T15:29:10.3366489Z       message: 'Not Found',
+2025-07-28T15:29:10.3367221Z       documentation_url: 'https://docs.github.com/rest/releases/releases#create-a-release',
+2025-07-28T15:29:10.3367927Z       status: '404'
+2025-07-28T15:29:10.3368232Z     }
+2025-07-28T15:29:10.3368504Z   }
+2025-07-28T15:29:10.3368769Z }
+2025-07-28T15:29:10.3369977Z [[93m/home/runner/work/resvg-js/resvg-js/npm/win32-x64-msvc/index.win32-x64-msvc.node[39m] doesn't exist
+2025-07-28T15:29:10.3371447Z [[93m/home/runner/work/resvg-js/resvg-js/npm/darwin-x64/index.darwin-x64.node[39m] doesn't exist
+2025-07-28T15:29:10.3372927Z [[93m/home/runner/work/resvg-js/resvg-js/npm/linux-x64-gnu/index.linux-x64-gnu.node[39m] doesn't exist
+2025-07-28T15:29:10.4066113Z 
+2025-07-28T15:29:10.4066681Z   js-binding.js  5.7kb
+2025-07-28T15:29:10.4066980Z 
+2025-07-28T15:29:10.4067271Z ⚡ Done in 2ms
+2025-07-28T15:29:10.5970226Z npm warn publish npm auto-corrected some errors in your package.json when publishing.  Please run "npm pkg fix" to address these errors.
+2025-07-28T15:29:10.5971442Z npm warn publish errors corrected:
+2025-07-28T15:29:10.5972200Z npm warn publish "repository" was changed from a string to an object
+2025-07-28T15:29:10.5973509Z npm warn publish "repository.url" was normalized to "git+https://github.com/Aborrol/resvg-js.git"
+2025-07-28T15:29:10.6005855Z npm notice
+2025-07-28T15:29:10.6007327Z npm notice 📦  @aborrol/resvg-js-tolty@2.6.2-ab17
+2025-07-28T15:29:10.6007906Z npm notice Tarball Contents
+2025-07-28T15:29:10.6011043Z npm notice 16.7kB LICENSE
+2025-07-28T15:29:10.6011845Z npm notice 16.4kB README.md
+2025-07-28T15:29:10.6012310Z npm notice 2.2kB index.d.ts
+2025-07-28T15:29:10.6012705Z npm notice 9.5kB index.js
+2025-07-28T15:29:10.6013158Z npm notice 1.6kB js-binding.d.ts
+2025-07-28T15:29:10.6014037Z npm notice 5.8kB js-binding.js
+2025-07-28T15:29:10.6014610Z npm notice 710B npm/android-arm-eabi/package.json
+2025-07-28T15:29:10.6015273Z npm notice 107B npm/android-arm-eabi/README.md
+2025-07-28T15:29:10.6015907Z npm notice 705B npm/android-arm64/package.json
+2025-07-28T15:29:10.6016507Z npm notice 102B npm/android-arm64/README.md
+2025-07-28T15:29:10.6017097Z npm notice 701B npm/darwin-arm64/package.json
+2025-07-28T15:29:10.6017693Z npm notice 100B npm/darwin-arm64/README.md
+2025-07-28T15:29:10.6018278Z npm notice 692B npm/darwin-x64/package.json
+2025-07-28T15:29:10.6018834Z npm notice 97B npm/darwin-x64/README.md
+2025-07-28T15:29:10.6019349Z npm notice 1.6kB npm/index.d.ts
+2025-07-28T15:29:10.6019790Z npm notice 9.5kB npm/index.js
+2025-07-28T15:29:10.6020385Z npm notice 719B npm/linux-arm-gnueabihf/package.json
+2025-07-28T15:29:10.6021317Z npm notice 116B npm/linux-arm-gnueabihf/README.md
+2025-07-28T15:29:10.6021966Z npm notice 738B npm/linux-arm64-gnu/package.json
+2025-07-28T15:29:10.6022588Z npm notice 108B npm/linux-arm64-gnu/README.md
+2025-07-28T15:29:10.6023228Z npm notice 740B npm/linux-arm64-musl/package.json
+2025-07-28T15:29:10.6024084Z npm notice 110B npm/linux-arm64-musl/README.md
+2025-07-28T15:29:10.6024705Z npm notice 576B npm/linux-x64-gnu/package.json
+2025-07-28T15:29:10.6025308Z npm notice 105B npm/linux-x64-gnu/README.md
+2025-07-28T15:29:10.6025929Z npm notice 732B npm/linux-x64-musl/package.json
+2025-07-28T15:29:10.6026505Z npm notice 107B npm/linux-x64-musl/README.md
+2025-07-28T15:29:10.6026821Z npm notice 4.0kB npm/README.md
+2025-07-28T15:29:10.6027138Z npm notice 712B npm/win32-arm64-msvc/package.json
+2025-07-28T15:29:10.6027487Z npm notice 107B npm/win32-arm64-msvc/README.md
+2025-07-28T15:29:10.6027826Z npm notice 708B npm/win32-ia32-msvc/package.json
+2025-07-28T15:29:10.6028186Z npm notice 103B npm/win32-ia32-msvc/README.md
+2025-07-28T15:29:10.6028516Z npm notice 703B npm/win32-x64-msvc/package.json
+2025-07-28T15:29:10.6028851Z npm notice 104B npm/win32-x64-msvc/README.md
+2025-07-28T15:29:10.6029143Z npm notice 4.6kB package.json
+2025-07-28T15:29:10.6029452Z npm notice 1.9kB scripts/install-platform.js
+2025-07-28T15:29:10.6029764Z npm notice 1.1kB scripts/postinstall.js
+2025-07-28T15:29:10.6030085Z npm notice 996B scripts/update-versions.js
+2025-07-28T15:29:10.6030365Z npm notice Tarball Details
+2025-07-28T15:29:10.6030646Z npm notice name: @aborrol/resvg-js-tolty
+2025-07-28T15:29:10.6030956Z npm notice version: 2.6.2-ab17
+2025-07-28T15:29:10.6031411Z npm notice filename: aborrol-resvg-js-tolty-2.6.2-ab17.tgz
+2025-07-28T15:29:10.6032032Z npm notice package size: 18.1 kB
+2025-07-28T15:29:10.6032466Z npm notice unpacked size: 85.6 kB
+2025-07-28T15:29:10.6032835Z npm notice shasum: 39677f33fdbf0617f9081caf150830be0cab8960
+2025-07-28T15:29:10.6033272Z npm notice integrity: sha512-z/IbHtnr6owxB[...]c5Qk+Gez5vBig==
+2025-07-28T15:29:10.6033894Z npm notice total files: 37
+2025-07-28T15:29:10.6034111Z npm notice
+2025-07-28T15:29:10.6034547Z npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
+2025-07-28T15:29:11.8087682Z + @aborrol/resvg-js-tolty@2.6.2-ab17

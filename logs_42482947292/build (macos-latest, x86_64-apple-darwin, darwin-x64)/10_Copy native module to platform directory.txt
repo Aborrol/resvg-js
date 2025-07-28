@@ -1,0 +1,11 @@
+﻿2025-07-28T15:25:11.5929280Z ##[group]Run # Find the built .node file and copy it to the platform directory
+2025-07-28T15:25:11.5930010Z [36;1m# Find the built .node file and copy it to the platform directory[0m
+2025-07-28T15:25:11.5930430Z [36;1mfind . -name "resvgjs.darwin-x64.node" -exec cp {} npm/darwin-x64/ \;[0m
+2025-07-28T15:25:11.6027540Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:25:11.6027830Z env:
+2025-07-28T15:25:11.6028250Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:25:11.6028550Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:25:11.6028800Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:25:11.6029010Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:25:11.6029250Z   CARGO_TERM_COLOR: always
+2025-07-28T15:25:11.6029440Z ##[endgroup]

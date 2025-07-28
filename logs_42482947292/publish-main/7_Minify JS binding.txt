@@ -1,0 +1,14 @@
+﻿2025-07-28T15:29:08.2499987Z ##[group]Run npx esbuild js-binding.js --minify --allow-overwrite --outfile=js-binding.js
+2025-07-28T15:29:08.2500620Z [36;1mnpx esbuild js-binding.js --minify --allow-overwrite --outfile=js-binding.js[0m
+2025-07-28T15:29:08.2529107Z shell: /usr/bin/bash -e {0}
+2025-07-28T15:29:08.2529348Z env:
+2025-07-28T15:29:08.2529575Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-07-28T15:29:08.2529912Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:29:08.2530209Z   CARGO_HOME: /home/runner/.cargo
+2025-07-28T15:29:08.2530443Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:29:08.2530651Z   CARGO_TERM_COLOR: always
+2025-07-28T15:29:08.2530859Z ##[endgroup]
+2025-07-28T15:29:08.5962244Z 
+2025-07-28T15:29:08.5962560Z   js-binding.js  5.7kb
+2025-07-28T15:29:08.5962843Z 
+2025-07-28T15:29:08.5963246Z ⚡ Done in 3ms

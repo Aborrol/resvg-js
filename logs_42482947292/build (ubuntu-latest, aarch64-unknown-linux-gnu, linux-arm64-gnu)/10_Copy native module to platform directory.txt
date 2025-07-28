@@ -1,0 +1,11 @@
+﻿2025-07-28T15:25:35.3142116Z ##[group]Run # Find the built .node file and copy it to the platform directory
+2025-07-28T15:25:35.3142626Z [36;1m# Find the built .node file and copy it to the platform directory[0m
+2025-07-28T15:25:35.3143116Z [36;1mfind . -name "resvgjs.linux-arm64-gnu.node" -exec cp {} npm/linux-arm64-gnu/ \;[0m
+2025-07-28T15:25:35.3171092Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:25:35.3171413Z env:
+2025-07-28T15:25:35.3171653Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-07-28T15:25:35.3171988Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:25:35.3172261Z   CARGO_HOME: /home/runner/.cargo
+2025-07-28T15:25:35.3172497Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:25:35.3172699Z   CARGO_TERM_COLOR: always
+2025-07-28T15:25:35.3172927Z ##[endgroup]

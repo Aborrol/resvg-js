@@ -9,6 +9,14 @@ This changelog also contains important changes in dependencies.
 
 ## [Unreleased]
 
+## [2.6.2-ab18] - 2025-01-28
+
+### Fixed
+
+- **BREAKING**: Add debug logging to understand why .node file is not being copied in CI
+  - Added extensive debug output to copy step to identify file location issues
+  - This will help diagnose why native modules are not included in platform packages
+
 ## [2.6.2-ab17] - 2025-01-28
 
 ### Fixed

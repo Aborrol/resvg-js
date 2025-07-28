@@ -1,0 +1,693 @@
+﻿2025-07-28T15:23:19.4706650Z Current runner version: '2.327.0'
+2025-07-28T15:23:19.4721140Z ##[group]Runner Image Provisioner
+2025-07-28T15:23:19.4721650Z Hosted Compute Agent
+2025-07-28T15:23:19.4721990Z Version: 20250711.363
+2025-07-28T15:23:19.4722370Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-28T15:23:19.4722790Z Build Date: 2025-07-11T20:04:25Z
+2025-07-28T15:23:19.4723150Z ##[endgroup]
+2025-07-28T15:23:19.4723490Z ##[group]Operating System
+2025-07-28T15:23:19.4723840Z macOS
+2025-07-28T15:23:19.4724120Z 14.7.6
+2025-07-28T15:23:19.4724390Z 23H626
+2025-07-28T15:23:19.4724670Z ##[endgroup]
+2025-07-28T15:23:19.4724970Z ##[group]Runner Image
+2025-07-28T15:23:19.4725290Z Image: macos-14-arm64
+2025-07-28T15:23:19.4725610Z Version: 20250723.1691
+2025-07-28T15:23:19.4726290Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20250723.1691/images/macos/macos-14-arm64-Readme.md
+2025-07-28T15:23:19.4727310Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20250723.1691
+2025-07-28T15:23:19.4727910Z ##[endgroup]
+2025-07-28T15:23:19.4729430Z ##[group]GITHUB_TOKEN Permissions
+2025-07-28T15:23:19.4730510Z Actions: write
+2025-07-28T15:23:19.4730820Z Attestations: write
+2025-07-28T15:23:19.4731130Z Checks: write
+2025-07-28T15:23:19.4731440Z Contents: write
+2025-07-28T15:23:19.4731740Z Deployments: write
+2025-07-28T15:23:19.4732050Z Discussions: write
+2025-07-28T15:23:19.4732360Z Issues: write
+2025-07-28T15:23:19.4732660Z Metadata: read
+2025-07-28T15:23:19.4732960Z Models: read
+2025-07-28T15:23:19.4733250Z Packages: write
+2025-07-28T15:23:19.4733550Z Pages: write
+2025-07-28T15:23:19.4733860Z PullRequests: write
+2025-07-28T15:23:19.4734180Z RepositoryProjects: write
+2025-07-28T15:23:19.4734530Z SecurityEvents: write
+2025-07-28T15:23:19.4734890Z Statuses: write
+2025-07-28T15:23:19.4735190Z ##[endgroup]
+2025-07-28T15:23:19.4736650Z Secret source: Actions
+2025-07-28T15:23:19.4737040Z Prepare workflow directory
+2025-07-28T15:23:19.4938460Z Prepare all required actions
+2025-07-28T15:23:19.4964390Z Getting action download info
+2025-07-28T15:23:19.8930640Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-28T15:23:19.8931940Z Version: 4.2.2
+2025-07-28T15:23:19.8933110Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-28T15:23:19.8934380Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-28T15:23:19.8935210Z ##[endgroup]
+2025-07-28T15:23:20.0999450Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-07-28T15:23:20.1000020Z Version: 4.4.0
+2025-07-28T15:23:20.1000650Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-07-28T15:23:20.1001330Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-07-28T15:23:20.1001840Z ##[endgroup]
+2025-07-28T15:23:20.1768080Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:4305c38b25d97ef35a8ad1f985ccf2d2242004f2)
+2025-07-28T15:23:20.9966450Z Complete job name: build (macos-latest, aarch64-apple-darwin, darwin-arm64)
+2025-07-28T15:23:21.0333810Z ##[group]Run actions/checkout@v4
+2025-07-28T15:23:21.0334470Z with:
+2025-07-28T15:23:21.0334960Z   repository: Aborrol/resvg-js
+2025-07-28T15:23:21.0335480Z   token: ***
+2025-07-28T15:23:21.0335790Z   ssh-strict: true
+2025-07-28T15:23:21.0336110Z   ssh-user: git
+2025-07-28T15:23:21.0336440Z   persist-credentials: true
+2025-07-28T15:23:21.0336800Z   clean: true
+2025-07-28T15:23:21.0337130Z   sparse-checkout-cone-mode: true
+2025-07-28T15:23:21.0337530Z   fetch-depth: 1
+2025-07-28T15:23:21.0337860Z   fetch-tags: false
+2025-07-28T15:23:21.0338200Z   show-progress: true
+2025-07-28T15:23:21.0338540Z   lfs: false
+2025-07-28T15:23:21.0338860Z   submodules: false
+2025-07-28T15:23:21.0339190Z   set-safe-directory: true
+2025-07-28T15:23:21.0339890Z ##[endgroup]
+2025-07-28T15:23:21.3226130Z Syncing repository: Aborrol/resvg-js
+2025-07-28T15:23:21.3227460Z ##[group]Getting Git version info
+2025-07-28T15:23:21.3228010Z Working directory is '/Users/runner/work/resvg-js/resvg-js'
+2025-07-28T15:23:21.3229470Z [command]/opt/homebrew/bin/git version
+2025-07-28T15:23:21.3428160Z git version 2.50.1
+2025-07-28T15:23:21.3455600Z ##[endgroup]
+2025-07-28T15:23:21.3464840Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/bc86f247-1562-4aaf-ac4f-8acbb1e4a19c/.gitconfig'
+2025-07-28T15:23:21.3470750Z Temporarily overriding HOME='/Users/runner/work/_temp/bc86f247-1562-4aaf-ac4f-8acbb1e4a19c' before making global git config changes
+2025-07-28T15:23:21.3471870Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-28T15:23:21.3474220Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/resvg-js/resvg-js
+2025-07-28T15:23:21.3563450Z Deleting the contents of '/Users/runner/work/resvg-js/resvg-js'
+2025-07-28T15:23:21.3564710Z ##[group]Initializing the repository
+2025-07-28T15:23:21.3565350Z [command]/opt/homebrew/bin/git init /Users/runner/work/resvg-js/resvg-js
+2025-07-28T15:23:21.3697940Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-28T15:23:21.3699100Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-28T15:23:21.3700020Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-28T15:23:21.3700640Z hint:
+2025-07-28T15:23:21.3701040Z hint: 	git config --global init.defaultBranch <name>
+2025-07-28T15:23:21.3701520Z hint:
+2025-07-28T15:23:21.3701980Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-28T15:23:21.3702720Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-28T15:23:21.3703310Z hint:
+2025-07-28T15:23:21.3703630Z hint: 	git branch -m <name>
+2025-07-28T15:23:21.3704000Z hint:
+2025-07-28T15:23:21.3704500Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-07-28T15:23:21.3705270Z Initialized empty Git repository in /Users/runner/work/resvg-js/resvg-js/.git/
+2025-07-28T15:23:21.3706720Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:21.3756530Z ##[endgroup]
+2025-07-28T15:23:21.3757150Z ##[group]Disabling automatic garbage collection
+2025-07-28T15:23:21.3758560Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2025-07-28T15:23:21.3793620Z ##[endgroup]
+2025-07-28T15:23:21.3794190Z ##[group]Setting up auth
+2025-07-28T15:23:21.3797830Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-28T15:23:21.3831690Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-28T15:23:21.4354140Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-28T15:23:21.4388340Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-28T15:23:21.4809740Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-28T15:23:21.4850610Z ##[endgroup]
+2025-07-28T15:23:21.4851220Z ##[group]Fetching the repository
+2025-07-28T15:23:21.4856030Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6:refs/tags/v2.6.2-ab17
+2025-07-28T15:23:22.4345670Z From https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:22.4346880Z  * [new ref]         b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6 -> v2.6.2-ab17
+2025-07-28T15:23:22.4388680Z ##[endgroup]
+2025-07-28T15:23:22.4389370Z ##[group]Determining the checkout info
+2025-07-28T15:23:22.4390130Z ##[endgroup]
+2025-07-28T15:23:22.4392890Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2025-07-28T15:23:22.4485290Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-28T15:23:22.4526720Z ##[group]Checking out the ref
+2025-07-28T15:23:22.4528690Z [command]/opt/homebrew/bin/git checkout --progress --force refs/tags/v2.6.2-ab17
+2025-07-28T15:23:22.4804000Z HEAD is now at b6b5364 Fix CI build failure on Windows - use bash shell for find command
+2025-07-28T15:23:22.4815360Z ##[endgroup]
+2025-07-28T15:23:22.4871780Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2025-07-28T15:23:22.4906130Z b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6
+2025-07-28T15:23:22.5111960Z ##[group]Run actions/setup-node@v4
+2025-07-28T15:23:22.5112700Z with:
+2025-07-28T15:23:22.5113220Z   node-version: 20
+2025-07-28T15:23:22.5113860Z   registry-url: https://registry.npmjs.org
+2025-07-28T15:23:22.5114640Z   always-auth: false
+2025-07-28T15:23:22.5115260Z   check-latest: false
+2025-07-28T15:23:22.5115990Z   token: ***
+2025-07-28T15:23:22.5116540Z ##[endgroup]
+2025-07-28T15:23:22.6432430Z Found in cache @ /Users/runner/hostedtoolcache/node/20.19.4/arm64
+2025-07-28T15:23:22.6434990Z ##[group]Environment details
+2025-07-28T15:23:23.2543320Z node: v20.19.4
+2025-07-28T15:23:23.2544000Z npm: 10.8.2
+2025-07-28T15:23:23.2544530Z yarn: 3.8.5
+2025-07-28T15:23:23.2545650Z ##[endgroup]
+2025-07-28T15:23:23.2820540Z ##[group]Run dtolnay/rust-toolchain@stable
+2025-07-28T15:23:23.2821410Z with:
+2025-07-28T15:23:23.2821850Z   toolchain: stable
+2025-07-28T15:23:23.2822330Z env:
+2025-07-28T15:23:23.2822880Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:23.2823650Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:23.2824280Z ##[endgroup]
+2025-07-28T15:23:23.2913410Z ##[group]Run : parse toolchain version
+2025-07-28T15:23:23.2914090Z [36;1m: parse toolchain version[0m
+2025-07-28T15:23:23.2914910Z [36;1mif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2025-07-28T15:23:23.2915760Z [36;1m  if [[ macOS == macOS ]]; then[0m
+2025-07-28T15:23:23.2916860Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:23.2917960Z [36;1m  else[0m
+2025-07-28T15:23:23.2918810Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:23.2919800Z [36;1m  fi[0m
+2025-07-28T15:23:23.2920470Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2025-07-28T15:23:23.2921600Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:23.2922600Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2025-07-28T15:23:23.2923710Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:23.2924740Z [36;1melse[0m
+2025-07-28T15:23:23.2925310Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:23.2925980Z [36;1mfi[0m
+2025-07-28T15:23:23.2979010Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:23.2979730Z env:
+2025-07-28T15:23:23.2980270Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:23.2981040Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:23.2981670Z   toolchain: stable
+2025-07-28T15:23:23.2982160Z ##[endgroup]
+2025-07-28T15:23:23.3265420Z ##[group]Run : construct rustup command line
+2025-07-28T15:23:23.3266220Z [36;1m: construct rustup command line[0m
+2025-07-28T15:23:23.3267170Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:23.3268460Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:23.3269510Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:23.3315660Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:23.3316350Z env:
+2025-07-28T15:23:23.3316910Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:23.3317850Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:23.3318470Z   targets: 
+2025-07-28T15:23:23.3318960Z   components: 
+2025-07-28T15:23:23.3319470Z ##[endgroup]
+2025-07-28T15:23:23.3545880Z ##[group]Run : set $CARGO_HOME
+2025-07-28T15:23:23.3546520Z [36;1m: set $CARGO_HOME[0m
+2025-07-28T15:23:23.3547250Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV[0m
+2025-07-28T15:23:23.3593470Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:23.3594150Z env:
+2025-07-28T15:23:23.3594680Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:23.3595430Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:23.3596050Z ##[endgroup]
+2025-07-28T15:23:23.3854890Z ##[group]Run : install rustup if needed
+2025-07-28T15:23:23.3855540Z [36;1m: install rustup if needed[0m
+2025-07-28T15:23:23.3856180Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2025-07-28T15:23:23.3857650Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y[0m
+2025-07-28T15:23:23.3859400Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+2025-07-28T15:23:23.3860020Z [36;1mfi[0m
+2025-07-28T15:23:23.3908520Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:23.3909180Z env:
+2025-07-28T15:23:23.3909710Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:23.3910450Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:23.3911080Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:23.3911630Z ##[endgroup]
+2025-07-28T15:23:23.5249750Z ##[group]Run rustup toolchain install stable --profile minimal --no-self-update
+2025-07-28T15:23:23.5251800Z [36;1mrustup toolchain install stable --profile minimal --no-self-update[0m
+2025-07-28T15:23:23.5336530Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:23.5337610Z env:
+2025-07-28T15:23:23.5338490Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:23.5339680Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:23.5340700Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:23.5341700Z ##[endgroup]
+2025-07-28T15:23:23.8025880Z info: syncing channel updates for 'stable-aarch64-apple-darwin'
+2025-07-28T15:23:24.0132300Z 
+2025-07-28T15:23:24.0211260Z info: self-update is disabled for this build of rustup
+2025-07-28T15:23:24.0211930Z   stable-aarch64-apple-darwin unchanged - rustc 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:24.0212750Z info: any updates to rustup will need to be fetched with your system package manager
+2025-07-28T15:23:24.0213060Z 
+2025-07-28T15:23:24.0237620Z ##[group]Run rustup default stable
+2025-07-28T15:23:24.0237880Z [36;1mrustup default stable[0m
+2025-07-28T15:23:24.0290530Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:24.0290780Z env:
+2025-07-28T15:23:24.0290980Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:24.0291300Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:24.0291530Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:24.0291720Z ##[endgroup]
+2025-07-28T15:23:24.0540930Z info: using existing install for 'stable-aarch64-apple-darwin'
+2025-07-28T15:23:24.0741690Z info: default toolchain set to 'stable-aarch64-apple-darwin'
+2025-07-28T15:23:24.0741990Z 
+2025-07-28T15:23:24.0803020Z   stable-aarch64-apple-darwin unchanged - rustc 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:24.0804770Z info: note that the toolchain '1.88.0-aarch64-apple-darwin' is currently in use (overridden by '/Users/runner/work/resvg-js/resvg-js/rust-toolchain')
+2025-07-28T15:23:24.0805220Z 
+2025-07-28T15:23:24.0829100Z ##[group]Run : create cachekey
+2025-07-28T15:23:24.0829310Z [36;1m: create cachekey[0m
+2025-07-28T15:23:24.0829660Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2025-07-28T15:23:24.0830180Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2025-07-28T15:23:24.0830750Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:24.0876890Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:24.0877120Z env:
+2025-07-28T15:23:24.0877290Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:24.0877540Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:24.0877770Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:24.0877940Z ##[endgroup]
+2025-07-28T15:23:24.1536880Z ##[group]Run : disable incremental compilation
+2025-07-28T15:23:24.1537140Z [36;1m: disable incremental compilation[0m
+2025-07-28T15:23:24.1537400Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2025-07-28T15:23:24.1537650Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2025-07-28T15:23:24.1537840Z [36;1mfi[0m
+2025-07-28T15:23:24.1584110Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:24.1584360Z env:
+2025-07-28T15:23:24.1584540Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:24.1584790Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:24.1585160Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:24.1585340Z ##[endgroup]
+2025-07-28T15:23:24.1776710Z ##[group]Run : enable colors in Cargo output
+2025-07-28T15:23:24.1776970Z [36;1m: enable colors in Cargo output[0m
+2025-07-28T15:23:24.1777220Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2025-07-28T15:23:24.1777460Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2025-07-28T15:23:24.1777660Z [36;1mfi[0m
+2025-07-28T15:23:24.1824570Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:24.1824820Z env:
+2025-07-28T15:23:24.1825030Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:24.1825290Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:24.1825510Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:24.1825750Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:24.1825950Z ##[endgroup]
+2025-07-28T15:23:24.2020640Z ##[group]Run : enable Cargo sparse registry
+2025-07-28T15:23:24.2020910Z [36;1m: enable Cargo sparse registry[0m
+2025-07-28T15:23:24.2021270Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2025-07-28T15:23:24.2021780Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/Users/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2025-07-28T15:23:24.2022310Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2025-07-28T15:23:24.2022730Z [36;1m    touch "/Users/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-07-28T15:23:24.2023120Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2025-07-28T15:23:24.2023470Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2025-07-28T15:23:24.2023900Z [36;1m    touch "/Users/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-07-28T15:23:24.2024320Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2025-07-28T15:23:24.2024560Z [36;1m  fi[0m
+2025-07-28T15:23:24.2024710Z [36;1mfi[0m
+2025-07-28T15:23:24.2072670Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:24.2072910Z env:
+2025-07-28T15:23:24.2073080Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:24.2073340Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:24.2073550Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:24.2073730Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:24.2074020Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:24.2074190Z ##[endgroup]
+2025-07-28T15:23:24.2558890Z ##[group]Run : work around spurious network errors in curl 8.0
+2025-07-28T15:23:24.2559250Z [36;1m: work around spurious network errors in curl 8.0[0m
+2025-07-28T15:23:24.2559690Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2025-07-28T15:23:24.2560370Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2025-07-28T15:23:24.2560710Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2025-07-28T15:23:24.2560930Z [36;1mfi[0m
+2025-07-28T15:23:24.2607460Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:24.2607680Z env:
+2025-07-28T15:23:24.2607860Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:24.2608110Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:24.2608310Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:24.2608490Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:24.2608640Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:24.2608810Z ##[endgroup]
+2025-07-28T15:23:24.2928350Z ##[group]Run rustc +stable --version --verbose
+2025-07-28T15:23:24.2928660Z [36;1mrustc +stable --version --verbose[0m
+2025-07-28T15:23:24.2984590Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:24.2984870Z env:
+2025-07-28T15:23:24.2985050Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:24.2985310Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:24.2985730Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:24.2985910Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:24.2986070Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:24.2986220Z ##[endgroup]
+2025-07-28T15:23:24.3279130Z rustc 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:24.3279500Z binary: rustc
+2025-07-28T15:23:24.3279820Z commit-hash: 6b00bc3880198600130e1cf62b8f8a93494488cc
+2025-07-28T15:23:24.3280090Z commit-date: 2025-06-23
+2025-07-28T15:23:24.3280310Z host: aarch64-apple-darwin
+2025-07-28T15:23:24.3280510Z release: 1.88.0
+2025-07-28T15:23:24.3282340Z LLVM version: 20.1.5
+2025-07-28T15:23:24.3332180Z ##[group]Run npm ci
+2025-07-28T15:23:24.3332360Z [36;1mnpm ci[0m
+2025-07-28T15:23:24.3332510Z [36;1mnpm install -g @napi-rs/cli[0m
+2025-07-28T15:23:24.3378720Z shell: /bin/bash -e {0}
+2025-07-28T15:23:24.3378900Z env:
+2025-07-28T15:23:24.3379070Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:24.3379320Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:24.3379550Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:24.3379780Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:24.3379930Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:24.3380110Z ##[endgroup]
+2025-07-28T15:23:26.7982990Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-07-28T15:23:26.8433340Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-07-28T15:23:26.8600370Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-07-28T15:23:31.4164070Z 
+2025-07-28T15:23:31.4164940Z > @aborrol/resvg-js-tolty@2.6.2-ab17 postinstall
+2025-07-28T15:23:31.4168860Z > node scripts/postinstall.js
+2025-07-28T15:23:31.4169260Z 
+2025-07-28T15:23:31.4435330Z Checking if platform package is installed: @aborrol/resvg-js-tolty-darwin-arm64
+2025-07-28T15:23:31.4439220Z Installing platform package: @aborrol/resvg-js-tolty-darwin-arm64
+2025-07-28T15:23:32.5858560Z 
+2025-07-28T15:23:32.5859320Z added 1 package, removed 1 package, and audited 472 packages in 1s
+2025-07-28T15:23:32.5859560Z 
+2025-07-28T15:23:32.5859710Z 193 packages are looking for funding
+2025-07-28T15:23:32.5859960Z   run `npm fund` for details
+2025-07-28T15:23:32.5891230Z 
+2025-07-28T15:23:32.5901980Z 1 moderate severity vulnerability
+2025-07-28T15:23:32.5902320Z 
+2025-07-28T15:23:32.5902760Z To address all issues (including breaking changes), run:
+2025-07-28T15:23:32.5903230Z   npm audit fix --force
+2025-07-28T15:23:32.5903460Z 
+2025-07-28T15:23:32.5903660Z Run `npm audit` for details.
+2025-07-28T15:23:32.5936600Z ✅ Successfully installed @aborrol/resvg-js-tolty-darwin-arm64
+2025-07-28T15:23:32.6006730Z 
+2025-07-28T15:23:32.6009790Z added 470 packages, and audited 471 packages in 8s
+2025-07-28T15:23:32.6009990Z 
+2025-07-28T15:23:32.6010150Z 193 packages are looking for funding
+2025-07-28T15:23:32.6010380Z   run `npm fund` for details
+2025-07-28T15:23:32.6051240Z 
+2025-07-28T15:23:32.6051860Z 1 moderate severity vulnerability
+2025-07-28T15:23:32.6061260Z 
+2025-07-28T15:23:32.6086390Z To address all issues (including breaking changes), run:
+2025-07-28T15:23:32.6108200Z   npm audit fix --force
+2025-07-28T15:23:32.6108440Z 
+2025-07-28T15:23:32.6108600Z Run `npm audit` for details.
+2025-07-28T15:23:42.6898260Z 
+2025-07-28T15:23:42.6898940Z added 81 packages in 10s
+2025-07-28T15:23:42.6899720Z 
+2025-07-28T15:23:42.6907290Z 14 packages are looking for funding
+2025-07-28T15:23:42.6907570Z   run `npm fund` for details
+2025-07-28T15:23:42.6983460Z ##[group]Run rustup target add aarch64-apple-darwin
+2025-07-28T15:23:42.6983800Z [36;1mrustup target add aarch64-apple-darwin[0m
+2025-07-28T15:23:42.7056710Z shell: /bin/bash -e {0}
+2025-07-28T15:23:42.7056900Z env:
+2025-07-28T15:23:42.7057080Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:42.7057350Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:42.7057560Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:42.7057740Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:42.7057910Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:42.7058120Z ##[endgroup]
+2025-07-28T15:23:42.7371370Z info: syncing channel updates for '1.88.0-aarch64-apple-darwin'
+2025-07-28T15:23:42.9048000Z info: latest update on 2025-06-26, rust version 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:42.9059590Z info: downloading component 'cargo'
+2025-07-28T15:23:43.0691200Z info: downloading component 'rust-std'
+2025-07-28T15:23:43.3780350Z info: downloading component 'rustc'
+2025-07-28T15:23:44.0368330Z info: installing component 'cargo'
+2025-07-28T15:23:44.5713250Z info: installing component 'rust-std'
+2025-07-28T15:23:45.9953070Z info: installing component 'rustc'
+2025-07-28T15:23:49.4287430Z info: component 'rust-std' for target 'aarch64-apple-darwin' is up to date
+2025-07-28T15:23:49.4361090Z ##[group]Run node scripts/update-versions.js
+2025-07-28T15:23:49.4361350Z [36;1mnode scripts/update-versions.js[0m
+2025-07-28T15:23:49.4415780Z shell: /bin/bash -e {0}
+2025-07-28T15:23:49.4415950Z env:
+2025-07-28T15:23:49.4416120Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:49.4416350Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:49.4416540Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:49.4416700Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:49.4416850Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:49.4417060Z ##[endgroup]
+2025-07-28T15:23:49.5018390Z Updating all platform packages to version: 2.6.2-ab17
+2025-07-28T15:23:49.5059280Z Updating npm/win32-x64-msvc/package.json...
+2025-07-28T15:23:49.5064620Z Updating npm/win32-ia32-msvc/package.json...
+2025-07-28T15:23:49.5068160Z Updating npm/win32-arm64-msvc/package.json...
+2025-07-28T15:23:49.5069690Z Updating npm/linux-x64-musl/package.json...
+2025-07-28T15:23:49.5073140Z Updating npm/linux-x64-gnu/package.json...
+2025-07-28T15:23:49.5074680Z Updating npm/linux-arm64-musl/package.json...
+2025-07-28T15:23:49.5078030Z Updating npm/linux-arm64-gnu/package.json...
+2025-07-28T15:23:49.5079710Z Updating npm/linux-arm-gnueabihf/package.json...
+2025-07-28T15:23:49.5083210Z Updating npm/darwin-x64/package.json...
+2025-07-28T15:23:49.5087180Z Updating npm/darwin-arm64/package.json...
+2025-07-28T15:23:49.5088600Z Updating npm/android-arm64/package.json...
+2025-07-28T15:23:49.5092090Z Updating npm/android-arm-eabi/package.json...
+2025-07-28T15:23:49.5093850Z ✅ Updated 12 platform packages to version 2.6.2-ab17
+2025-07-28T15:23:49.5094440Z ℹ️  Note: optionalDependencies are not added to main package.json to avoid CI issues
+2025-07-28T15:23:49.5134770Z ##[group]Run napi build --target aarch64-apple-darwin --release
+2025-07-28T15:23:49.5135110Z [36;1mnapi build --target aarch64-apple-darwin --release[0m
+2025-07-28T15:23:49.5181430Z shell: /bin/bash -e {0}
+2025-07-28T15:23:49.5181580Z env:
+2025-07-28T15:23:49.5181740Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:23:49.5182050Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:49.5182250Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:23:49.5182410Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:49.5182570Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:49.5182720Z ##[endgroup]
+2025-07-28T15:23:55.3511690Z [1m[32m   Compiling[0m proc-macro2 v1.0.95
+2025-07-28T15:23:55.3512590Z [1m[32m   Compiling[0m unicode-ident v1.0.18
+2025-07-28T15:23:55.3513000Z [1m[32m   Compiling[0m version_check v0.9.5
+2025-07-28T15:23:55.6221150Z [1m[32m   Compiling[0m log v0.4.27
+2025-07-28T15:23:55.6950120Z [1m[32m   Compiling[0m semver v1.0.26
+2025-07-28T15:23:55.7759820Z [1m[32m   Compiling[0m arrayvec v0.7.6
+2025-07-28T15:23:55.8932110Z [1m[32m   Compiling[0m cfg-if v1.0.1
+2025-07-28T15:23:55.9091600Z [1m[32m   Compiling[0m memchr v2.7.5
+2025-07-28T15:23:56.2728490Z [1m[32m   Compiling[0m bytemuck v1.23.1
+2025-07-28T15:23:56.4356030Z [1m[32m   Compiling[0m crc32fast v1.5.0
+2025-07-28T15:23:57.3790210Z [1m[32m   Compiling[0m float-cmp v0.9.0
+2025-07-28T15:23:57.4240850Z [1m[32m   Compiling[0m strict-num v0.1.1
+2025-07-28T15:23:57.4873260Z [1m[32m   Compiling[0m arrayref v0.3.9
+2025-07-28T15:23:57.5043580Z [1m[32m   Compiling[0m smallvec v1.15.1
+2025-07-28T15:23:57.5370570Z [1m[32m   Compiling[0m bitflags v1.3.2
+2025-07-28T15:23:57.5544030Z [1m[32m   Compiling[0m tiny-skia-path v0.10.0
+2025-07-28T15:23:57.6128660Z [1m[32m   Compiling[0m rustc_version v0.4.1
+2025-07-28T15:23:57.7495380Z [1m[32m   Compiling[0m quote v1.0.40
+2025-07-28T15:23:57.8399400Z [1m[32m   Compiling[0m syn v2.0.104
+2025-07-28T15:23:57.8730200Z [1m[32m   Compiling[0m kurbo v0.9.5
+2025-07-28T15:23:58.0801970Z [1m[32m   Compiling[0m slotmap v1.0.7
+2025-07-28T15:23:58.1648130Z [1m[32m   Compiling[0m unicode-general-category v0.6.0
+2025-07-28T15:23:58.3682150Z [1m[32m   Compiling[0m siphasher v0.3.11
+2025-07-28T15:23:58.4495700Z [1m[32m   Compiling[0m svgtypes v0.11.0
+2025-07-28T15:23:59.0290680Z [1m[32m   Compiling[0m pathfinder_simd v0.5.2
+2025-07-28T15:23:59.1210620Z [1m[32m   Compiling[0m zerocopy v0.8.26
+2025-07-28T15:23:59.1227310Z [1m[32m   Compiling[0m pin-project-lite v0.2.16
+2025-07-28T15:23:59.3154840Z [1m[32m   Compiling[0m serde v1.0.219
+2025-07-28T15:23:59.3759310Z [1m[32m   Compiling[0m shlex v1.3.0
+2025-07-28T15:23:59.4308190Z [1m[32m   Compiling[0m tinyvec_macros v0.1.1
+2025-07-28T15:23:59.4470710Z [1m[32m   Compiling[0m rctree v0.5.0
+2025-07-28T15:23:59.4566720Z [1m[32m   Compiling[0m adler2 v2.0.1
+2025-07-28T15:23:59.4997980Z [1m[32m   Compiling[0m miniz_oxide v0.8.9
+2025-07-28T15:23:59.5083340Z [1m[32m   Compiling[0m usvg-tree v0.34.0 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:23:59.8856420Z [1m[32m   Compiling[0m tinyvec v1.9.0
+2025-07-28T15:24:00.1004470Z [1m[32m   Compiling[0m cc v1.2.30
+2025-07-28T15:24:00.4492580Z [1m[32m   Compiling[0m aho-corasick v1.1.3
+2025-07-28T15:24:00.5255630Z [1m[32m   Compiling[0m serde_derive v1.0.219
+2025-07-28T15:24:01.4035860Z [1m[32m   Compiling[0m ahash v0.8.12
+2025-07-28T15:24:01.4926410Z [1m[32m   Compiling[0m adler32 v1.2.0
+2025-07-28T15:24:01.5355740Z [1m[32m   Compiling[0m ttf-parser v0.18.1
+2025-07-28T15:24:02.2609780Z [1m[32m   Compiling[0m adler v1.0.2
+2025-07-28T15:24:02.3110990Z [1m[32m   Compiling[0m regex-syntax v0.8.5
+2025-07-28T15:24:02.9827390Z [1m[32m   Compiling[0m futures-core v0.3.31
+2025-07-28T15:24:03.0400070Z [1m[32m   Compiling[0m libc v0.2.174
+2025-07-28T15:24:03.2033740Z [1m[32m   Compiling[0m once_cell v1.21.3
+2025-07-28T15:24:03.2890460Z [1m[32m   Compiling[0m xmlparser v0.13.6
+2025-07-28T15:24:03.5676160Z [1m[32m   Compiling[0m unicode-ccc v0.1.2
+2025-07-28T15:24:03.6232850Z [1m[32m   Compiling[0m ttf-parser v0.19.2
+2025-07-28T15:24:03.8239190Z [1m[32m   Compiling[0m unicode-script v0.5.7
+2025-07-28T15:24:04.1599720Z [1m[32m   Compiling[0m futures-sink v0.3.31
+2025-07-28T15:24:05.0643690Z [1m[32m   Compiling[0m unicode-bidi-mirroring v0.1.0
+2025-07-28T15:24:05.1028400Z [1m[32m   Compiling[0m rustybuzz v0.7.0
+2025-07-28T15:24:05.5679360Z [1m[32m   Compiling[0m regex-automata v0.4.9
+2025-07-28T15:24:05.8595730Z [1m[32m   Compiling[0m fontdb v0.14.1
+2025-07-28T15:24:06.2528490Z [1m[32m   Compiling[0m futures-channel v0.3.31
+2025-07-28T15:24:06.3566320Z [1m[32m   Compiling[0m roxmltree v0.18.1
+2025-07-28T15:24:07.4225770Z [1m[32m   Compiling[0m miniz_oxide v0.5.4
+2025-07-28T15:24:08.9070720Z [1m[32m   Compiling[0m deflate v1.0.0
+2025-07-28T15:24:09.5976410Z [1m[32m   Compiling[0m libmimalloc-sys v0.1.43
+2025-07-28T15:24:09.8028190Z [1m[32m   Compiling[0m futures-macro v0.3.31
+2025-07-28T15:24:10.3517200Z [1m[32m   Compiling[0m flate2 v1.1.2
+2025-07-28T15:24:10.5269600Z [1m[32m   Compiling[0m simplecss v0.2.2
+2025-07-28T15:24:10.6072850Z [1m[32m   Compiling[0m serde_json v1.0.141
+2025-07-28T15:24:10.6890010Z [1m[32m   Compiling[0m slab v0.4.10
+2025-07-28T15:24:10.7621780Z [1m[32m   Compiling[0m unicode-bidi v0.3.18
+2025-07-28T15:24:11.0286280Z [1m[32m   Compiling[0m futures-task v0.3.31
+2025-07-28T15:24:11.0829300Z [1m[32m   Compiling[0m data-url v0.2.0
+2025-07-28T15:24:11.3261490Z [1m[32m   Compiling[0m imagesize v0.12.0
+2025-07-28T15:24:11.3359280Z [1m[32m   Compiling[0m utf8parse v0.2.2
+2025-07-28T15:24:11.3653000Z [1m[32m   Compiling[0m unicode-segmentation v1.12.0
+2025-07-28T15:24:11.3944640Z [1m[32m   Compiling[0m pin-utils v0.1.0
+2025-07-28T15:24:11.4122830Z [1m[32m   Compiling[0m futures-io v0.3.31
+2025-07-28T15:24:11.4748080Z [1m[32m   Compiling[0m unicode-vo v0.1.0
+2025-07-28T15:24:11.5280610Z [1m[32m   Compiling[0m usvg-text-layout v0.34.0 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:24:11.5792760Z [1m[32m   Compiling[0m convert_case v0.6.0
+2025-07-28T15:24:11.7349180Z [1m[32m   Compiling[0m usvg-parser v0.34.0 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:24:11.7708960Z [1m[32m   Compiling[0m futures-util v0.3.31
+2025-07-28T15:24:13.0563540Z [1m[32m   Compiling[0m anstyle-parse v0.2.7
+2025-07-28T15:24:13.2904640Z [1m[32m   Compiling[0m png v0.17.5
+2025-07-28T15:24:14.1949480Z [1m[32m   Compiling[0m regex v1.11.1
+2025-07-28T15:24:14.7332950Z [1m[32m   Compiling[0m pico-args v0.5.0
+2025-07-28T15:24:14.9091770Z [1m[32m   Compiling[0m is_terminal_polyfill v1.70.1
+2025-07-28T15:24:14.9108730Z [1m[32m   Compiling[0m ryu v1.0.20
+2025-07-28T15:24:14.9356230Z [1m[32m   Compiling[0m itoa v1.0.15
+2025-07-28T15:24:14.9834700Z [1m[32m   Compiling[0m thiserror v1.0.69
+2025-07-28T15:24:15.0342070Z [1m[32m   Compiling[0m anstyle-query v1.1.3
+2025-07-28T15:24:15.1135290Z [1m[32m   Compiling[0m colorchoice v1.0.4
+2025-07-28T15:24:15.1406790Z [1m[32m   Compiling[0m napi-build v2.2.3
+2025-07-28T15:24:15.1560820Z [1m[32m   Compiling[0m base64 v0.21.7
+2025-07-28T15:24:15.2198390Z [1m[32m   Compiling[0m xmlwriter v0.1.0
+2025-07-28T15:24:15.3547000Z [1m[32m   Compiling[0m anstyle v1.0.11
+2025-07-28T15:24:15.3999710Z [1m[32m   Compiling[0m color_quant v1.1.0
+2025-07-28T15:24:15.4569650Z [1m[32m   Compiling[0m weezl v0.1.10
+2025-07-28T15:24:15.5052390Z [1m[32m   Compiling[0m anstream v0.6.19
+2025-07-28T15:24:15.6851530Z [1m[32m   Compiling[0m gif v0.12.0
+2025-07-28T15:24:15.8297010Z [1m[32m   Compiling[0m usvg v0.34.1 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:24:16.2065120Z [1m[32m   Compiling[0m resvg-js v1.0.1 (/Users/runner/work/resvg-js/resvg-js)
+2025-07-28T15:24:16.2137010Z [1m[32m   Compiling[0m napi-derive-backend v1.0.75
+2025-07-28T15:24:16.7823050Z [1m[32m   Compiling[0m env_filter v0.1.3
+2025-07-28T15:24:17.0518260Z [1m[32m   Compiling[0m tiny-skia v0.10.0
+2025-07-28T15:24:17.1487660Z [1m[32m   Compiling[0m hashbrown v0.13.2
+2025-07-28T15:24:17.3456970Z [1m[32m   Compiling[0m futures-executor v0.3.31
+2025-07-28T15:24:17.4752390Z [1m[32m   Compiling[0m pathfinder_color v0.5.0
+2025-07-28T15:24:17.5126090Z [1m[32m   Compiling[0m pathfinder_geometry v0.5.1
+2025-07-28T15:24:17.5129680Z [1m[32m   Compiling[0m ctor v0.2.9
+2025-07-28T15:24:17.6279230Z [1m[32m   Compiling[0m thiserror-impl v1.0.69
+2025-07-28T15:24:17.7794160Z [1m[32m   Compiling[0m tokio v1.47.0
+2025-07-28T15:24:18.3270840Z [1m[32m   Compiling[0m kurbo v0.11.3
+2025-07-28T15:24:19.2138270Z [1m[32m   Compiling[0m rgb v0.8.52
+2025-07-28T15:24:19.3826430Z [1m[32m   Compiling[0m siphasher v1.0.1
+2025-07-28T15:24:19.4620120Z [1m[32m   Compiling[0m bitflags v2.9.1
+2025-07-28T15:24:19.4843520Z [1m[32m   Compiling[0m napi-sys v2.4.0
+2025-07-28T15:24:19.5208650Z [1m[32m   Compiling[0m jiff v0.2.15
+2025-07-28T15:24:19.5908220Z [1m[32m   Compiling[0m arrayvec v0.5.2
+2025-07-28T15:24:19.7201800Z [1m[32m   Compiling[0m jpeg-decoder v0.3.2
+2025-07-28T15:24:20.1106800Z [1m[32m   Compiling[0m ttf-parser v0.15.2
+2025-07-28T15:24:20.8425480Z [1m[32m   Compiling[0m napi-derive v2.16.13
+2025-07-28T15:24:20.8531970Z [1m[32m   Compiling[0m fontdue v0.7.3
+2025-07-28T15:24:21.1645820Z [1m[32m   Compiling[0m resvg v0.34.1 (https://github.com/zimond/resvg?rev=3495d870#3495d870)
+2025-07-28T15:24:21.7122800Z [1m[32m   Compiling[0m env_logger v0.11.8
+2025-07-28T15:24:22.1442740Z [1m[32m   Compiling[0m pathfinder_content v0.5.0
+2025-07-28T15:24:22.7820150Z [1m[32m   Compiling[0m napi v2.16.17
+2025-07-28T15:24:23.0336560Z [1m[32m   Compiling[0m svgtypes v0.15.3
+2025-07-28T15:24:23.7587790Z [1m[32m   Compiling[0m futures v0.3.31
+2025-07-28T15:24:23.7818990Z [1m[32m   Compiling[0m mimalloc v0.1.47
+2025-07-28T15:24:23.8106460Z [1m[32m   Compiling[0m serde_bytes v0.11.17
+2025-07-28T15:24:26.9686250Z [0m[1m[33mwarning[0m[0m[1m: unused import: `svgtypes::FontFamily`[0m
+2025-07-28T15:24:26.9686850Z [0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/lib.rs:29:5[0m
+2025-07-28T15:24:26.9687180Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:26.9687680Z [0m[1m[38;5;12m29[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse svgtypes::FontFamily;[0m
+2025-07-28T15:24:26.9688250Z [0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^[0m
+2025-07-28T15:24:26.9688580Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:26.9689050Z [0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_imports)]` on by default[0m
+2025-07-28T15:24:26.9689280Z 
+2025-07-28T15:24:26.9689580Z [0m[1m[33mwarning[0m[0m[1m: unused import: `std::sync::Arc`[0m
+2025-07-28T15:24:26.9690000Z [0m [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:5:5[0m
+2025-07-28T15:24:26.9690300Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:26.9690750Z [0m[1m[38;5;12m5[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse std::sync::Arc;[0m
+2025-07-28T15:24:26.9691260Z [0m  [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^[0m
+2025-07-28T15:24:26.9691460Z 
+2025-07-28T15:24:26.9691850Z [0m[1m[33mwarning[0m[0m[1m: unused imports: `ImageHrefResolver`, `ImageKind`, and `Options`[0m
+2025-07-28T15:24:26.9692350Z [0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:13:25[0m
+2025-07-28T15:24:26.9692660Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:26.9693340Z [0m[1m[38;5;12m13[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse resvg::usvg::{self, ImageHrefResolver, ImageKind, Options, TreeParsing};[0m
+2025-07-28T15:24:26.9694120Z [0m   [0m[0m[1m[38;5;12m|[0m[0m                         [0m[0m[1m[33m^^^^^^^^^^^^^^^^^[0m[0m  [0m[0m[1m[33m^^^^^^^^^[0m[0m  [0m[0m[1m[33m^^^^^^^[0m
+2025-07-28T15:24:26.9694360Z 
+2025-07-28T15:24:26.9694610Z [0m[1m[33mwarning[0m[0m[1m: unused import: `Deserializer`[0m
+2025-07-28T15:24:26.9698200Z [0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:14:26[0m
+2025-07-28T15:24:26.9698680Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:26.9699250Z [0m[1m[38;5;12m14[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse serde::{Deserialize, Deserializer};[0m
+2025-07-28T15:24:26.9702400Z [0m   [0m[0m[1m[38;5;12m|[0m[0m                          [0m[0m[1m[33m^^^^^^^^^^^^[0m
+2025-07-28T15:24:26.9702580Z 
+2025-07-28T15:24:27.1251370Z [0m[1m[33mwarning[0m[0m[1m: unreachable pattern[0m
+2025-07-28T15:24:27.1251950Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/fonts.rs:278:9[0m
+2025-07-28T15:24:27.1252250Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.1252700Z [0m[1m[38;5;12m278[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        _ => return None,[0m
+2025-07-28T15:24:27.1253300Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^[0m[0m [0m[0m[1m[33mno value can reach this[0m
+2025-07-28T15:24:27.1253720Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.1254220Z [0m[1m[38;5;10mnote[0m[0m: multiple earlier patterns match some of the same values[0m
+2025-07-28T15:24:27.1254680Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/fonts.rs:278:9[0m
+2025-07-28T15:24:27.1255000Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.1255880Z [0m[1m[38;5;12m271[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        Source::Binary(ref bytes) => bytes.as_ref().as_ref().to_vec(),[0m
+2025-07-28T15:24:27.1256790Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-------------------------[0m[0m [0m[0m[1m[38;5;12mmatches some of the same values[0m
+2025-07-28T15:24:27.1257480Z [0m[1m[38;5;12m272[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        Source::File(ref path) => {[0m
+2025-07-28T15:24:27.1258170Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m----------------------[0m[0m [0m[0m[1m[38;5;12mmatches some of the same values[0m
+2025-07-28T15:24:27.1258520Z [0m[1m[38;5;12m...[0m
+2025-07-28T15:24:27.1258940Z [0m[1m[38;5;12m278[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        _ => return None,[0m
+2025-07-28T15:24:27.1259570Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;10m^[0m[0m [0m[0m[1m[38;5;10mcollectively making this unreachable[0m
+2025-07-28T15:24:27.1260160Z [0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unreachable_patterns)]` on by default[0m
+2025-07-28T15:24:27.1260440Z 
+2025-07-28T15:24:27.1956230Z [0m[1m[33mwarning[0m[0m[1m: variable does not need to be mutable[0m
+2025-07-28T15:24:27.1956760Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/lib.rs:157:14[0m
+2025-07-28T15:24:27.1957080Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.1957720Z [0m[1m[38;5;12m157[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let (mut opts, fontdb) = js_options.to_usvg_options();[0m
+2025-07-28T15:24:27.1958350Z [0m    [0m[0m[1m[38;5;12m|[0m[0m              [0m[0m[1m[38;5;12m----[0m[0m[1m[33m^^^^[0m
+2025-07-28T15:24:27.1958810Z [0m    [0m[0m[1m[38;5;12m|[0m[0m              [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.1959310Z [0m    [0m[0m[1m[38;5;12m|[0m[0m              [0m[0m[1m[38;5;12mhelp: remove this `mut`[0m
+2025-07-28T15:24:27.1959690Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.1960220Z [0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_mut)]` on by default[0m
+2025-07-28T15:24:27.1960420Z 
+2025-07-28T15:24:27.2312560Z [0m[1m[33mwarning[0m[0m[1m: trait `ResvgReadable` is never used[0m
+2025-07-28T15:24:27.2313040Z [0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:72:18[0m
+2025-07-28T15:24:27.2313340Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.2313810Z [0m[1m[38;5;12m72[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub(crate) trait ResvgReadable {[0m
+2025-07-28T15:24:27.2314310Z [0m   [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^[0m
+2025-07-28T15:24:27.2315100Z [0m   [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.2315580Z [0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(dead_code)]` on by default[0m
+2025-07-28T15:24:27.2315800Z 
+2025-07-28T15:24:27.2316320Z [0m[1m[33mwarning[0m[0m[1m: field `font_name` is never read[0m
+2025-07-28T15:24:27.2316740Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:208:9[0m
+2025-07-28T15:24:27.2317030Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.2317620Z [0m[1m[38;5;12m207[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct JsFontBuffer {[0m
+2025-07-28T15:24:27.2318240Z [0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m------------[0m[0m [0m[0m[1m[38;5;12mfield in this struct[0m
+2025-07-28T15:24:27.2318770Z [0m[1m[38;5;12m208[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub font_name: String,[0m
+2025-07-28T15:24:27.2319200Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^^^[0m
+2025-07-28T15:24:27.2319370Z 
+2025-07-28T15:24:27.2319700Z [0m[1m[33mwarning[0m[0m[1m: fields `font_weight` and `font_style` are never read[0m
+2025-07-28T15:24:27.2320130Z [0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/options.rs:326:9[0m
+2025-07-28T15:24:27.2320410Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.2320880Z [0m[1m[38;5;12m315[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct JsTextLayoutBlockOptions {[0m
+2025-07-28T15:24:27.2321600Z [0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m------------------------[0m[0m [0m[0m[1m[38;5;12mfields in this struct[0m
+2025-07-28T15:24:27.2321920Z [0m[1m[38;5;12m...[0m
+2025-07-28T15:24:27.2322350Z [0m[1m[38;5;12m326[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub font_weight: Option<String>,[0m
+2025-07-28T15:24:27.2322800Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^^^^^[0m
+2025-07-28T15:24:27.2323300Z [0m[1m[38;5;12m327[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub font_style: Option<String>,[0m
+2025-07-28T15:24:27.2323740Z [0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^^^^[0m
+2025-07-28T15:24:27.2324030Z [0m    [0m[0m[1m[38;5;12m|[0m
+2025-07-28T15:24:27.2324870Z [0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `JsTextLayoutBlockOptions` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis[0m
+2025-07-28T15:24:27.2325290Z 
+2025-07-28T15:24:54.6871840Z [1m[33mwarning[0m[1m:[0m `resvg-js` (lib) generated 9 warnings (run `cargo fix --lib -p resvg-js` to apply 5 suggestions)
+2025-07-28T15:24:54.6872700Z [1m[32m    Finished[0m `release` profile [optimized] target(s) in 59.44s
+2025-07-28T15:24:54.7107100Z ##[group]Run # Find the built .node file and copy it to the platform directory
+2025-07-28T15:24:54.7107650Z [36;1m# Find the built .node file and copy it to the platform directory[0m
+2025-07-28T15:24:54.7108070Z [36;1mfind . -name "resvgjs.darwin-arm64.node" -exec cp {} npm/darwin-arm64/ \;[0m
+2025-07-28T15:24:54.7285550Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:24:54.7285890Z env:
+2025-07-28T15:24:54.7286100Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:24:54.7286470Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:24:54.7286760Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:24:54.7286970Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:24:54.7287160Z   CARGO_TERM_COLOR: always
+2025-07-28T15:24:54.7287350Z ##[endgroup]
+2025-07-28T15:24:54.8127350Z ##[group]Run cd npm/darwin-arm64
+2025-07-28T15:24:54.8127680Z [36;1mcd npm/darwin-arm64[0m
+2025-07-28T15:24:54.8127990Z [36;1mPACKAGE_NAME=$(node -p "require('./package.json').name")[0m
+2025-07-28T15:24:54.8128330Z [36;1mVERSION=$(node -p "require('./package.json').version")[0m
+2025-07-28T15:24:54.8128700Z [36;1mecho "Checking if $PACKAGE_NAME@$VERSION already exists..."[0m
+2025-07-28T15:24:54.8129000Z [36;1m[0m
+2025-07-28T15:24:54.8129230Z [36;1m# Check if version exists in npm registry[0m
+2025-07-28T15:24:54.8129650Z [36;1mif npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then[0m
+2025-07-28T15:24:54.8130050Z [36;1m  echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"[0m
+2025-07-28T15:24:54.8136780Z [36;1melse[0m
+2025-07-28T15:24:54.8137010Z [36;1m  echo "📦 $PACKAGE_NAME@$VERSION does not exist, publishing..."[0m
+2025-07-28T15:24:54.8137400Z [36;1m  npm publish --access public[0m
+2025-07-28T15:24:54.8137650Z [36;1mfi[0m
+2025-07-28T15:24:54.8183930Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:24:54.8184180Z env:
+2025-07-28T15:24:54.8184410Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:24:54.8185040Z   NODE_AUTH_TOKEN: ***
+2025-07-28T15:24:54.8185280Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:24:54.8185480Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:24:54.8185650Z   CARGO_TERM_COLOR: always
+2025-07-28T15:24:54.8185820Z ##[endgroup]
+2025-07-28T15:24:54.8865600Z Checking if @aborrol/resvg-js-tolty-darwin-arm64@2.6.2-ab17 already exists...
+2025-07-28T15:24:55.3046050Z 📦 @aborrol/resvg-js-tolty-darwin-arm64@2.6.2-ab17 does not exist, publishing...
+2025-07-28T15:24:55.5844140Z npm warn publish npm auto-corrected some errors in your package.json when publishing.  Please run "npm pkg fix" to address these errors.
+2025-07-28T15:24:55.5844930Z npm warn publish errors corrected:
+2025-07-28T15:24:55.5845520Z npm warn publish "repository" was changed from a string to an object
+2025-07-28T15:24:55.5846370Z npm warn publish "repository.url" was normalized to "git+https://github.com/Aborrol/resvg-js.git"
+2025-07-28T15:24:55.5866100Z npm notice
+2025-07-28T15:24:55.5866740Z npm notice 📦  @aborrol/resvg-js-tolty-darwin-arm64@2.6.2-ab17
+2025-07-28T15:24:55.5867090Z npm notice Tarball Contents
+2025-07-28T15:24:55.5867550Z npm notice 100B README.md
+2025-07-28T15:24:55.5867780Z npm notice 701B package.json
+2025-07-28T15:24:55.5868380Z npm notice Tarball Details
+2025-07-28T15:24:55.5868820Z npm notice name: @aborrol/resvg-js-tolty-darwin-arm64
+2025-07-28T15:24:55.5869130Z npm notice version: 2.6.2-ab17
+2025-07-28T15:24:55.5869520Z npm notice filename: aborrol-resvg-js-tolty-darwin-arm64-2.6.2-ab17.tgz
+2025-07-28T15:24:55.5870030Z npm notice package size: 533 B
+2025-07-28T15:24:55.5870410Z npm notice unpacked size: 801 B
+2025-07-28T15:24:55.5870950Z npm notice shasum: a982e9e894d8d38c1aba36215404982b60725834
+2025-07-28T15:24:55.5871470Z npm notice integrity: sha512-k2YQI4ucUpgKS[...]SY9MvPjEsgs0A==
+2025-07-28T15:24:55.5871830Z npm notice total files: 2
+2025-07-28T15:24:55.5872150Z npm notice
+2025-07-28T15:24:55.5880840Z npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
+2025-07-28T15:24:57.0908790Z + @aborrol/resvg-js-tolty-darwin-arm64@2.6.2-ab17
+2025-07-28T15:24:57.1195360Z Post job cleanup.
+2025-07-28T15:24:57.3739890Z Post job cleanup.
+2025-07-28T15:24:57.4502930Z [command]/opt/homebrew/bin/git version
+2025-07-28T15:24:57.4687860Z git version 2.50.1
+2025-07-28T15:24:57.4722890Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/d005ac05-7285-4e66-a2bb-dab2895fb698/.gitconfig'
+2025-07-28T15:24:57.4730430Z Temporarily overriding HOME='/Users/runner/work/_temp/d005ac05-7285-4e66-a2bb-dab2895fb698' before making global git config changes
+2025-07-28T15:24:57.4731160Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-28T15:24:57.4737760Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/resvg-js/resvg-js
+2025-07-28T15:24:57.4807440Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-28T15:24:57.4847720Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-28T15:24:57.5411630Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-28T15:24:57.5447090Z http.https://github.com/.extraheader
+2025-07-28T15:24:57.5455080Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-28T15:24:57.5494130Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-28T15:24:57.6039950Z Cleaning up orphan processes

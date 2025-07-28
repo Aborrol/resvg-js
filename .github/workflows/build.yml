@@ -66,8 +66,26 @@ jobs:
       - name: Copy native module to platform directory
         shell: bash
         run: |
+          # Debug: List all .node files in the workspace
+          echo "🔍 Searching for .node files..."
+          find . -name "*.node" -type f
+          echo ""
+          
+          # Debug: Check if the specific file exists
+          echo "🔍 Looking for resvgjs.${{ matrix.platform }}.node..."
+          if [ -f "resvgjs.${{ matrix.platform }}.node" ]; then
+            echo "✅ Found resvgjs.${{ matrix.platform }}.node in root directory"
+          else
+            echo "❌ resvgjs.${{ matrix.platform }}.node not found in root directory"
+          fi
+          
           # Find the built .node file and copy it to the platform directory
+          echo "🔍 Running find command..."
           find . -name "resvgjs.${{ matrix.platform }}.node" -exec cp {} npm/${{ matrix.platform }}/ \;
+          
+          # Debug: Check if file was copied
+          echo "🔍 Checking if file was copied to npm/${{ matrix.platform }}/..."
+          ls -la npm/${{ matrix.platform }}/
 
       - name: Check and publish platform package
         shell: bash

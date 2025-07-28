@@ -1,0 +1,51 @@
+﻿2025-07-28T15:27:20.8480916Z Current runner version: '2.326.0'
+2025-07-28T15:27:20.8507269Z ##[group]Runner Image Provisioner
+2025-07-28T15:27:20.8508096Z Hosted Compute Agent
+2025-07-28T15:27:20.8508655Z Version: 20250711.363
+2025-07-28T15:27:20.8509300Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-28T15:27:20.8509965Z Build Date: 2025-07-11T20:04:25Z
+2025-07-28T15:27:20.8510597Z ##[endgroup]
+2025-07-28T15:27:20.8511170Z ##[group]Operating System
+2025-07-28T15:27:20.8511721Z Ubuntu
+2025-07-28T15:27:20.8512291Z 24.04.2
+2025-07-28T15:27:20.8512690Z LTS
+2025-07-28T15:27:20.8513251Z ##[endgroup]
+2025-07-28T15:27:20.8514237Z ##[group]Runner Image
+2025-07-28T15:27:20.8514888Z Image: ubuntu-24.04
+2025-07-28T15:27:20.8515420Z Version: 20250720.1.0
+2025-07-28T15:27:20.8516397Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250720.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-28T15:27:20.8517839Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250720.1
+2025-07-28T15:27:20.8519062Z ##[endgroup]
+2025-07-28T15:27:20.8521527Z ##[group]GITHUB_TOKEN Permissions
+2025-07-28T15:27:20.8523630Z Actions: write
+2025-07-28T15:27:20.8524314Z Attestations: write
+2025-07-28T15:27:20.8524827Z Checks: write
+2025-07-28T15:27:20.8525325Z Contents: write
+2025-07-28T15:27:20.8525903Z Deployments: write
+2025-07-28T15:27:20.8526422Z Discussions: write
+2025-07-28T15:27:20.8526884Z Issues: write
+2025-07-28T15:27:20.8527421Z Metadata: read
+2025-07-28T15:27:20.8527880Z Models: read
+2025-07-28T15:27:20.8528403Z Packages: write
+2025-07-28T15:27:20.8528953Z Pages: write
+2025-07-28T15:27:20.8529418Z PullRequests: write
+2025-07-28T15:27:20.8530138Z RepositoryProjects: write
+2025-07-28T15:27:20.8530713Z SecurityEvents: write
+2025-07-28T15:27:20.8531372Z Statuses: write
+2025-07-28T15:27:20.8531891Z ##[endgroup]
+2025-07-28T15:27:20.8534282Z Secret source: Actions
+2025-07-28T15:27:20.8535008Z Prepare workflow directory
+2025-07-28T15:27:20.8861450Z Prepare all required actions
+2025-07-28T15:27:20.8900747Z Getting action download info
+2025-07-28T15:27:21.5411947Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-28T15:27:21.5413545Z Version: 4.2.2
+2025-07-28T15:27:21.5414958Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-28T15:27:21.5416446Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-28T15:27:21.5417574Z ##[endgroup]
+2025-07-28T15:27:21.6276788Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-07-28T15:27:21.6278538Z Version: 4.4.0
+2025-07-28T15:27:21.6280063Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-07-28T15:27:21.6282222Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-07-28T15:27:21.6283974Z ##[endgroup]
+2025-07-28T15:27:21.7232918Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:4305c38b25d97ef35a8ad1f985ccf2d2242004f2)
+2025-07-28T15:27:22.0284551Z Complete job name: publish-main

@@ -1,0 +1,69 @@
+﻿2025-07-28T15:23:21.0333790Z ##[group]Run actions/checkout@v4
+2025-07-28T15:23:21.0334460Z with:
+2025-07-28T15:23:21.0334960Z   repository: Aborrol/resvg-js
+2025-07-28T15:23:21.0335480Z   token: ***
+2025-07-28T15:23:21.0335790Z   ssh-strict: true
+2025-07-28T15:23:21.0336110Z   ssh-user: git
+2025-07-28T15:23:21.0336430Z   persist-credentials: true
+2025-07-28T15:23:21.0336800Z   clean: true
+2025-07-28T15:23:21.0337130Z   sparse-checkout-cone-mode: true
+2025-07-28T15:23:21.0337520Z   fetch-depth: 1
+2025-07-28T15:23:21.0337860Z   fetch-tags: false
+2025-07-28T15:23:21.0338190Z   show-progress: true
+2025-07-28T15:23:21.0338540Z   lfs: false
+2025-07-28T15:23:21.0338850Z   submodules: false
+2025-07-28T15:23:21.0339190Z   set-safe-directory: true
+2025-07-28T15:23:21.0339890Z ##[endgroup]
+2025-07-28T15:23:21.3226060Z Syncing repository: Aborrol/resvg-js
+2025-07-28T15:23:21.3227450Z ##[group]Getting Git version info
+2025-07-28T15:23:21.3228010Z Working directory is '/Users/runner/work/resvg-js/resvg-js'
+2025-07-28T15:23:21.3229410Z [command]/opt/homebrew/bin/git version
+2025-07-28T15:23:21.3428130Z git version 2.50.1
+2025-07-28T15:23:21.3455590Z ##[endgroup]
+2025-07-28T15:23:21.3464810Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/bc86f247-1562-4aaf-ac4f-8acbb1e4a19c/.gitconfig'
+2025-07-28T15:23:21.3470730Z Temporarily overriding HOME='/Users/runner/work/_temp/bc86f247-1562-4aaf-ac4f-8acbb1e4a19c' before making global git config changes
+2025-07-28T15:23:21.3471860Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-28T15:23:21.3474200Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/resvg-js/resvg-js
+2025-07-28T15:23:21.3563380Z Deleting the contents of '/Users/runner/work/resvg-js/resvg-js'
+2025-07-28T15:23:21.3564700Z ##[group]Initializing the repository
+2025-07-28T15:23:21.3565340Z [command]/opt/homebrew/bin/git init /Users/runner/work/resvg-js/resvg-js
+2025-07-28T15:23:21.3697860Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-28T15:23:21.3699100Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-28T15:23:21.3700010Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-28T15:23:21.3700630Z hint:
+2025-07-28T15:23:21.3701040Z hint: 	git config --global init.defaultBranch <name>
+2025-07-28T15:23:21.3701520Z hint:
+2025-07-28T15:23:21.3701980Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-28T15:23:21.3702720Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-28T15:23:21.3703310Z hint:
+2025-07-28T15:23:21.3703630Z hint: 	git branch -m <name>
+2025-07-28T15:23:21.3704000Z hint:
+2025-07-28T15:23:21.3704490Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-07-28T15:23:21.3705270Z Initialized empty Git repository in /Users/runner/work/resvg-js/resvg-js/.git/
+2025-07-28T15:23:21.3706700Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:21.3756490Z ##[endgroup]
+2025-07-28T15:23:21.3757150Z ##[group]Disabling automatic garbage collection
+2025-07-28T15:23:21.3758550Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2025-07-28T15:23:21.3793600Z ##[endgroup]
+2025-07-28T15:23:21.3794190Z ##[group]Setting up auth
+2025-07-28T15:23:21.3797810Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-28T15:23:21.3831660Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-28T15:23:21.4354060Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-28T15:23:21.4387740Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-28T15:23:21.4809640Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-28T15:23:21.4850580Z ##[endgroup]
+2025-07-28T15:23:21.4851220Z ##[group]Fetching the repository
+2025-07-28T15:23:21.4856010Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6:refs/tags/v2.6.2-ab17
+2025-07-28T15:23:22.4345600Z From https://github.com/Aborrol/resvg-js
+2025-07-28T15:23:22.4346880Z  * [new ref]         b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6 -> v2.6.2-ab17
+2025-07-28T15:23:22.4388660Z ##[endgroup]
+2025-07-28T15:23:22.4389360Z ##[group]Determining the checkout info
+2025-07-28T15:23:22.4390120Z ##[endgroup]
+2025-07-28T15:23:22.4392870Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2025-07-28T15:23:22.4485180Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-28T15:23:22.4526700Z ##[group]Checking out the ref
+2025-07-28T15:23:22.4528690Z [command]/opt/homebrew/bin/git checkout --progress --force refs/tags/v2.6.2-ab17
+2025-07-28T15:23:22.4803930Z HEAD is now at b6b5364 Fix CI build failure on Windows - use bash shell for find command
+2025-07-28T15:23:22.4815350Z ##[endgroup]
+2025-07-28T15:23:22.4871730Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2025-07-28T15:23:22.4906110Z b6b5364b62ccc511b5971ac1f4552ba0ed16b2d6

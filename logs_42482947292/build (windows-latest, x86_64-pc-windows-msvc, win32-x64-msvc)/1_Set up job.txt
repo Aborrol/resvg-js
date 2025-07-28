@@ -1,0 +1,51 @@
+﻿2025-07-28T15:23:19.7921624Z Current runner version: '2.326.0'
+2025-07-28T15:23:19.7969158Z ##[group]Runner Image Provisioner
+2025-07-28T15:23:19.7969951Z Hosted Compute Agent
+2025-07-28T15:23:19.7970421Z Version: 20250711.363
+2025-07-28T15:23:19.7970996Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-28T15:23:19.7971619Z Build Date: 2025-07-11T20:04:25Z
+2025-07-28T15:23:19.7972125Z ##[endgroup]
+2025-07-28T15:23:19.7972576Z ##[group]Operating System
+2025-07-28T15:23:19.7973070Z Microsoft Windows Server 2022
+2025-07-28T15:23:19.7973592Z 10.0.20348
+2025-07-28T15:23:19.7973990Z Datacenter
+2025-07-28T15:23:19.7974372Z ##[endgroup]
+2025-07-28T15:23:19.7974805Z ##[group]Runner Image
+2025-07-28T15:23:19.7975286Z Image: windows-2022
+2025-07-28T15:23:19.7975718Z Version: 20250720.1.0
+2025-07-28T15:23:19.7976700Z Included Software: https://github.com/actions/runner-images/blob/win22/20250720.1/images/windows/Windows2022-Readme.md
+2025-07-28T15:23:19.7977977Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250720.1
+2025-07-28T15:23:19.7979189Z ##[endgroup]
+2025-07-28T15:23:19.7981570Z ##[group]GITHUB_TOKEN Permissions
+2025-07-28T15:23:19.7983378Z Actions: write
+2025-07-28T15:23:19.7983884Z Attestations: write
+2025-07-28T15:23:19.7984378Z Checks: write
+2025-07-28T15:23:19.7984826Z Contents: write
+2025-07-28T15:23:19.7985252Z Deployments: write
+2025-07-28T15:23:19.7985690Z Discussions: write
+2025-07-28T15:23:19.7986134Z Issues: write
+2025-07-28T15:23:19.7986590Z Metadata: read
+2025-07-28T15:23:19.7987006Z Models: read
+2025-07-28T15:23:19.7987414Z Packages: write
+2025-07-28T15:23:19.7987856Z Pages: write
+2025-07-28T15:23:19.7988294Z PullRequests: write
+2025-07-28T15:23:19.7988756Z RepositoryProjects: write
+2025-07-28T15:23:19.7989283Z SecurityEvents: write
+2025-07-28T15:23:19.7989809Z Statuses: write
+2025-07-28T15:23:19.7990234Z ##[endgroup]
+2025-07-28T15:23:19.7992189Z Secret source: Actions
+2025-07-28T15:23:19.7992842Z Prepare workflow directory
+2025-07-28T15:23:19.8327739Z Prepare all required actions
+2025-07-28T15:23:19.8364614Z Getting action download info
+2025-07-28T15:23:20.0754380Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-28T15:23:20.0755709Z Version: 4.2.2
+2025-07-28T15:23:20.0756827Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-28T15:23:20.0758244Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-28T15:23:20.0759020Z ##[endgroup]
+2025-07-28T15:23:20.2049346Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-07-28T15:23:20.2050125Z Version: 4.4.0
+2025-07-28T15:23:20.2050781Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-07-28T15:23:20.2051660Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-07-28T15:23:20.2052272Z ##[endgroup]
+2025-07-28T15:23:20.3731162Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:4305c38b25d97ef35a8ad1f985ccf2d2242004f2)
+2025-07-28T15:23:20.8210957Z Complete job name: build (windows-latest, x86_64-pc-windows-msvc, win32-x64-msvc)

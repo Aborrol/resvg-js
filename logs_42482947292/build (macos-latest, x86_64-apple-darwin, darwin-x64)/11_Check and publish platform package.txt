@@ -1,0 +1,44 @@
+﻿2025-07-28T15:25:11.7372620Z ##[group]Run cd npm/darwin-x64
+2025-07-28T15:25:11.7373040Z [36;1mcd npm/darwin-x64[0m
+2025-07-28T15:25:11.7373350Z [36;1mPACKAGE_NAME=$(node -p "require('./package.json').name")[0m
+2025-07-28T15:25:11.7373800Z [36;1mVERSION=$(node -p "require('./package.json').version")[0m
+2025-07-28T15:25:11.7374280Z [36;1mecho "Checking if $PACKAGE_NAME@$VERSION already exists..."[0m
+2025-07-28T15:25:11.7390200Z [36;1m[0m
+2025-07-28T15:25:11.7390450Z [36;1m# Check if version exists in npm registry[0m
+2025-07-28T15:25:11.7390860Z [36;1mif npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then[0m
+2025-07-28T15:25:11.7398080Z [36;1m  echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"[0m
+2025-07-28T15:25:11.7398400Z [36;1melse[0m
+2025-07-28T15:25:11.7398760Z [36;1m  echo "📦 $PACKAGE_NAME@$VERSION does not exist, publishing..."[0m
+2025-07-28T15:25:11.7399100Z [36;1m  npm publish --access public[0m
+2025-07-28T15:25:11.7399350Z [36;1mfi[0m
+2025-07-28T15:25:11.7448780Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:25:11.7449200Z env:
+2025-07-28T15:25:11.7449450Z   NPM_CONFIG_USERCONFIG: /Users/runner/work/_temp/.npmrc
+2025-07-28T15:25:11.7450560Z   NODE_AUTH_TOKEN: ***
+2025-07-28T15:25:11.7450840Z   CARGO_HOME: /Users/runner/.cargo
+2025-07-28T15:25:11.7451060Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:25:11.7451270Z   CARGO_TERM_COLOR: always
+2025-07-28T15:25:11.7451530Z ##[endgroup]
+2025-07-28T15:25:11.8698360Z Checking if @aborrol/resvg-js-tolty-darwin-x64@2.6.2-ab17 already exists...
+2025-07-28T15:25:12.6370080Z 📦 @aborrol/resvg-js-tolty-darwin-x64@2.6.2-ab17 does not exist, publishing...
+2025-07-28T15:25:12.9956710Z npm warn publish npm auto-corrected some errors in your package.json when publishing.  Please run "npm pkg fix" to address these errors.
+2025-07-28T15:25:12.9958430Z npm warn publish errors corrected:
+2025-07-28T15:25:12.9959550Z npm warn publish "repository" was changed from a string to an object
+2025-07-28T15:25:12.9961450Z npm warn publish "repository.url" was normalized to "git+https://github.com/Aborrol/resvg-js.git"
+2025-07-28T15:25:12.9983330Z npm notice
+2025-07-28T15:25:12.9984430Z npm notice 📦  @aborrol/resvg-js-tolty-darwin-x64@2.6.2-ab17
+2025-07-28T15:25:12.9984840Z npm notice Tarball Contents
+2025-07-28T15:25:12.9985190Z npm notice 97B README.md
+2025-07-28T15:25:12.9985520Z npm notice 693B package.json
+2025-07-28T15:25:12.9987080Z npm notice Tarball Details
+2025-07-28T15:25:12.9987770Z npm notice name: @aborrol/resvg-js-tolty-darwin-x64
+2025-07-28T15:25:12.9988320Z npm notice version: 2.6.2-ab17
+2025-07-28T15:25:12.9988860Z npm notice filename: aborrol-resvg-js-tolty-darwin-x64-2.6.2-ab17.tgz
+2025-07-28T15:25:12.9989470Z npm notice package size: 531 B
+2025-07-28T15:25:12.9989970Z npm notice unpacked size: 790 B
+2025-07-28T15:25:12.9990470Z npm notice shasum: abf0ec3184e7dc12301341390c0639db0a035803
+2025-07-28T15:25:12.9991040Z npm notice integrity: sha512-HYo6jX8RpvJpF[...]TeAIeHQH+9U9g==
+2025-07-28T15:25:12.9991550Z npm notice total files: 2
+2025-07-28T15:25:12.9991910Z npm notice
+2025-07-28T15:25:13.0004000Z npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
+2025-07-28T15:25:14.2422130Z + @aborrol/resvg-js-tolty-darwin-x64@2.6.2-ab17

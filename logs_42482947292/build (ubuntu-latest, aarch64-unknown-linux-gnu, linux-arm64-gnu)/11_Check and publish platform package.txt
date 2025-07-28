@@ -1,0 +1,44 @@
+﻿2025-07-28T15:25:35.3577533Z ##[group]Run cd npm/linux-arm64-gnu
+2025-07-28T15:25:35.3577875Z [36;1mcd npm/linux-arm64-gnu[0m
+2025-07-28T15:25:35.3578208Z [36;1mPACKAGE_NAME=$(node -p "require('./package.json').name")[0m
+2025-07-28T15:25:35.3578605Z [36;1mVERSION=$(node -p "require('./package.json').version")[0m
+2025-07-28T15:25:35.3579171Z [36;1mecho "Checking if $PACKAGE_NAME@$VERSION already exists..."[0m
+2025-07-28T15:25:35.3579491Z [36;1m[0m
+2025-07-28T15:25:35.3579696Z [36;1m# Check if version exists in npm registry[0m
+2025-07-28T15:25:35.3580077Z [36;1mif npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then[0m
+2025-07-28T15:25:35.3580507Z [36;1m  echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"[0m
+2025-07-28T15:25:35.3580848Z [36;1melse[0m
+2025-07-28T15:25:35.3581118Z [36;1m  echo "📦 $PACKAGE_NAME@$VERSION does not exist, publishing..."[0m
+2025-07-28T15:25:35.3581453Z [36;1m  npm publish --access public[0m
+2025-07-28T15:25:35.3581692Z [36;1mfi[0m
+2025-07-28T15:25:35.3606644Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:25:35.3606998Z env:
+2025-07-28T15:25:35.3607256Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-07-28T15:25:35.3607982Z   NODE_AUTH_TOKEN: ***
+2025-07-28T15:25:35.3608225Z   CARGO_HOME: /home/runner/.cargo
+2025-07-28T15:25:35.3608466Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:25:35.3608671Z   CARGO_TERM_COLOR: always
+2025-07-28T15:25:35.3608879Z ##[endgroup]
+2025-07-28T15:25:35.4175305Z Checking if @aborrol/resvg-js-tolty-linux-arm64-gnu@2.6.2-ab17 already exists...
+2025-07-28T15:25:35.8927146Z 📦 @aborrol/resvg-js-tolty-linux-arm64-gnu@2.6.2-ab17 does not exist, publishing...
+2025-07-28T15:25:36.2861967Z npm warn publish npm auto-corrected some errors in your package.json when publishing.  Please run "npm pkg fix" to address these errors.
+2025-07-28T15:25:36.2864509Z npm warn publish errors corrected:
+2025-07-28T15:25:36.2865092Z npm warn publish "repository" was changed from a string to an object
+2025-07-28T15:25:36.2865820Z npm warn publish "repository.url" was normalized to "git+https://github.com/Aborrol/resvg-js.git"
+2025-07-28T15:25:36.2900525Z npm notice
+2025-07-28T15:25:36.2902419Z npm notice 📦  @aborrol/resvg-js-tolty-linux-arm64-gnu@2.6.2-ab17
+2025-07-28T15:25:36.2903054Z npm notice Tarball Contents
+2025-07-28T15:25:36.2904569Z npm notice 108B README.md
+2025-07-28T15:25:36.2904953Z npm notice 738B package.json
+2025-07-28T15:25:36.2905797Z npm notice Tarball Details
+2025-07-28T15:25:36.2906764Z npm notice name: @aborrol/resvg-js-tolty-linux-arm64-gnu
+2025-07-28T15:25:36.2907471Z npm notice version: 2.6.2-ab17
+2025-07-28T15:25:36.2908398Z npm notice filename: aborrol-resvg-js-tolty-linux-arm64-gnu-2.6.2-ab17.tgz
+2025-07-28T15:25:36.2909762Z npm notice package size: 546 B
+2025-07-28T15:25:36.2910207Z npm notice unpacked size: 846 B
+2025-07-28T15:25:36.2910969Z npm notice shasum: 446d20c3e7342b5b6243baae446c6c14cd0fbf55
+2025-07-28T15:25:36.2912264Z npm notice integrity: sha512-eSDow9aiOdSq9[...]ePJZ6IMVAHEWw==
+2025-07-28T15:25:36.2912865Z npm notice total files: 2
+2025-07-28T15:25:36.2913214Z npm notice
+2025-07-28T15:25:36.2928466Z npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
+2025-07-28T15:25:37.5443469Z + @aborrol/resvg-js-tolty-linux-arm64-gnu@2.6.2-ab17

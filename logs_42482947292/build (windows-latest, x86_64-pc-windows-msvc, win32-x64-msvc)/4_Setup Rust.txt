@@ -1,0 +1,172 @@
+﻿2025-07-28T15:23:29.3817494Z ##[group]Run dtolnay/rust-toolchain@stable
+2025-07-28T15:23:29.3817816Z with:
+2025-07-28T15:23:29.3817979Z   toolchain: stable
+2025-07-28T15:23:29.3818145Z env:
+2025-07-28T15:23:29.3818323Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:29.3818581Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:29.3818808Z ##[endgroup]
+2025-07-28T15:23:29.4083384Z ##[group]Run : parse toolchain version
+2025-07-28T15:23:29.4083795Z [36;1m: parse toolchain version[0m
+2025-07-28T15:23:29.4084194Z [36;1mif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2025-07-28T15:23:29.4084536Z [36;1m  if [[ Windows == macOS ]]; then[0m
+2025-07-28T15:23:29.4084978Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.4085398Z [36;1m  else[0m
+2025-07-28T15:23:29.4085729Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.4086160Z [36;1m  fi[0m
+2025-07-28T15:23:29.4086405Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2025-07-28T15:23:29.4086855Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.4087227Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2025-07-28T15:23:29.4087646Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.4088045Z [36;1melse[0m
+2025-07-28T15:23:29.4088240Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.4088481Z [36;1mfi[0m
+2025-07-28T15:23:29.4106070Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:29.4106443Z env:
+2025-07-28T15:23:29.4106621Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:29.4106889Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:29.4107141Z   toolchain: stable
+2025-07-28T15:23:29.4107299Z ##[endgroup]
+2025-07-28T15:23:29.5685614Z ##[group]Run : construct rustup command line
+2025-07-28T15:23:29.5685949Z [36;1m: construct rustup command line[0m
+2025-07-28T15:23:29.5686332Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.5686858Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.5687475Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:29.5700260Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:29.5700632Z env:
+2025-07-28T15:23:29.5700811Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:29.5701070Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:29.5701290Z   targets: 
+2025-07-28T15:23:29.5701434Z   components: 
+2025-07-28T15:23:29.5701611Z ##[endgroup]
+2025-07-28T15:23:29.6290193Z ##[group]Run : set $CARGO_HOME
+2025-07-28T15:23:29.6290450Z [36;1m: set $CARGO_HOME[0m
+2025-07-28T15:23:29.6290739Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$USERPROFILE\.cargo"} >> $GITHUB_ENV[0m
+2025-07-28T15:23:29.6302958Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:29.6303325Z env:
+2025-07-28T15:23:29.6303503Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:29.6303755Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:29.6304019Z ##[endgroup]
+2025-07-28T15:23:29.6726159Z ##[group]Run : install rustup if needed on windows
+2025-07-28T15:23:29.6726517Z [36;1m: install rustup if needed on windows[0m
+2025-07-28T15:23:29.6726822Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2025-07-28T15:23:29.6727566Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://win.rustup.rs/x86_64 --output 'D:\a\_temp\rustup-init.exe'[0m
+2025-07-28T15:23:29.6730291Z [36;1m  'D:\a\_temp\rustup-init.exe' --default-toolchain none --no-modify-path -y[0m
+2025-07-28T15:23:29.6730719Z [36;1m  echo "$CARGO_HOME\bin" >> $GITHUB_PATH[0m
+2025-07-28T15:23:29.6730971Z [36;1mfi[0m
+2025-07-28T15:23:29.6743451Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:29.6743836Z env:
+2025-07-28T15:23:29.6744018Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:29.6744295Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:29.6744576Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:29.6744810Z ##[endgroup]
+2025-07-28T15:23:29.7219868Z ##[group]Run rustup toolchain install stable --profile minimal --no-self-update
+2025-07-28T15:23:29.7220354Z [36;1mrustup toolchain install stable --profile minimal --no-self-update[0m
+2025-07-28T15:23:29.7232622Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:29.7232990Z env:
+2025-07-28T15:23:29.7233166Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:29.7233425Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:29.7233688Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:29.7233904Z ##[endgroup]
+2025-07-28T15:23:33.7833764Z info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
+2025-07-28T15:23:34.1262763Z 
+2025-07-28T15:23:34.1423999Z   stable-x86_64-pc-windows-msvc unchanged - rustc 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:34.1425111Z 
+2025-07-28T15:23:34.1590942Z ##[group]Run rustup default stable
+2025-07-28T15:23:34.1591202Z [36;1mrustup default stable[0m
+2025-07-28T15:23:34.1602364Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:34.1602733Z env:
+2025-07-28T15:23:34.1602910Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:34.1603177Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:34.1603427Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:34.1603657Z ##[endgroup]
+2025-07-28T15:23:34.2210728Z info: using existing install for 'stable-x86_64-pc-windows-msvc'
+2025-07-28T15:23:34.2934230Z info: default toolchain set to 'stable-x86_64-pc-windows-msvc'
+2025-07-28T15:23:34.2934880Z 
+2025-07-28T15:23:34.3098669Z   stable-x86_64-pc-windows-msvc unchanged - rustc 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:34.3099079Z 
+2025-07-28T15:23:34.3105052Z info: note that the toolchain '1.88.0-x86_64-pc-windows-msvc' is currently in use (overridden by 'D:\a\resvg-js\resvg-js\rust-toolchain')
+2025-07-28T15:23:34.3577776Z ##[group]Run : create cachekey
+2025-07-28T15:23:34.3578028Z [36;1m: create cachekey[0m
+2025-07-28T15:23:34.3578438Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2025-07-28T15:23:34.3578990Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2025-07-28T15:23:34.3579414Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2025-07-28T15:23:34.3590665Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:34.3591008Z env:
+2025-07-28T15:23:34.3591179Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:34.3591434Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:34.3591675Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:34.3591893Z ##[endgroup]
+2025-07-28T15:23:35.2170045Z ##[group]Run : disable incremental compilation
+2025-07-28T15:23:35.2170389Z [36;1m: disable incremental compilation[0m
+2025-07-28T15:23:35.2170685Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2025-07-28T15:23:35.2170993Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2025-07-28T15:23:35.2171239Z [36;1mfi[0m
+2025-07-28T15:23:35.2181973Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:35.2182356Z env:
+2025-07-28T15:23:35.2182536Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.2183508Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.2183778Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.2184010Z ##[endgroup]
+2025-07-28T15:23:35.2609882Z ##[group]Run : enable colors in Cargo output
+2025-07-28T15:23:35.2610219Z [36;1m: enable colors in Cargo output[0m
+2025-07-28T15:23:35.2610495Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2025-07-28T15:23:35.2610786Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2025-07-28T15:23:35.2611053Z [36;1mfi[0m
+2025-07-28T15:23:35.2621845Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:35.2622183Z env:
+2025-07-28T15:23:35.2622355Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.2622618Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.2622862Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.2623083Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:35.2623248Z ##[endgroup]
+2025-07-28T15:23:35.3032624Z ##[group]Run : enable Cargo sparse registry
+2025-07-28T15:23:35.3032952Z [36;1m: enable Cargo sparse registry[0m
+2025-07-28T15:23:35.3033296Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2025-07-28T15:23:35.3033910Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2025-07-28T15:23:35.3034562Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2025-07-28T15:23:35.3035066Z [36;1m    touch "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-07-28T15:23:35.3035518Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2025-07-28T15:23:35.3035984Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2025-07-28T15:23:35.3036541Z [36;1m    touch "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-07-28T15:23:35.3036991Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2025-07-28T15:23:35.3037296Z [36;1m  fi[0m
+2025-07-28T15:23:35.3037451Z [36;1mfi[0m
+2025-07-28T15:23:35.3048423Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:35.3048826Z env:
+2025-07-28T15:23:35.3049010Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.3049294Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.3049563Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.3050586Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:35.3050784Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:35.3050972Z ##[endgroup]
+2025-07-28T15:23:35.4831269Z ##[group]Run : work around spurious network errors in curl 8.0
+2025-07-28T15:23:35.4831680Z [36;1m: work around spurious network errors in curl 8.0[0m
+2025-07-28T15:23:35.4832148Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2025-07-28T15:23:35.4832690Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2025-07-28T15:23:35.4833067Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2025-07-28T15:23:35.4833340Z [36;1mfi[0m
+2025-07-28T15:23:35.4844156Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:35.4844492Z env:
+2025-07-28T15:23:35.4844669Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.4844935Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.4845199Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.4845425Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:35.4845603Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:35.4845778Z ##[endgroup]
+2025-07-28T15:23:35.5923962Z ##[group]Run rustc +stable --version --verbose
+2025-07-28T15:23:35.5924306Z [36;1mrustc +stable --version --verbose[0m
+2025-07-28T15:23:35.5936095Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-07-28T15:23:35.5936612Z env:
+2025-07-28T15:23:35.5936787Z   NPM_CONFIG_USERCONFIG: D:\a\_temp\.npmrc
+2025-07-28T15:23:35.5937033Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-07-28T15:23:35.5937278Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+2025-07-28T15:23:35.5937505Z   CARGO_INCREMENTAL: 0
+2025-07-28T15:23:35.5937684Z   CARGO_TERM_COLOR: always
+2025-07-28T15:23:35.5937865Z ##[endgroup]
+2025-07-28T15:23:35.6609202Z rustc 1.88.0 (6b00bc388 2025-06-23)
+2025-07-28T15:23:35.6609818Z binary: rustc
+2025-07-28T15:23:35.6610387Z commit-hash: 6b00bc3880198600130e1cf62b8f8a93494488cc
+2025-07-28T15:23:35.6610961Z commit-date: 2025-06-23
+2025-07-28T15:23:35.6611330Z host: x86_64-pc-windows-msvc
+2025-07-28T15:23:35.6611671Z release: 1.88.0
+2025-07-28T15:23:35.6612434Z LLVM version: 20.1.5
