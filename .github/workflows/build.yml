@@ -49,6 +49,9 @@ jobs:
           npm ci
           npm install -g @napi-rs/cli
 
+      - name: Add Rust target (if needed)
+        run: rustup target add ${{ matrix.target }}
+
       - name: Build for platform
         run: |
           napi build --target ${{ matrix.target }} --release
