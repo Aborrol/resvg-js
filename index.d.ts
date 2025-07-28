@@ -4,8 +4,8 @@
 /* Custom TypeScript definitions for @aborrol/resvg-js-tolty */
 
 export interface FontBuffer {
-  name: string
-  data: Buffer
+  fontName: string
+  buffer: number[]
 }
 
 export interface FontOptions {
