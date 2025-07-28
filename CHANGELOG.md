@@ -17,6 +17,7 @@ This changelog also contains important changes in dependencies.
   - Fixed issue where resvgjs.node was created without platform suffix
   - Now correctly copies resvgjs.node to resvgjs.{platform}.node in platform packages
   - This ensures native modules are properly included in published packages
+  - ✅ Native module now successfully copied and included in platform packages
 
 ## [2.6.2-ab18] - 2025-01-28
 
