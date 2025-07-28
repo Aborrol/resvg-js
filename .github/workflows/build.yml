@@ -63,7 +63,24 @@ jobs:
         run: |
           napi build --target ${{ matrix.target }} --release
 
+      - name: Check if platform package version exists
+        run: |
+          cd npm/${{ matrix.platform }}
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Checking if $PACKAGE_NAME@$VERSION already exists..."
+          
+          # Check if version exists in npm registry
+          if npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then
+            echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"
+            echo "skip_publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "📦 $PACKAGE_NAME@$VERSION does not exist, will publish"
+            echo "skip_publish=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Publish platform package
+        if: steps.check_version.outputs.skip_publish != 'true'
         run: |
           cd npm/${{ matrix.platform }}
           npm publish --access public
@@ -99,7 +116,23 @@ jobs:
         run: |
           npx esbuild js-binding.js --minify --allow-overwrite --outfile=js-binding.js
 
+      - name: Check if main package version exists
+        run: |
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Checking if $PACKAGE_NAME@$VERSION already exists..."
+          
+          # Check if version exists in npm registry
+          if npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then
+            echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"
+            echo "skip_publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "📦 $PACKAGE_NAME@$VERSION does not exist, will publish"
+            echo "skip_publish=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Update package.json with optionalDependencies
+        if: steps.check_main_version.outputs.skip_publish != 'true'
         run: |
           # Add optionalDependencies to package.json
           node -e "
@@ -117,6 +150,7 @@ jobs:
           "
 
       - name: Publish main package
+        if: steps.check_main_version.outputs.skip_publish != 'true'
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} 
