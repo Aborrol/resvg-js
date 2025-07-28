@@ -1,6 +1,6 @@
 {
   "name": "@aborrol/resvg-js-tolty",
-  "version": "2.6.2-ab12",
+  "version": "2.6.2-ab11",
   "description": "Fork: resvg-js with advanced custom text layout (textLayout, letterSpacing, opacity, font buffers) by Aborrol",
   "repository": "https://github.com/Aborrol/resvg-js",
   "author": "Aborrol <aborrol@gmail.com>",
