@@ -59,7 +59,11 @@ jobs:
       - name: Update platform package versions
         run: node scripts/update-versions.js
 
-      - name: Check if platform package version exists
+      - name: Build for platform
+        run: |
+          napi build --target ${{ matrix.target }} --release
+
+      - name: Check and publish platform package
         shell: bash
         run: |
           cd npm/${{ matrix.platform }}
@@ -69,23 +73,11 @@ jobs:
           
           # Check if version exists in npm registry
           if npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then
-            echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping build and publish"
-            echo "skip_build=true" >> $GITHUB_OUTPUT
+            echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"
           else
-            echo "📦 $PACKAGE_NAME@$VERSION does not exist, will build and publish"
-            echo "skip_build=false" >> $GITHUB_OUTPUT
+            echo "📦 $PACKAGE_NAME@$VERSION does not exist, publishing..."
+            npm publish --access public
           fi
-
-      - name: Build for platform
-        if: steps.check_version.outputs.skip_build != 'true'
-        run: |
-          napi build --target ${{ matrix.target }} --release
-
-      - name: Publish platform package
-        if: steps.check_version.outputs.skip_build != 'true'
-        run: |
-          cd npm/${{ matrix.platform }}
-          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -110,7 +102,15 @@ jobs:
           npm ci
           npm install -g @napi-rs/cli
 
-      - name: Check if main package version exists
+      - name: Build JS binding
+        run: |
+          napi build --platform --release --js js-binding.js --dts js-binding.d.ts
+
+      - name: Minify JS binding
+        run: |
+          npx esbuild js-binding.js --minify --allow-overwrite --outfile=js-binding.js
+
+      - name: Check and publish main package
         shell: bash
         run: |
           PACKAGE_NAME=$(node -p "require('./package.json').name")
@@ -119,43 +119,26 @@ jobs:
           
           # Check if version exists in npm registry
           if npm view "$PACKAGE_NAME@$VERSION" version >/dev/null 2>&1; then
-            echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping build and publish"
-            echo "skip_build=true" >> $GITHUB_OUTPUT
+            echo "✅ $PACKAGE_NAME@$VERSION already exists, skipping publish"
           else
-            echo "📦 $PACKAGE_NAME@$VERSION does not exist, will build and publish"
-            echo "skip_build=false" >> $GITHUB_OUTPUT
+            echo "📦 $PACKAGE_NAME@$VERSION does not exist, updating package.json and publishing..."
+            
+            # Add optionalDependencies to package.json
+            node -e "
+            const fs = require('fs');
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            pkg.optionalDependencies = {
+              '@aborrol/resvg-js-tolty-darwin-arm64': pkg.version,
+              '@aborrol/resvg-js-tolty-darwin-x64': pkg.version,
+              '@aborrol/resvg-js-tolty-linux-arm64-gnu': pkg.version,
+              '@aborrol/resvg-js-tolty-linux-x64-gnu': pkg.version,
+              '@aborrol/resvg-js-tolty-win32-ia32-msvc': pkg.version,
+              '@aborrol/resvg-js-tolty-win32-x64-msvc': pkg.version
+            };
+            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
+            "
+            
+            npm publish --access public
           fi
-
-      - name: Build JS binding
-        if: steps.check_main_version.outputs.skip_build != 'true'
-        run: |
-          napi build --platform --release --js js-binding.js --dts js-binding.d.ts
-
-      - name: Minify JS binding
-        if: steps.check_main_version.outputs.skip_build != 'true'
-        run: |
-          npx esbuild js-binding.js --minify --allow-overwrite --outfile=js-binding.js
-
-      - name: Update package.json with optionalDependencies
-        if: steps.check_main_version.outputs.skip_build != 'true'
-        run: |
-          # Add optionalDependencies to package.json
-          node -e "
-          const fs = require('fs');
-          const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-          pkg.optionalDependencies = {
-            '@aborrol/resvg-js-tolty-darwin-arm64': pkg.version,
-            '@aborrol/resvg-js-tolty-darwin-x64': pkg.version,
-            '@aborrol/resvg-js-tolty-linux-arm64-gnu': pkg.version,
-            '@aborrol/resvg-js-tolty-linux-x64-gnu': pkg.version,
-            '@aborrol/resvg-js-tolty-win32-ia32-msvc': pkg.version,
-            '@aborrol/resvg-js-tolty-win32-x64-msvc': pkg.version
-          };
-          fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
-          "
-
-      - name: Publish main package
-        if: steps.check_main_version.outputs.skip_build != 'true'
-        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} 
